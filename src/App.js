@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
+import DartBoard from './components/DartBoard';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -39,6 +41,9 @@ const App = (props) => {
   return (
     <MuiThemeProvider theme={theme}>
       <Typography children={'Bar Darts'} variant={'h1'} className={classes.h1}/>
+      <Container> 
+        <DartBoard />
+      </Container>
     </MuiThemeProvider>
   );
 }
