@@ -1,10 +1,9 @@
 import React from 'react';
-import './App.css';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 import { Container, Typography } from '@material-ui/core';
-import DartBoard from './components/DartBoard';
-
+import DartBoard from './containers/DartBoard';
+import Footer from './components/Footer/Footer';
 
 const theme = createMuiTheme({
   palette: {
@@ -30,7 +29,7 @@ const theme = createMuiTheme({
 const styles = {
   h1: {
     fontSize: 72,
-    fontWeight: 600,
+    fontWeight: 500,
     margin: '2rem auto',
     textAlign: 'center'
   }
@@ -44,6 +43,7 @@ const App = (props) => {
       <Container> 
         <DartBoard />
       </Container>
+      <Footer />
     </MuiThemeProvider>
   );
 }
