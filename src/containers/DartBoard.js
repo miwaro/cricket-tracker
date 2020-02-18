@@ -15,7 +15,7 @@ const dartBoard = (props) => {
     return (
         <Card className={classes.root}>
             <Paper variant={'outlined'} elevation={3}>
-                <Grid container spacing={1}>
+                <Grid container spacing={0}>
                     <Grid item xs={3}>
                         <DartBoardStatic />
                     </Grid>

@@ -42,10 +42,22 @@ class dartBoardPlayers extends Component {
                     '15': 0,
                     'B': 0
                 }
+            },
+            {
+                name: 'Mike',
+                active: true,
+                board: {
+                    '20': 0,
+                    '19': 1,
+                    '18': 2,
+                    '17': 3,
+                    '16': 0,
+                    '15': 0,
+                    'B': 0
+                }
             }
         ]
     }
-
 
     render() {
         return(
@@ -55,7 +67,7 @@ class dartBoardPlayers extends Component {
                         key={i}
                         player={player}
                     />
-                ))}
+                ))}             
             </div>
         );
     }

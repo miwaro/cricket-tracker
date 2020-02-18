@@ -15,7 +15,7 @@ const theme = createMuiTheme({
     },
     secondary: {
       light: '#000000',
-      main: '#5C2751',
+      main: '#9C2751',
       dark: '#000000',
       contrastText: '#000000'
     }
@@ -24,7 +24,6 @@ const theme = createMuiTheme({
     useNextVariants: true,
   }
 });
-console.log(theme)
 
 const App = (props) => {
   return (

@@ -1,34 +1,31 @@
 import React, { Component } from 'react';
-import classes from './DartBoardPlayerControl.module.css'
+import classes from './DartBoardPlayerControl.module.css';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-// grab onto props
-// get value (20, 19, etc.)
-// get score (0-3)
-// switch statement on score
-// if 0, show + w/ circle
-// if 1 show /
-// if 2 show X
-// if 3 show x w/ circle
+import CloseIcon from '@material-ui/icons/Close';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+
+
 class dartBoardPlayerControl extends Component {
 
     componentWillMount() {
         this.setIcon();
     }
 
-    icon; // JSX (i.e., a Material-UI Icon Component)
-
+    icon;
+    
     setIcon = () => {
+ 
         switch(this.props.score) {
         case 0:
-            return this.icon = <AddCircleOutlineIcon className={classes.root} />;
+            return this.icon = <AddCircleOutlineIcon style={{ cursor: 'pointer', fontSize: '60' }}/>;
         case 1:
-            return this.icon = <div>/</div>
+            return this.icon = <div>/</div>;
         case 2:
-            return this.icon = <div>X</div>
+            return this.icon = <CloseIcon color='secondary' style={{fontSize: '60'}}/>;
         case 3:
-            return this.icon = <div>X With Circle</div>
+            return this.icon = <HighlightOffIcon color='secondary' style={{fontSize: '60'}}/>;
         default:
-            this.icon = <AddCircleOutlineIcon className={classes.root} />;
+            this.icon = <AddCircleOutlineIcon style={{ cursor: 'pointer', fontSize: '60' }}/>;
         }
     }
 
