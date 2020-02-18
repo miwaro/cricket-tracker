@@ -1,7 +1,7 @@
 import React from 'react';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { withStyles } from '@material-ui/core/styles';
-import { Container, Typography } from '@material-ui/core';
+import Header from './components/Header';
+import { Container } from '@material-ui/core';
 import DartBoard from './containers/DartBoard';
 import Footer from './components/Footer/Footer';
 
@@ -22,24 +22,14 @@ const theme = createMuiTheme({
   },
   typography: {
     useNextVariants: true,
-    fontFamily: ['Spicy Rice', 'cursive']
   }
 });
-
-const styles = {
-  h1: {
-    fontSize: 72,
-    fontWeight: 500,
-    margin: '2rem auto',
-    textAlign: 'center'
-  }
-}
+console.log(theme)
 
 const App = (props) => {
-  const { classes } = props;
   return (
     <MuiThemeProvider theme={theme}>
-      <Typography children={'Bar Darts'} variant={'h1'} className={classes.h1}/>
+      <Header />
       <Container> 
         <DartBoard />
       </Container>
@@ -48,4 +38,4 @@ const App = (props) => {
   );
 }
 
-export default withStyles(styles)(App);
+export default App;

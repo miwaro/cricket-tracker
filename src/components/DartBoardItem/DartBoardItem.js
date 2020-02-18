@@ -1,21 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classes from './DartBoardItem.module.css';
 
-
-class DartBoardItem extends Component {
-    // state = {
-    //     type: '',
-    //     content: '',
-    // }
-
-    render() {
-        return(  
-            <div className={classes.DartBoardItem}>
-                {this.props.label} 
-            </div>
-        );
-    }
-
-}
-
+const DartBoardItem = (props) => (
+        <div className={classes.DartBoardItem}>
+            {props.label} 
+        </div>
+);
+      
 export default DartBoardItem;

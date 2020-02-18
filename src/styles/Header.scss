@@ -1,0 +1,23 @@
+@import './colors.scss';
+
+.Header-container {
+  margin-bottom: 40px;
+}
+
+.Header-title-line-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.Header-title {
+  font-family: 'Spicy Rice', cursive;
+  font-size: 80px;
+}
+
+.Header-helpIconContainer {
+  position: absolute;
+  right: 2%;
+}
+

@@ -1,7 +1,6 @@
 import React from 'react';
 import DartBoardItem from '../DartBoardItem/DartBoardItem';
-import classes from './DartBoardStatic.module.css';
-import PlayersBox from '../PlayersBox/PlayersBox';
+import PlayersBox from './PlayersBox/PlayersBox';
 
 const labels = [
     { label: '20'},
@@ -14,7 +13,7 @@ const labels = [
 ];
 
 const DartBoardStatic = (props) => (
-    <div className={classes.Labels}>
+    <div>
         <PlayersBox />
         {labels.map(target => (
             <DartBoardItem

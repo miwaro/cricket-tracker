@@ -1,3 +1,6 @@
+# Bar-Darts
+Record the score of your "Bar-darts" game, a simplified version of Cricket often played in bars or home.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Grid, Paper } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import DartBoardStatic from '../components/DartBoardStatic/DartBoardStatic';
+import DartBoardPlayers from '../components/DartBoardPlayers/DartBoardPlayers';
 
 const styles = {
     root: {
@@ -14,12 +15,12 @@ const dartBoard = (props) => {
     return (
         <Card className={classes.root}>
             <Paper variant={'outlined'} elevation={3}>
-                <Grid container spacing={0}>
+                <Grid container spacing={1}>
                     <Grid item xs={3}>
                         <DartBoardStatic />
                     </Grid>
-                    <Grid  container item xs={9}>
-                    
+                    <Grid item xs={9}>
+                        <DartBoardPlayers />
                     </Grid>
                 </Grid>
             </Paper>
