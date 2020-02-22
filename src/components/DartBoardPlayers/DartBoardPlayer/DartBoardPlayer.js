@@ -1,21 +1,22 @@
 import React from 'react';
 import classes from './DartBoardPlayer.module.css';
 import Button from '@material-ui/core/Button';
-import DartBoardPlayerControl from '../../DartBoardPlayerControl/DartBoardPlayerControl';
-import UndoIcon from '@material-ui/icons/Undo';
+import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 
 const dartBoardPlayer = (props) => {
-    // let className = 'dartBoardPlayer dartBoardButtons';
+
+    console.log(props.player.score)
+
     return (
         <div style={{width: '100%'}}>
             <div className={classes.dartBoardPlayer}>
                     {props.player.name}
             </div>
-                {Object.keys(props.player.board).map((num, i) => (
-                <DartBoardPlayerControl key={i} value={num} score={props.player.board[num]} />
-                ))}
-            <div classname={classes.dartBoardButtons}>
-                <UndoIcon variant="outlined" color="primary" />
+                {(props.player.score).map((num, i) => (
+                    <DartBoardPlayerControl key={i} value={num} score={num} />
+                ))}  
+            <div className={classes.dartBoardButtons}>
+                <Button variant="contained" color="primary">Undo</Button>
                 <Button variant="contained" color="secondary">Next</Button>
             </div>
         </div>

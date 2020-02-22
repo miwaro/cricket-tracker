@@ -3,21 +3,21 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Header from './components/Header';
 import { Container } from '@material-ui/core';
 import DartBoard from './containers/DartBoard';
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 
 const theme = createMuiTheme({
   palette: {
     primary: {
       light: '#000000',
-      main: '#76E5FC',
-      dark: '#65c2d4',
-      contrastText: '#274060'
+      main: '#673ab7',
+      dark: '#311b92',
+      contrastText: '#FFF'
     },
     secondary: {
       light: '#000000',
-      main: '#9C2751',
-      dark: '#000000',
-      contrastText: '#000000'
+      main: '#009688',
+      dark: '#004d40',
+      contrastText: '#FFF'
     }
   },
   typography: {
@@ -32,7 +32,6 @@ const App = (props) => {
       <Container> 
         <DartBoard />
       </Container>
-      <Footer />
     </MuiThemeProvider>
   );
 }

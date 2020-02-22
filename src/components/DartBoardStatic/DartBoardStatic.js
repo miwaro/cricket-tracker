@@ -1,5 +1,7 @@
 import React from 'react';
-import DartBoardItem from '../DartBoardItem/DartBoardItem';
+import DartBoardItem from './DartBoardItem/DartBoardItem';
+import Button from '@material-ui/core/Button';
+import classes from './DartBoardStatic.module.css';
 import PlayersBox from './PlayersBox/PlayersBox';
 
 const labels = [
@@ -9,11 +11,11 @@ const labels = [
     { label: '17'},
     { label: '16'},
     { label: '15'},
-    { label: 'B'}
+    { label: 'B'},
 ];
 
 const DartBoardStatic = (props) => (
-    <div>
+    <div className="Label-style">
         <PlayersBox />
         {labels.map(target => (
             <DartBoardItem
@@ -21,6 +23,9 @@ const DartBoardStatic = (props) => (
                 label={target.label}
             />     
         ))}
+        <div className={classes.newGame}>
+                <Button variant="contained" color="secondary">New Game</Button>
+            </div>
     </div>
 );
 

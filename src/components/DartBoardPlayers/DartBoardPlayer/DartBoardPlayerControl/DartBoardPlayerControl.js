@@ -19,7 +19,7 @@ class dartBoardPlayerControl extends Component {
         case 0:
             return this.icon = <AddCircleOutlineIcon style={{ cursor: 'pointer', fontSize: '60' }}/>;
         case 1:
-            return this.icon = <div>/</div>;
+            return this.icon = <div style={{color: "#9C2751"}}>/</div>;
         case 2:
             return this.icon = <CloseIcon color='secondary' style={{fontSize: '60'}}/>;
         case 3:

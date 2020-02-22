@@ -1,6 +1,8 @@
 .DartBoardPlayerControl {
     display: flex;
-    font-size: 60px;
+    font-size: 40px;
+    font-weight: 700;
+    color: "red";
     justify-content: center;
     align-items: center;
     width: 100%;
