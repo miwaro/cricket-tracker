@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
 import DartBoardPlayer from './DartBoardPlayer/DartBoardPlayer';
-import Modal from '../Modal/Modal';
 import classes from './DartBoardPlayers.module.css';
 import { connect } from 'react-redux';
-import { addPlayer } from '../../store/actions/addPlayer';
 
 class dartBoardPlayers extends Component {
-
-    addPlayerHandler = () => {
-        this.props.onPlayerAdded('Test');
-    }
-
     render() {
         const dartBoardPlayer = (
             <div className={classes.dartBoardPlayers}>
@@ -22,15 +15,8 @@ class dartBoardPlayers extends Component {
                 ))}             
             </div>
         );
-        return (
-            <>
-                <Modal />
-                {dartBoardPlayer}
-                <button onClick={this.addPlayerHandler}>test</button>
-                <div>{this.props.players.length}</div>
-            </>
-        );
-    }
+        return ( dartBoardPlayer );
+    };
 };
 
 const mapStateToProps = state => {
@@ -39,11 +25,4 @@ const mapStateToProps = state => {
     };
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onPlayerAdded: (name) => dispatch(addPlayer(name)),
-    }
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(dartBoardPlayers);
+export default connect(mapStateToProps)(dartBoardPlayers);
