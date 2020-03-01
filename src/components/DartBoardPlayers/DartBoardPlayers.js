@@ -11,6 +11,7 @@ class dartBoardPlayers extends Component {
                     <DartBoardPlayer 
                         key={i}
                         player={player}
+                        playerIndex={i}
                     />
                 ))}             
             </div>

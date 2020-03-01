@@ -7,33 +7,20 @@ import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 class dartBoardPlayerControl extends Component {
 
-    componentWillMount() {
-        this.setIcon();
-    }
-
-    icon;
-    
-    setIcon = () => {
- 
-        switch(this.props.score) {
-        case 0:
-            return this.icon = <AddCircleOutlineIcon style={{ cursor: 'pointer', fontSize: '60' }}/>;
-        case 1:
-            return this.icon = <div style={{color: "#9C2751"}}>/</div>;
-        case 2:
-            return this.icon = <CloseIcon color='secondary' style={{fontSize: '60'}}/>;
-        case 3:
-            return this.icon = <HighlightOffIcon color='secondary' style={{fontSize: '60'}}/>;
-        default:
-            this.icon = <AddCircleOutlineIcon style={{ cursor: 'pointer', fontSize: '60' }}/>;
-        }
+    updateScoreHandler = () => {
+        if (this.props.score === 3) { return; }
+        this.props.onUpdateScore(this.props.scoreIndex)
     }
 
     render(){
        
         return(
-            <div className={classes.DartBoardPlayerControl}>
-               {this.icon}
+            <div className={classes.DartBoardPlayerControl} onClick={this.updateScoreHandler}>
+               {this.props.score === 0 && <AddCircleOutlineIcon style={{ cursor: 'pointer', fontSize: '60' }}/>}
+               {this.props.score === 1 && <div style={{cursor: 'pointer', color: "#9C2751"}}>/</div>}
+               {this.props.score === 2 && <CloseIcon color='secondary' style={{cursor: 'pointer', fontSize: '60'}}/>}
+               {this.props.score === 3 && <HighlightOffIcon color='secondary' style={{cursor: 'pointer', fontSize: '60'}}/>}
+
             </div>
         )
     }

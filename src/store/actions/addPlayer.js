@@ -6,3 +6,11 @@ export const addPlayer = ( name ) => {
         name
     };
 };
+
+export const updateScore = ( playerIndex, scoreIndex ) => {
+    return {
+        type: actionTypes.UPDATE_SCORE,
+        playerIndex, 
+        scoreIndex
+    };
+};
