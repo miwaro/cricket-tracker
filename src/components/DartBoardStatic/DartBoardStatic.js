@@ -1,5 +1,7 @@
 import React from 'react';
 import DartBoardItem from './DartBoardItem/DartBoardItem';
+import { connect } from 'react-redux';
+import { resetBoard } from '../../store/actions/actions';
 import Button from '@material-ui/core/Button';
 import classes from './DartBoardStatic.module.css';
 import PlayersBox from './PlayersBox/PlayersBox';
@@ -14,8 +16,13 @@ const labels = [
     { label: 'B'},
 ];
 
-const DartBoardStatic = (props) => (
-    <div className="Label-style">
+const DartBoardStatic = (props) => {
+    const resetBoardHandler = () => {
+        props.onResetBoard();
+    }
+
+    return (
+        <div className="Label-style">
         <PlayersBox />
         {labels.map(target => (
             <DartBoardItem
@@ -24,9 +31,20 @@ const DartBoardStatic = (props) => (
             />     
         ))}
         <div className={classes.newGame}>
-                <Button variant="contained" color="secondary">New Game</Button>
+                <Button variant="contained" color="secondary" onClick={resetBoardHandler}>
+                    New Game
+                </Button>
             </div>
     </div>
-);
+    ) 
+}
+    
 
-export default DartBoardStatic;
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onResetBoard: () => dispatch(resetBoard()),
+    }
+}
+
+export default connect(null, mapDispatchToProps)(DartBoardStatic);

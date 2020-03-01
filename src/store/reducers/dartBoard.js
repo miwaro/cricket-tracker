@@ -22,10 +22,14 @@ const reducer = ( state = initialState, action) => {
             player = state.players[action.playerIndex];
             player.score[action.scoreIndex]++;
             players = state.players.slice();
-            players[action.playerIndex] = player;
             return {
                 ...state,
                 players
+            }
+        case actionTypes.RESET_BOARD:
+            return {
+                ...state,
+                players: []
             }
         default:
             return state;

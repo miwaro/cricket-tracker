@@ -1,7 +1,7 @@
 import React from 'react';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import { connect } from 'react-redux';
-import { addPlayer } from '../../../store/actions/addPlayer';
+import { addPlayer } from '../../../store/actions/actions';
 import { withStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 

@@ -14,3 +14,9 @@ export const updateScore = ( playerIndex, scoreIndex ) => {
         scoreIndex
     };
 };
+
+export const resetBoard = () => {
+    return {
+        type: actionTypes.RESET_BOARD,
+    };
+};
