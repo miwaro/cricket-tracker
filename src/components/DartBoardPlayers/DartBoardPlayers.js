@@ -4,6 +4,10 @@ import classes from './DartBoardPlayers.module.css';
 import { connect } from 'react-redux';
 
 class dartBoardPlayers extends Component {
+    state = {
+
+    }
+
     render() {
         const dartBoardPlayer = (
             <div className={classes.dartBoardPlayers}>

@@ -11,9 +11,9 @@ styles = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '100%',
+        // width: '100%',
         height: 90,
-        border: '2px  solid black'
+        borderBottom: '2px  solid black'
     },
     h4: {
         fontSize: 50,
