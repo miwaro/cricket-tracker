@@ -13,16 +13,17 @@ styles = {
         alignItems: 'center',
         // width: '100%',
         height: 90,
-        borderBottom: '2px  solid black'
+        borderBottom: '2px  solid #dbe4eb'
     },
     h4: {
-        fontSize: 50,
+        fontSize: 46,
         paddingRight: 12,
         fontFamily: 'Spicy Rice, cursive'
     },
     root: {
         fontSize: 40,
         cursor: 'pointer',
+        hover: 'red'
     }
 };
 

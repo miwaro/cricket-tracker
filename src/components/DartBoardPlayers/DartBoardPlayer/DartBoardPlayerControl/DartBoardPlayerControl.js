@@ -16,8 +16,8 @@ class dartBoardPlayerControl extends Component {
         return(
             <div className={classes.DartBoardPlayerControl} onClick={this.updateScoreHandler}>
                {this.props.score === 0 && <AddCircleOutlineIcon style={{ cursor: 'pointer', fontSize: '60' }}/>}
-               {this.props.score === 1 && <div style={{cursor: 'pointer', color: "#009688"}}>/</div>}
-               {this.props.score === 2 && <CloseIcon color='secondary' style={{cursor: 'pointer', fontSize: '60'}}/>}
+               {this.props.score === 1 && <div style={{cursor: 'pointer', color: "#1d9500"}}>/</div>}
+               {this.props.score === 2 && <CloseIcon style={{cursor: 'pointer', fontSize: '60', color: "#ffcc00"}}/>}
                {this.props.score === 3 && <HighlightOffIcon color='secondary' style={{cursor: 'pointer', fontSize: '60'}}/>}
             </div>
         )

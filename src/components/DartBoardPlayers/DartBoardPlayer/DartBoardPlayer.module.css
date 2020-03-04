@@ -2,12 +2,12 @@
     display: flex;
     font-size: 60px;
     font-family: 'Spicy Rice cursive';
-    color: #673ab7;
+    color: #dbe4eb;
     justify-content: center;
     align-items: center;
     height: 90px;
-    border-bottom: 2px solid black;
-    border-left: 2px solid black;
+    border-bottom: 2px solid #dbe4eb;
+    border-left: 2px solid #dbe4eb;
 }
 
 .dartBoardButtons {
@@ -18,6 +18,4 @@
     padding-left: 6rem;
     padding-right: 6rem;
     align-items: center;
-    height: 90px;
-    border-left: 2px solid black;
 }

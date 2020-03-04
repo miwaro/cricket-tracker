@@ -15,6 +15,14 @@ export const updateScore = ( playerIndex, scoreIndex ) => {
     };
 };
 
+export const undoMove = ( playerIndex, scoreIndex ) => {
+    return {
+        type: actionTypes.UNDO_MOVE,
+        playerIndex, 
+        scoreIndex
+    };
+};
+
 export const resetBoard = () => {
     return {
         type: actionTypes.RESET_BOARD,

@@ -4,9 +4,6 @@ import classes from './DartBoardPlayers.module.css';
 import { connect } from 'react-redux';
 
 class dartBoardPlayers extends Component {
-    state = {
-
-    }
 
     render() {
         const dartBoardPlayer = (
@@ -26,7 +23,8 @@ class dartBoardPlayers extends Component {
 
 const mapStateToProps = state => {
     return {
-        players: state.players
+        players: state.players,
+        history: state.history
     };
 }
 

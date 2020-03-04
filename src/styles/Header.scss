@@ -1,9 +1,5 @@
 @import './colors.scss';
 
-// .Header-container {
-//   margin-bottom: 40px;
-// }
-
 .Header-title-line-container {
   display: flex;
   align-items: center;
@@ -13,6 +9,7 @@
 .Header-title {
   font-family: 'Spicy Rice', cursive;
   font-size: 80px;
+  letter-spacing: 4px;
 }
 
 .Header-helpIconContainer {

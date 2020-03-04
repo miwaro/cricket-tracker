@@ -2,13 +2,18 @@ import React from 'react';
 import classes from './DartBoardPlayer.module.css';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
-import { updateScore } from '../../../store/actions/actions';
+import { updateScore, undoMove } from '../../../store/actions/actions';
+import ResetBoard from '../../DartBoardStatic/ResetBoard/ResetBoard';
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 
 const dartBoardPlayer = (props) => {
 
     const handleUpdateScore = (scoreIndex) => {
         props.onUpdateScore(props.playerIndex, scoreIndex)
+    }
+
+    const undoMoveHandler = (scoreIndex) => {
+        props.onUndoMove(props.playerIndex, scoreIndex)
     }
 
     return (
@@ -23,15 +28,22 @@ const dartBoardPlayer = (props) => {
                             key={i} 
                             score={num} 
                             scoreIndex={i}
-                            onUpdateScore={handleUpdateScore}/>
+                            onUpdateScore={handleUpdateScore}
+                        />  
                     ))
                 }
 
-            <div className={classes.dartBoardButtons}>
-                <Button variant="contained" color="primary">Undo</Button>
-                <Button variant="contained" color="secondary">Next</Button>
+                    <div className={classes.dartBoardButtons}>
+                
+                        <Button 
+                            variant="contained"
+                            color="primary"
+                            onClick={undoMoveHandler}
+                        >
+                            Undo
+                        </Button>
+                        <ResetBoard />
             </div>
-
         </div>
     )  
 };
@@ -40,12 +52,14 @@ const dartBoardPlayer = (props) => {
 const mapDispatchToProps = dispatch => {
     return {
         onUpdateScore: (playerIndex, scoreIndex) => dispatch(updateScore(playerIndex, scoreIndex)),
+        onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex))
     }
 }
 
 const mapStateToProps = state => {
     return {
-        players: state.players
+        players: state.players,
+        history: state.history
     };
 }
       

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import DartBoardStatic from '../components/DartBoardStatic/DartBoardStatic';
@@ -7,23 +7,30 @@ import DartBoardPlayers from '../components/DartBoardPlayers/DartBoardPlayers';
 
 const styles = {
     root: {
-        border: '3px solid #26a69a !important',
+        
+        border: '3px solid #dbe4eb !important',
+        backgroundColor: '#081818',
+        color: '#e2e2e2',
+        borderRadius: 10
     }
 }
 
+
+
 const dartBoard = (props) => {
+    // let p = props.players.length
     const { classes } = props;
     return (
-        <Card className={classes.root} spacing={0}>
+        <Grid className={classes.root} xs={12}>
             <Grid container spacing={0}>
-                <Grid item xs={props.players.length > 0 ? 3 : 12} >
+                <Grid item xs={3} >
                     <DartBoardStatic />
                 </Grid>
-                <Grid item xs={props.players.length > 0 ? 9 : 0}>
+                <Grid item xs={9}>
                     <DartBoardPlayers />
                 </Grid>
             </Grid>
-        </Card>
+        </Grid>
     )
 };
 
