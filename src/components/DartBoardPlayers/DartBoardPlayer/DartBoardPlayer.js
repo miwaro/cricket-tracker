@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './DartBoardPlayer.module.css';
 import Button from '@material-ui/core/Button';
+import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 import { connect } from 'react-redux';
 import { updateScore, undoMove, removePlayer } from '../../../store/actions/actions';
-import ResetBoard from '../../DartBoardStatic/ResetBoard/ResetBoard';
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 
 const dartBoardPlayer = (props) => {
@@ -11,20 +11,19 @@ const dartBoardPlayer = (props) => {
     const handleUpdateScore = (scoreIndex) => {
         props.onUpdateScore(props.playerIndex, scoreIndex)
     }
-
-    const undoMoveHandler = (scoreIndex) => {
-        props.onUndoMove(props.playerIndex, scoreIndex)
-    }
-
     const removePlayerHandler = () => {
         props.onRemovePlayer( props.playerIndex)
     }
 
     return (
         <div style={{width: '100%'}}>
-
-            <div className={classes.dartBoardPlayer}> {props.player.name} </div>
-
+            <div className={classes.dartBoardPlayer}> 
+                <RemoveCircleIcon 
+                    onClick={removePlayerHandler}
+                    variant="contained"
+                    // color="secondary"
+                />
+                {props.player.name} </div>
                 {
                     (props.players[props.playerIndex].score).map((num, i) => (
 
@@ -36,24 +35,6 @@ const dartBoardPlayer = (props) => {
                         />  
                     ))
                 }
-
-            {/* <div className={classes.dartBoardButtons}>
-                <Button 
-                    variant="contained"
-                    color="primary"
-                    onClick={undoMoveHandler}
-                >
-                    Undo
-                </Button>
-                <Button 
-                    onClick={removePlayerHandler}
-                    variant="contained"
-                    color="secondary"
-                >
-                    Remove Player
-                </Button> 
-                <ResetBoard />
-            </div> */}
         </div>
     )  
 };
