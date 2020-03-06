@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import ResetBoard from './DartBoardStatic/ResetBoard/ResetBoard';
-import { undoMove } from '../store/actions/actions';
+import { undoMove, addPlayer } from '../store/actions/actions';
 import { connect } from 'react-redux';
 
 
@@ -12,13 +12,20 @@ const Nav = (props) => {
    props.onUndoMove(props.playerIndex, scoreIndex)
 }
 
+const addPlayerHandler = () => {
+  const name = window.prompt('Please Enter Your Name');
+  if (name) {
+      props.onPlayerAdded(name);
+  }
+}
+
     return (
       <>
       <div className="Nav-container">
           <Grid container justify="center">
             <Grid item xs={1.5}>
-                <Button size="large" className="theme-button-1">
-                Add Player
+                <Button size="large" className="theme-button-1" onClick={addPlayerHandler}>
+                    Add Player
                 </Button>
             </Grid>
             <Grid item xs={1.5}>
@@ -41,7 +48,8 @@ const Nav = (props) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex)),    
+      onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex)),
+      onPlayerAdded: (name) => dispatch(addPlayer(name)),    
   }
 }
 
