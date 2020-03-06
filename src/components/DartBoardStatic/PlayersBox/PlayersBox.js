@@ -5,8 +5,7 @@ import { addPlayer } from '../../../store/actions/actions';
 import { withStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 
-const 
-styles = {
+const styles = {
     PlayersBox: {
         display: 'flex',
         justifyContent: 'center',
@@ -33,9 +32,11 @@ const PlayersBox = props => {
 
     
 const addPlayerHandler = () => {
-    const name = window.prompt('Please Enter Your Name')
-    props.onPlayerAdded(name);
+    const name = window.prompt('Please Enter Your Name');
+    if (name) {
+        props.onPlayerAdded(name);
     }
+}
 
     return(  
             <div className={classes.PlayersBox}>

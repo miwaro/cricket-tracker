@@ -18,15 +18,26 @@ const styles = {
 
 
 const dartBoard = (props) => {
-    // let p = props.players.length
     const { classes } = props;
+    let p = props.players.length
     return (
-        <Grid className={classes.root} xs={12}>
+        // <Grid className={classes.root} item xs={p === 0 ? 3 : 12 }>
+        //     <Grid container spacing={0}>
+        //         <Grid item xs={p === 0 ? 12 : p === 1 ? 6 : p === 2 ? 4 : 3} >
+        //             <DartBoardStatic />
+        //         </Grid>
+        //         <Grid item xs={p === 1 ? 6 : p === 2 ? 4 : 3}>
+        //             <DartBoardPlayers />
+        //         </Grid>
+        //     </Grid>
+        // </Grid>
+
+        <Grid className={classes.root} item xs={p < 1 ? 3: 12}>
             <Grid container spacing={0}>
-                <Grid item xs={3} >
+                <Grid item xs={p === 0 ? 12 : p === 1 ? 6 : p === 2 ? 4 : p > 3 ? 2 : 3} >
                     <DartBoardStatic />
                 </Grid>
-                <Grid item xs={9}>
+                <Grid item xs={p === 1 ? 6 : p === 2 ? 4 : p > 3 ? 2 : 3}>
                     <DartBoardPlayers />
                 </Grid>
             </Grid>

@@ -11,6 +11,7 @@ import './styles/Header.scss';
 import './styles/base_styles.scss';
 import './styles/index.scss';
 import './styles/label_styles.scss';
+import './styles/Nav.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

@@ -7,6 +7,13 @@ export const addPlayer = ( name ) => {
     };
 };
 
+export const removePlayer = ( playerIndex ) => {
+    return {
+        type: actionTypes.REMOVE_PLAYER,
+        playerIndex,
+    };
+};
+
 export const updateScore = ( playerIndex, scoreIndex ) => {
     return {
         type: actionTypes.UPDATE_SCORE,

@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './DartBoardPlayer.module.css';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
-import { updateScore, undoMove } from '../../../store/actions/actions';
+import { updateScore, undoMove, removePlayer } from '../../../store/actions/actions';
 import ResetBoard from '../../DartBoardStatic/ResetBoard/ResetBoard';
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 
@@ -14,6 +14,10 @@ const dartBoardPlayer = (props) => {
 
     const undoMoveHandler = (scoreIndex) => {
         props.onUndoMove(props.playerIndex, scoreIndex)
+    }
+
+    const removePlayerHandler = () => {
+        props.onRemovePlayer( props.playerIndex)
     }
 
     return (
@@ -33,17 +37,23 @@ const dartBoardPlayer = (props) => {
                     ))
                 }
 
-                    <div className={classes.dartBoardButtons}>
-                
-                        <Button 
-                            variant="contained"
-                            color="primary"
-                            onClick={undoMoveHandler}
-                        >
-                            Undo
-                        </Button>
-                        <ResetBoard />
-            </div>
+            {/* <div className={classes.dartBoardButtons}>
+                <Button 
+                    variant="contained"
+                    color="primary"
+                    onClick={undoMoveHandler}
+                >
+                    Undo
+                </Button>
+                <Button 
+                    onClick={removePlayerHandler}
+                    variant="contained"
+                    color="secondary"
+                >
+                    Remove Player
+                </Button> 
+                <ResetBoard />
+            </div> */}
         </div>
     )  
 };
@@ -52,7 +62,8 @@ const dartBoardPlayer = (props) => {
 const mapDispatchToProps = dispatch => {
     return {
         onUpdateScore: (playerIndex, scoreIndex) => dispatch(updateScore(playerIndex, scoreIndex)),
-        onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex))
+        onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex)),
+        onRemovePlayer: (playerIndex) => dispatch(removePlayer(playerIndex))
     }
 }
 

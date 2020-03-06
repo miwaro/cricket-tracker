@@ -21,8 +21,17 @@ const reducer = ( state = initialState, action) => {
                 ...state,
                 players
             }
-        // case actionTypes.REM0VE_PLAYER:
-        //     player 
+        case actionTypes.REMOVE_PLAYER:
+        
+            // const updatedArray = state.players.filter((i, player) => player !== action.playerIndex);
+            // players = state.players.filter((_, i) => i !== action.playerIndex);
+            players = state.players.filter(function(el, index) {
+                return index !== action.playerIndex;})
+
+            return {
+                ...state,
+                players
+            }
 
         case actionTypes.UPDATE_SCORE:
             player = state.players[action.playerIndex];
