@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './DartBoardPlayer.module.css';
-import Button from '@material-ui/core/Button';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 import { connect } from 'react-redux';
-import { updateScore, undoMove, removePlayer } from '../../../store/actions/actions';
+import { updateScore, undoMove, removePlayer, addPlayer } from '../../../store/actions/actions';
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
+import AddPlayer from './AddPlayer';
 
 const dartBoardPlayer = (props) => {
 
@@ -12,7 +12,7 @@ const dartBoardPlayer = (props) => {
         props.onUpdateScore(props.playerIndex, scoreIndex)
     }
     const removePlayerHandler = () => {
-        props.onRemovePlayer( props.playerIndex)
+        props.onRemovePlayer(props.playerIndex)
     }
 
     return (
@@ -21,9 +21,18 @@ const dartBoardPlayer = (props) => {
                 <RemoveCircleIcon 
                     onClick={removePlayerHandler}
                     variant="contained"
-                    // color="secondary"
+                    color="secondary"
                 />
-                {props.player.name} </div>
+                <AddPlayer 
+                    onClick={removePlayerHandler}
+                    variant="contained"
+                    color="secondary"
+                />
+                {/* {props.player.name}  */}
+            </div>
+
+            
+
                 {
                     (props.players[props.playerIndex].score).map((num, i) => (
 
@@ -44,14 +53,14 @@ const mapDispatchToProps = dispatch => {
     return {
         onUpdateScore: (playerIndex, scoreIndex) => dispatch(updateScore(playerIndex, scoreIndex)),
         onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex)),
-        onRemovePlayer: (playerIndex) => dispatch(removePlayer(playerIndex))
+        onRemovePlayer: (playerIndex) => dispatch(removePlayer(playerIndex)),
+        onAddName: (name) => dispatch(addPlayer(name))
     }
 }
 
 const mapStateToProps = state => {
     return {
-        players: state.players,
-        history: state.history
+        players: state.players
     };
 }
       

@@ -36,7 +36,7 @@ const ResetBoard = (props) => {
                 <DialogTitle id="alert-dialog-title">{"Are you sure you want to clear the board?"}</DialogTitle>
                 
                 <DialogActions>
-                <Button onClick={handleClose} color="primary">
+                <Button onClick={handleClose} color="secondary">
                     No
                 </Button>
                 <Button onClick={resetBoardHandler} color="primary" autoFocus>
