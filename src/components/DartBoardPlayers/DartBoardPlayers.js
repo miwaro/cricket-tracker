@@ -23,8 +23,7 @@ class dartBoardPlayers extends Component {
 
 const mapStateToProps = state => {
     return {
-        players: state.players,
-        history: state.history
+        players: state.players
     };
 }
 

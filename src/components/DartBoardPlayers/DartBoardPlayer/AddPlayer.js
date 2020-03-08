@@ -12,8 +12,9 @@ import classes from '../../DartBoardStatic/DartBoardStatic.module.css';
 
 
 const AddPlayer = (props) => {
-    console.log(props)
+
     const [open, setOpen] = useState(false);
+    const [name, getName] = useState('');
     
     const handleClickOpen = () => {
       setOpen(true);
@@ -24,8 +25,7 @@ const AddPlayer = (props) => {
     }
 
     const addPlayerHandler = () => {
-        props.onPlayerAdded(props.name) && setOpen(false);
-        console.log(props.name)
+        props.onPlayerAdded(name) && setOpen(false);
     }
     
 
@@ -51,6 +51,7 @@ const AddPlayer = (props) => {
                         label="Name"
                         type="string"
                         fullWidth
+                        onChange={e => getName(e.target.value)}
                     />
                 </DialogContent>
                 <DialogActions>
@@ -66,11 +67,11 @@ const AddPlayer = (props) => {
     ) 
 }
 
-const mapStateToProps = state => {
-    return {
-        players: state.players
-    };
-}
+// const mapStateToProps = state => {
+//     return {
+//         players: state.players
+//     };
+// }
     
 const mapDispatchToProps = dispatch => {
     return {
@@ -80,4 +81,4 @@ const mapDispatchToProps = dispatch => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddPlayer);
+export default connect(null, mapDispatchToProps)(AddPlayer);
