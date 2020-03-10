@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import ResetBoard from './DartBoardStatic/ResetBoard/ResetBoard';
 import AddPlayer from './DartBoardPlayers/DartBoardPlayer/AddPlayer';
 import GameOverMessage from './GameOverMessage/GameOverMessage';
+import { undoMove } from '../store/actions/actions';
 
 const styles = {
   root: {   
@@ -54,4 +55,10 @@ const mapStateToProps = state => {
   };
 }
 
-export default connect(mapStateToProps)(withStyles(styles)(Nav));
+const mapDispatchToProps = dispatch => {
+  return {
+      onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Nav));

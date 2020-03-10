@@ -7,8 +7,7 @@ import DartBoardStatic from '../components/DartBoardStatic/DartBoardStatic';
 import DartBoardPlayers from '../components/DartBoardPlayers/DartBoardPlayers';
 
 const styles = {
-    root: {
-        
+    root: { 
         border: '3px solid #dbe4eb !important',
         backgroundColor: '#081818',
         color: '#e2e2e2',
@@ -22,16 +21,18 @@ const dartBoard = (props) => {
     const { classes } = props;
     let p = props.players.length
     return (
-        <Grid className={classes.root} item xs={p === 0 ? 3 : 12 }>
-            <Grid container spacing={0}>
-                <Grid item xs={p === 0 ? 12 : p === 1 ? 6 : p === 2 ? 4 : 3} >
-                    <DartBoardStatic />
-                </Grid>
-                <Grid item xs={p === 1 ? 6 : p === 2 ? 4 : 3}>
-                    <DartBoardPlayers />
+        <div style={{margin: 'auto', width: p === 0 ? '33%' : '100%'}}>
+            <Grid className={classes.root} item xs={12}>
+                <Grid container spacing={0}>
+                    <Grid item xs={p === 0 ? 12 : 3 } >
+                        <DartBoardStatic />
+                    </Grid>
+                    <Grid item xs={9}>
+                        <DartBoardPlayers />
+                    </Grid>
                 </Grid>
             </Grid>
-        </Grid>
+        </div>
     )
 };
 
