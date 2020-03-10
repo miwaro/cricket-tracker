@@ -1,7 +1,7 @@
 @import './colors.scss';
 
 .Header-container {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .Header-title-line-container {
@@ -14,6 +14,11 @@
   font-family: 'Spicy Rice', cursive;
   font-size: 80px;
   letter-spacing: 4px;
+}
+
+.Player-name {
+  font-family: 'Spicy Rice', cursive;
+  font-size: 30px;
 }
 
 .Header-helpIconContainer {

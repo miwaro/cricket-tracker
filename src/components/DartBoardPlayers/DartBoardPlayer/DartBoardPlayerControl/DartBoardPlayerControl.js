@@ -4,14 +4,30 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
+
+
 class dartBoardPlayerControl extends Component {
 
     updateScoreHandler = () => {
         if (this.props.score === 3) { return; }
         this.props.onUpdateScore(this.props.scoreIndex)
+       
+        // console.log(this.props.score)
     }
 
+
+    
+    
+
     render(){
+
+        // let totalScore = this.props.score.reduce((currentScore, score) => {
+        //     return score + currentScore
+        // }, 0)
+    
+        // if (totalScore === 21) {
+        //     return <p>you win</p>;
+        // }
        
         return(
             <div className={classes.DartBoardPlayerControl} onClick={this.updateScoreHandler}>

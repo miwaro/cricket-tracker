@@ -1,7 +1,6 @@
 .dartBoardPlayer {
     display: flex;
     font-size: 60px;
-    font-family: 'Spicy Rice cursive';
     color: #dbe4eb;
     justify-content: center;
     align-items: center;
@@ -19,3 +18,5 @@
     padding-right: 6rem;
     align-items: center;
 }
+
+

@@ -14,7 +14,7 @@ import classes from '../../DartBoardStatic/DartBoardStatic.module.css';
 const AddPlayer = (props) => {
 
     const [open, setOpen] = useState(false);
-    const [name, getName] = useState('');
+    const [name, setName] = useState('');
     
     const handleClickOpen = () => {
       setOpen(true);
@@ -51,7 +51,7 @@ const AddPlayer = (props) => {
                         label="Name"
                         type="string"
                         fullWidth
-                        onChange={e => getName(e.target.value)}
+                        onChange={e => setName(e.target.value)}
                     />
                 </DialogContent>
                 <DialogActions>

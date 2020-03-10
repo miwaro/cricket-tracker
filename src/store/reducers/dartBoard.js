@@ -2,7 +2,8 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     players: [],
-    history: []
+    history: [],
+    winningPlayerIndex: -1
 };
 
 const reducer = ( state = initialState, action) => {
@@ -22,12 +23,7 @@ const reducer = ( state = initialState, action) => {
                 players
             }
         case actionTypes.REMOVE_PLAYER:
-        
-            // const updatedArray = state.players.filter((i, player) => player !== action.playerIndex);
-            // players = state.players.filter((_, i) => i !== action.playerIndex);
-            players = state.players.filter(function(el, index) {
-                return index !== action.playerIndex;})
-
+            players = state.players.filter((_, i) => i !== action.playerIndex);
             return {
                 ...state,
                 players
@@ -36,6 +32,12 @@ const reducer = ( state = initialState, action) => {
         case actionTypes.UPDATE_SCORE:
             player = state.players[action.playerIndex];
             player.score[action.scoreIndex]++;
+
+            let winningPlayerIndex = -1;
+            if (player.score.every(el => el === 3)) {
+                winningPlayerIndex = action.playerIndex;
+            } 
+
             players = state.players.slice();
             record = {
                 playerIndex: action.playerIndex,
@@ -44,7 +46,8 @@ const reducer = ( state = initialState, action) => {
             return {
                 ...state,
                 players,
-                history: [...state.history, record]
+                history: [...state.history, record],
+                winningPlayerIndex
             }
         
         case actionTypes.UNDO_MOVE:
@@ -62,7 +65,8 @@ const reducer = ( state = initialState, action) => {
             case actionTypes.RESET_BOARD:
             return {
                 ...state,
-                players: []
+                players: [],
+                winningPlayerIndex: -1
             }
         default:
             return state;

@@ -1,0 +1,8 @@
+.newGame {
+    display: flex;
+    font-size: 60px;
+    justify-content: center;
+    align-items: center;
+    /* height: 90px; */
+    /* border-right: 2px solid black; */
+}
