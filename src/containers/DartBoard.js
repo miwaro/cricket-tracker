@@ -15,13 +15,11 @@ const styles = {
     }
 }
 
-
-
 const dartBoard = (props) => {
     const { classes } = props;
     let p = props.players.length
     return (
-        <div style={{margin: 'auto', width: p === 0 ? '33%' : '100%'}}>
+        <div style={{margin: 'auto', width: p === 0 ? '33%': p === 1 ? '55%': '100%'}}>
             <Grid className={classes.root} item xs={12}>
                 <Grid container spacing={0}>
                     <Grid item xs={p === 0 ? 12 : 3 } >

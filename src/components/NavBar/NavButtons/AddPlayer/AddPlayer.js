@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addPlayer } from '../../../store/actions/actions';
+
+import { addPlayer } from '../../../../store/actions/actions';
+
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -8,7 +10,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import classes from '../../DartBoardStatic/DartBoardStatic.module.css';
+
+import classes from './AddPlayer.module.css';
 
 
 const AddPlayer = (props) => {
@@ -25,12 +28,12 @@ const AddPlayer = (props) => {
     }
 
     const addPlayerHandler = () => {
+        if (name === '') { return; }
         props.onPlayerAdded(name) && setOpen(false);
     }
     
-
     return (
-        <div className={classes.newGame}>
+        <div className={classes.addPlayer}>
             <Button variant="contained" color='primary' onClick={handleClickOpen}>
                 Add Player
             </Button>
@@ -66,19 +69,11 @@ const AddPlayer = (props) => {
         </div>
     ) 
 }
-
-// const mapStateToProps = state => {
-//     return {
-//         players: state.players
-//     };
-// }
     
 const mapDispatchToProps = dispatch => {
     return {
         onPlayerAdded: (name) => dispatch(addPlayer(name))
     }
 }
-
-
 
 export default connect(null, mapDispatchToProps)(AddPlayer);

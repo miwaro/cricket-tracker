@@ -32,6 +32,12 @@ export const undoMove = ( playerIndex, scoreIndex ) => {
 
 export const resetBoard = () => {
     return {
-        type: actionTypes.RESET_BOARD,
+        type: actionTypes.RESET_BOARD
+    };
+};
+
+export const resetScores = () => {
+    return {
+        type: actionTypes.RESET_SCORES
     };
 };

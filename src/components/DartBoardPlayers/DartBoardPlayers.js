@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import DartBoardPlayer from './DartBoardPlayer/DartBoardPlayer';
 import classes from './DartBoardPlayers.module.css';
-import { connect } from 'react-redux';
 
 class dartBoardPlayers extends Component {
 
@@ -9,9 +10,9 @@ class dartBoardPlayers extends Component {
         const dartBoardPlayer = (
             <div className={classes.dartBoardPlayers}>
                 {this.props.players.map((player, i) => (
-                    <DartBoardPlayer 
-                        key={i}
+                    <DartBoardPlayer
                         player={player}
+                        key={i}
                         playerIndex={i}
                     />
                 ))}             

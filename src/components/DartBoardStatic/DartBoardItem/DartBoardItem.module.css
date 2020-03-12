@@ -1,6 +1,6 @@
 .DartBoardItem {
     display: flex;
-    font-size: 60px;
+    font-size: 50px;
     justify-content: center;
     align-items: center;
     /* width: 100%; */

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect, useSelector } from 'react-redux';
-import { resetBoard } from '../../store/actions/actions';
+import { resetScores } from '../../store/actions/actions';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -12,6 +12,7 @@ const GameOverMessage = (props) => {
     const [open, setOpen] = useState(false);
     const [winningPlayerIndex, setWinnningPlayerIndex] = useState(-1);
     const [winningPlayerName, setWinnningPlayerName] = useState('');
+    // const [score, setScore] = useState([0, 0, 0, 0, 0, 0, 0]);
 
     useSelector(state => {
         if (state.winningPlayerIndex > -1 && winningPlayerIndex === -1) {
@@ -26,9 +27,9 @@ const GameOverMessage = (props) => {
             setWinnningPlayerIndex(state.winningPlayerIndex);
         }
     });
-    
-    const resetBoardHandler = () => {
-        props.onResetBoard() && setOpen(false);
+
+    const resetScoresHandler = () => {
+        props.onResetScores() && setOpen(false);
     }
 
     const handleOpen = () => {
@@ -54,7 +55,7 @@ const GameOverMessage = (props) => {
                 <Button onClick={handleClose} color="secondary">
                     No
                 </Button>
-                <Button onClick={resetBoardHandler} color="primary" autoFocus>
+                <Button onClick={resetScoresHandler} color="primary" autoFocus>
                     Yes
                 </Button>
                 </DialogActions>
@@ -65,7 +66,7 @@ const GameOverMessage = (props) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onResetBoard: () => dispatch(resetBoard()),
+        onResetScores: () => dispatch(resetScores()),
     }
 }
 

@@ -11,7 +11,7 @@ const styles = {
         borderBottom: '2px  solid #dbe4eb'
     },
     h4: {
-        fontSize: 45,
+        fontSize: 40,
         paddingRight: 12,
         fontFamily: 'Spicy Rice, cursive'
     },

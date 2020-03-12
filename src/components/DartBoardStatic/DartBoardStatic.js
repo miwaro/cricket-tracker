@@ -3,13 +3,13 @@ import DartBoardItem from './DartBoardItem/DartBoardItem';
 import PlayersBox from './PlayersBox/PlayersBox';
 
 const labels = [
-    { label: '20'},
-    { label: '19'},
-    { label: '18'},
-    { label: '17'},
-    { label: '16'},
-    { label: '15'},
-    { label: 'B'},
+    { target: '20'},
+    { target: '19'},
+    { target: '18'},
+    { target: '17'},
+    { target: '16'},
+    { target: '15'},
+    { target: 'B'}
 ];
 
 const DartBoardStatic = () => {
@@ -17,10 +17,10 @@ const DartBoardStatic = () => {
     return (
         <div className="Label-style">
             <PlayersBox />
-            {labels.map(target => (
+            {labels.map(label => (
                 <DartBoardItem
-                    key={target.label}
-                    label={target.label}
+                    key={label.target}
+                    label={label.target}
                 />     
             ))}
         </div>

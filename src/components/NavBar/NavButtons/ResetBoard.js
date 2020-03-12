@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { resetBoard } from '../../../store/actions/actions';
+
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import classes from '../DartBoardStatic.module.css';
+
+import classes from './AddPlayer/AddPlayer.module.css';
 
 const ResetBoard = (props) => {
     
@@ -16,7 +19,8 @@ const ResetBoard = (props) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
-      setOpen(true);
+        if (props.players.length === 0) { return; }
+        setOpen(true);
     };
   
     const handleClose = () => {
@@ -24,7 +28,7 @@ const ResetBoard = (props) => {
     };
 
     return (
-        <div className={classes.newGame}>
+        <div className={classes.addPlayer}>
             <Button variant="contained" color="secondary" onClick={handleClickOpen}>
                 Reset Board
             </Button>
@@ -47,6 +51,12 @@ const ResetBoard = (props) => {
         </div>
     ) 
 }
+
+const mapStateToProps = state => {
+    return {
+        players: state.players
+    };
+}
     
 const mapDispatchToProps = dispatch => {
     return {
@@ -54,4 +64,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(ResetBoard);
+export default connect(mapStateToProps, mapDispatchToProps)(ResetBoard);
