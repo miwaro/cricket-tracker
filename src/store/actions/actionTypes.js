@@ -4,4 +4,5 @@ export const UPDATE_SCORE = 'UPDATE_SCORE';
 export const RESET_SCORES = 'RESET_SCORES';
 export const RESET_BOARD = 'RESET_BOARD';
 export const UNDO_MOVE = 'UNDO_MOVE';
+export const MODIFY_LABELS = 'MODIFY_LABELS';
 

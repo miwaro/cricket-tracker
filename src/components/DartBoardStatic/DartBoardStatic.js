@@ -1,30 +1,29 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import DartBoardItem from './DartBoardItem/DartBoardItem';
 import PlayersBox from './PlayersBox/PlayersBox';
 
-const labels = [
-    { target: '20'},
-    { target: '19'},
-    { target: '18'},
-    { target: '17'},
-    { target: '16'},
-    { target: '15'},
-    { target: 'B'}
-];
-
-const DartBoardStatic = () => {
+const DartBoardStatic = (props) => {
 
     return (
         <div className="Label-style">
             <PlayersBox />
-            {labels.map(label => (
+            {props.labels.map((label, i) => (
                 <DartBoardItem
-                    key={label.target}
-                    label={label.target}
+                    key={i}
+                    label={label}
+                    labelIndex={i}
                 />     
             ))}
         </div>
     ) 
 }
-    
-export default DartBoardStatic;
+
+const mapStateToProps = state => {
+    return {
+        labels: state.labels
+    };
+}
+  
+export default connect(mapStateToProps)(DartBoardStatic);

@@ -3,14 +3,35 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     players: [],
     history: [],
+    labels: [20, 19, 18, 17, 16, 15, 'B'],
     winningPlayerIndex: -1
 };
 
 const reducer = ( state = initialState, action) => {
+
     let player;
     let players;
     let record;
+
     switch ( action.type ) {
+
+        case actionTypes.MODIFY_LABELS:
+
+            let label = state.labels[action.labelIndex];
+
+            if (action.operation === 'decrement' && label === 1) {
+                label = 20;
+            } else if (action.operation === 'increment' && label === 20) {
+                label = 1;
+            } else {
+                label = action.operation === 'decrement' ? label -1 : label + 1;
+            }
+            const labels = state.labels.map((el, i) => i === action.labelIndex ? label : el);
+
+            return {
+                ...state,
+                labels
+            }
         
         case actionTypes.ADD_PLAYER:
             player = {

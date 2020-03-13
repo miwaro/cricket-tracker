@@ -41,3 +41,12 @@ export const resetScores = () => {
         type: actionTypes.RESET_SCORES
     };
 };
+
+export const modifyLabels = (labelIndex, operation) => {
+    console.log(labelIndex)
+    return {
+        type: actionTypes.MODIFY_LABELS,
+        labelIndex, 
+        operation
+    };
+};
