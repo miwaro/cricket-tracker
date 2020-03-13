@@ -12,7 +12,6 @@ const GameOverMessage = (props) => {
     const [open, setOpen] = useState(false);
     const [winningPlayerIndex, setWinnningPlayerIndex] = useState(-1);
     const [winningPlayerName, setWinnningPlayerName] = useState('');
-    // const [score, setScore] = useState([0, 0, 0, 0, 0, 0, 0]);
 
     useSelector(state => {
         if (state.winningPlayerIndex > -1 && winningPlayerIndex === -1) {

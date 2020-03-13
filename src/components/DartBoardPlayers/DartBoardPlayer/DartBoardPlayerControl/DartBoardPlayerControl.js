@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+
 import classes from './DartBoardPlayerControl.module.css';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
-
-
 
 class dartBoardPlayerControl extends Component {
 
@@ -14,6 +13,7 @@ class dartBoardPlayerControl extends Component {
     }
 
     render(){
+
         return(
             <div className={classes.DartBoardPlayerControl} onClick={this.updateScoreHandler}>
                {this.props.score === 0 && <AddCircleOutlineIcon style={{ cursor: 'pointer', fontSize: '60' }}/>}

@@ -3,7 +3,6 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     players: [],
     history: [],
-    // score: [0, 0, 0, 0, 0, 0, 0],
     winningPlayerIndex: -1
 };
 
@@ -11,7 +10,6 @@ const reducer = ( state = initialState, action) => {
     let player;
     let players;
     let record;
-    // let score;
     switch ( action.type ) {
         
         case actionTypes.ADD_PLAYER:
@@ -20,12 +18,11 @@ const reducer = ( state = initialState, action) => {
                 score: [0, 0, 0, 0, 0, 0, 0]
             }
             players = [...state.players, player]
-            // score = [...state.score];
             return {
                 ...state,
-                players,
-                // score
+                players
             }
+
         case actionTypes.REMOVE_PLAYER:
             players = state.players.filter((_, i) => i !== action.playerIndex);
             return {
@@ -53,6 +50,19 @@ const reducer = ( state = initialState, action) => {
                 history: [...state.history, record],
                 winningPlayerIndex
             }
+
+        case actionTypes.RESET_SCORES:
+            players = state.players.map(player => {
+                player.score = [0, 0, 0, 0, 0, 0, 0];
+                return player;
+            });
+            
+            return {
+                ...state,
+                players,
+                winningPlayerIndex: -1,
+                history: []
+            }
         
         case actionTypes.UNDO_MOVE:
             if (state.history.length === 0) { return; }
@@ -71,9 +81,8 @@ const reducer = ( state = initialState, action) => {
                 ...state,
                 players: [],
                 winningPlayerIndex: -1
-            }
-            case actionTypes.RESET_SCORES:
-                
+            } 
+                      
         default:
             return state;
     }

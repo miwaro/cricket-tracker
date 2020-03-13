@@ -12,8 +12,8 @@ class dartBoardPlayers extends Component {
                 {this.props.players.map((player, i) => (
                     <DartBoardPlayer
                         player={player}
-                        key={i}
                         playerIndex={i}
+                        key={i}   
                     />
                 ))}             
             </div>

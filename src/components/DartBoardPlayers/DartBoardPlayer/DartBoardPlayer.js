@@ -53,6 +53,12 @@ const dartBoardPlayer = (props) => {
     )  
 };
 
+const mapStateToProps = state => {
+    return {
+        players: state.players,
+    };
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         onUpdateScore: (playerIndex, scoreIndex) => dispatch(updateScore(playerIndex, scoreIndex)),
@@ -60,11 +66,5 @@ const mapDispatchToProps = dispatch => {
         onRemovePlayer: (playerIndex) => dispatch(removePlayer(playerIndex)),
     }
 }
-
-const mapStateToProps = state => {
-    return {
-        players: state.players,
-    };
-}
-      
+    
 export default connect(mapStateToProps, mapDispatchToProps)(dartBoardPlayer);
