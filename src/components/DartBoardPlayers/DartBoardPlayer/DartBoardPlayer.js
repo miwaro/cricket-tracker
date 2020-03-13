@@ -5,7 +5,7 @@ import { updateScore, undoMove, removePlayer} from '../../../store/actions/actio
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 import classes from './DartBoardPlayer.module.css';
 
-import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
+import RemoveCircleTwoToneIcon from '@material-ui/icons/RemoveCircleTwoTone';
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 
@@ -20,11 +20,10 @@ const dartBoardPlayer = (props) => {
 
     return (
         <div className={"Player-name"} style={{width: '100%'}}>
-            <div className={classes.dartBoardPlayer}> 
+            <div className={classes.dartBoardPlayer} onClick={removePlayerHandler}> 
                 <Tooltip title="Delete">
                     <IconButton aria-label="delete">
-                        <RemoveCircleIcon 
-                            onClick={removePlayerHandler}
+                        <RemoveCircleTwoToneIcon
                             variant="contained"
                             color="secondary"
                             style={{ 

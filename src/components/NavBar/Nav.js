@@ -6,10 +6,9 @@ import UndoMove from './NavButtons/UndoMove';
 import ResetBoard from './NavButtons/ResetBoard';
 import GameOverMessage from '../GameOverMessage/GameOverMessage';
 
-const Nav = (props) => {
+const Nav = () => {
 
     return (
-      <>
       <div className="Nav-container">
           <Grid container spacing={2} justify="center">
             <Grid item xs={1.5}>
@@ -24,7 +23,6 @@ const Nav = (props) => {
           </Grid>
           <GameOverMessage />
       </div>
-      </>
     );
 }
 

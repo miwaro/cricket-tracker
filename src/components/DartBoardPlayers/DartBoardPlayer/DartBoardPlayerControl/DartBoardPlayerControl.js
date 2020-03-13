@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 import classes from './DartBoardPlayerControl.module.css';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 import CloseIcon from '@material-ui/icons/Close';
-import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+// import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import HighlightOffTwoToneIcon from '@material-ui/icons/HighlightOffTwoTone';
 
 class dartBoardPlayerControl extends Component {
 
@@ -16,10 +17,10 @@ class dartBoardPlayerControl extends Component {
 
         return(
             <div className={classes.DartBoardPlayerControl} onClick={this.updateScoreHandler}>
-               {this.props.score === 0 && <AddCircleOutlineIcon style={{ cursor: 'pointer', fontSize: '60' }}/>}
-               {this.props.score === 1 && <div style={{cursor: 'pointer', color: "#1d9500"}}>/</div>}
-               {this.props.score === 2 && <CloseIcon style={{cursor: 'pointer', fontSize: '60', color: "#ffcc00"}}/>}
-               {this.props.score === 3 && <HighlightOffIcon color='secondary' style={{cursor: 'pointer', fontSize: '60'}}/>}
+               {this.props.score === 0 && <AddCircleIcon style={{ cursor: 'pointer', fontSize: '40' }}/>}
+               {this.props.score === 1 && <div style={{cursor: 'pointer', color: "#1d9500", fontSize: 32}}>/</div>}
+               {this.props.score === 2 && <CloseIcon style={{fontFamily: 'sans-serif', cursor: 'pointer', fontSize: '40', color: "#ffcc00"}}/>}
+               {this.props.score === 3 && <HighlightOffTwoToneIcon color='secondary' style={{cursor: 'pointer', fontSize: '40'}}/>}
             </div>
         )
     }
