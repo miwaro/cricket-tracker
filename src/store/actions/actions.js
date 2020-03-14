@@ -50,3 +50,12 @@ export const modifyLabels = (labelIndex, operation) => {
         operation
     };
 };
+
+export const randomizeLabels = (labelIndex, randomize) => {
+    console.log(labelIndex)
+    return {
+        type: actionTypes.RANDOMIZE_LABELS,
+        labelIndex, 
+        randomize
+    };
+};

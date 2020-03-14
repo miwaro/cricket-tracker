@@ -12,8 +12,30 @@ const reducer = ( state = initialState, action) => {
     let player;
     let players;
     let record;
+    let labels;
 
     switch ( action.type ) {
+
+        case actionTypes.RANDOMIZE_LABELS: 
+
+            const map = {};        
+            labels = state.labels.map(label => {
+                if (label === 'B') {
+                    return label;
+                } else {
+                    let num = Math.floor(Math.random() * (20 - 1) + 1);
+                    while (map[num]) {
+                        num = Math.floor(Math.random() * (20 - 1) + 1);
+                    }
+                    map[num] = num;
+                    return num;
+                }
+            }).sort((a, b) => b - a);
+
+            return {
+                ...state,
+                labels
+            }
 
         case actionTypes.MODIFY_LABELS:
 
@@ -26,7 +48,7 @@ const reducer = ( state = initialState, action) => {
             } else {
                 label = action.operation === 'decrement' ? label -1 : label + 1;
             }
-            const labels = state.labels.map((el, i) => i === action.labelIndex ? label : el);
+            labels = state.labels.map((el, i) => i === action.labelIndex ? label : el);
 
             return {
                 ...state,

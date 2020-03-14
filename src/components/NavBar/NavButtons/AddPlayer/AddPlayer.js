@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { addPlayer } from '../../../../store/actions/actions';
 
 import Button from '@material-ui/core/Button';
+import PersonAddTwoToneIcon from '@material-ui/icons/PersonAddTwoTone';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -34,9 +35,7 @@ const AddPlayer = (props) => {
     
     return (
         <div className={classes.addPlayer}>
-            <Button variant="contained" color='primary' onClick={handleClickOpen}>
-                Add Player
-            </Button>
+            <PersonAddTwoToneIcon style={{ cursor: 'pointer', fontSize: '50' }} onClick={handleClickOpen}/>
             <Dialog
                 open={open}
                 onClose={handleClose}

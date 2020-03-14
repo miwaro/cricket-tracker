@@ -2,7 +2,8 @@ import React from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-import PersonAddTwoToneIcon from '@material-ui/icons/PersonAddTwoTone';
+import AddPlayer from '../../NavBar/NavButtons/AddPlayer/AddPlayer';
+
 
 const styles = {
     PlayersBox: {
@@ -10,11 +11,11 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         height: 90,
-        borderBottom: '2px  solid #dbe4eb'
+        borderBottom: '4px solid #dbe4eb'
     },
     h4: {
         fontSize: 35,
-        paddingRight: 12,
+        paddingRight: 24,
         fontFamily: 'Spicy Rice, cursive'
     },
     root: {
@@ -31,7 +32,7 @@ const PlayersBox = props => {
         <>
             <div className={classes.PlayersBox}>
                 <Typography children={'Players'} variant={'h4'} className={classes.h4}/>
-                <PersonAddTwoToneIcon />
+                <AddPlayer />
             </div> 
             
         </>

@@ -7,7 +7,9 @@ import classes from './DartBoardPlayer.module.css';
 
 import RemoveCircleTwoToneIcon from '@material-ui/icons/RemoveCircleTwoTone';
 import Tooltip from '@material-ui/core/Tooltip';
-import IconButton from '@material-ui/core/IconButton';
+
+import Button from '@material-ui/core/Button';
+// import IconButton from '@material-ui/core/IconButton';
 
 const dartBoardPlayer = (props) => {
 
@@ -21,22 +23,9 @@ const dartBoardPlayer = (props) => {
     return (
         <div className={"Player-name"} style={{width: '100%'}}>
             <div className={classes.dartBoardPlayer} onClick={removePlayerHandler}> 
-                <Tooltip title="Delete">
-                    <IconButton aria-label="delete">
-                        <RemoveCircleTwoToneIcon
-                            variant="contained"
-                            color="secondary"
-                            style={{ 
-                                paddingRight: 30, 
-                                paddingTop: 10, 
-                                fontSize: 30,
-                                cursor: 'pointer'}} 
-                        />
-                    </IconButton>
-                </Tooltip>
                 {props.player.name} 
             </div>
-
+            
                 {
                     (props.players[props.playerIndex].score).map((num, i) => (
 
@@ -48,6 +37,15 @@ const dartBoardPlayer = (props) => {
                         />  
                     ))
                 }
+            <div className={classes.removePlayer} onClick={removePlayerHandler}> 
+                <Button 
+                    variant="contained" 
+                    color="secondary" 
+                    onClick={removePlayerHandler}
+                    style={{ cursor: 'pointer'}}>
+                    Remove Player
+                </Button>
+            </div>
         </div>
     )  
 };

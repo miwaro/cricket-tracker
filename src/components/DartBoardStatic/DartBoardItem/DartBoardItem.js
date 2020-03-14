@@ -9,6 +9,8 @@ import classes from './DartBoardItem.module.css';
 
 const DartBoardItem = (props) => {
 
+    // const last_element = props.labels[props.labels.length - 1];
+
     const incrementLabelHandler = () => {
         props.onModifyLabels(props.labelIndex, 'increment');
     }
@@ -20,18 +22,28 @@ const DartBoardItem = (props) => {
     return (
         <>
             <div className={classes.DartBoardItem}>
-                {props.label !== 'B' && 
-                    <ArrowLeftTwoToneIcon 
-                        style={{fontSize : 50}} 
+                {props.label !== 'B' && props.history.length < 1 &&
+                     <ArrowLeftTwoToneIcon 
+                        style={{fontSize : 50,
+                        cursor: 'pointer'}}
                         onClick={decrementLabelHandler}/>}
+
                 {props.label}
-                {props.label !== 'B' && 
+
+                {props.label !== 'B' && props.history.length < 1 &&
                     <ArrowRightTwoToneIcon 
-                        style={{fontSize : 50}} 
+                        style={{fontSize : 50, 
+                        cursor: 'pointer'}}
                         onClick={incrementLabelHandler}/>}  
             </div>
         </>
     );  
+}
+
+const mapStateToProps = state => {
+    return {
+        history: state.history
+    };
 }
 
 const mapDispatchToProps = dispatch => {
@@ -40,4 +52,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
       
-export default connect(null, mapDispatchToProps)(DartBoardItem);
+export default connect(mapStateToProps, mapDispatchToProps)(DartBoardItem);

@@ -9,9 +9,9 @@ import DartBoardPlayers from '../components/DartBoardPlayers/DartBoardPlayers';
 const styles = {
     root: { 
         border: '3px solid #dbe4eb !important',
-        backgroundColor: '#081818',
+        backgroundColor: '#0a1f1f',
         color: '#e2e2e2',
-        borderRadius: 10
+        borderRadius: 20
     }
 }
 
@@ -19,7 +19,7 @@ const dartBoard = (props) => {
     const { classes } = props;
     let p = props.players.length
     return (
-        <div style={{margin: 'auto', width: p === 0 ? '33%': p === 1 ? '75%': '100%'}}>
+        <div  style={{margin: 'auto', width: p === 0 ? '33%': p === 1 ? '75%': '100%'}}>
             <Grid className={classes.root} item xs={12}>
                 <Grid container spacing={0}>
                     <Grid item xs={p === 0 ? 12 : 3 } >
