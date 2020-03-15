@@ -13,12 +13,39 @@ const reducer = ( state = initialState, action) => {
     let players;
     let record;
     let labels;
+    let map;
 
     switch ( action.type ) {
 
+        case actionTypes.RANDOMIZE_PLAYERS_ORDER: 
+
+        map = { };        
+        let max = state.players.length;
+        let min = 0;
+        // let currentOrder = state.players.map((_, i) => i);
+        let randomOrder = state.players.map(() => {
+            let num = Math.floor(Math.random() * (max - min) + min);
+            while (map[num]) {
+                num = Math.floor(Math.random() * (max - min) + min);
+            }
+            map[num] = true;
+            return num;
+        });
+        // if (currentOrder[0] === randomOrder[0]) { randomOrder.reverse(); }
+        const shuffledPlayers = state.players.map(() => null);
+        state.players.forEach((player, i) => {
+            const newIndex = randomOrder[i];
+            shuffledPlayers[newIndex] = player;
+        });
+
+        return {
+            ...state,
+            players: shuffledPlayers
+        }
+
         case actionTypes.RANDOMIZE_LABELS: 
 
-            const map = {};        
+            map = {};        
             labels = state.labels.map(label => {
                 if (label === 'B') {
                     return label;

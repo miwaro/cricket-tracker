@@ -10,7 +10,7 @@ import classes from './DartboardStatic.module.css';
 const DartBoardStatic = (props) => {
 
     const randomizeLabelHandler = () => {
-        props.onRandomizeLabels(props.randomize);
+        props.onRandomizeLabels();
     }
 
     return (
@@ -23,7 +23,6 @@ const DartBoardStatic = (props) => {
                     labelIndex={i}
                 /> 
             ))}
-            {/* {props.players.length > 0 && <div className="Dartboard-styles"></div>} */}
 
             {props.history.length === 0 && 
                 <button 
@@ -47,7 +46,7 @@ const mapStateToProps = state => {
  
 const mapDispatchToProps = dispatch => {
     return {
-        onRandomizeLabels: (randomize) => dispatch(randomizeLabels(randomize))
+        onRandomizeLabels: () => dispatch(randomizeLabels())
     }
 }
   

@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { updateScore, undoMove, removePlayer} from '../../../store/actions/actions';
+import { 
+    updateScore, 
+    undoMove, 
+    removePlayer,
+    randomizePlayersOrder } from '../../../store/actions/actions';
+
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 import classes from './DartBoardPlayer.module.css';
-
-import RemoveCircleTwoToneIcon from '@material-ui/icons/RemoveCircleTwoTone';
-import Tooltip from '@material-ui/core/Tooltip';
-
 import Button from '@material-ui/core/Button';
-// import IconButton from '@material-ui/core/IconButton';
+
 
 const dartBoardPlayer = (props) => {
 
@@ -18,6 +19,10 @@ const dartBoardPlayer = (props) => {
     }
     const removePlayerHandler = () => {
         props.onRemovePlayer(props.playerIndex)
+    }
+
+    const randomizePlayersHandler = () => {
+        props.onRandomizePlayers()
     }
 
     return (
@@ -37,13 +42,22 @@ const dartBoardPlayer = (props) => {
                         />  
                     ))
                 }
-            <div className={classes.removePlayer} onClick={removePlayerHandler}> 
+            <div className={classes.removePlayer}> 
                 <Button 
                     variant="contained" 
                     color="secondary" 
                     onClick={removePlayerHandler}
                     style={{ cursor: 'pointer'}}>
                     Remove Player
+                </Button>
+            </div>
+            <div className={classes.removePlayer}> 
+                <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={randomizePlayersHandler}
+                    style={{ cursor: 'pointer'}}>
+                    Randomize Player Order
                 </Button>
             </div>
         </div>
@@ -61,6 +75,7 @@ const mapDispatchToProps = dispatch => {
         onUpdateScore: (playerIndex, scoreIndex) => dispatch(updateScore(playerIndex, scoreIndex)),
         onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex)),
         onRemovePlayer: (playerIndex) => dispatch(removePlayer(playerIndex)),
+        onRandomizePlayers: () => dispatch(randomizePlayersOrder())
     }
 }
     

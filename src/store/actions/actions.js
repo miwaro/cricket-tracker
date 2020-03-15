@@ -43,7 +43,6 @@ export const resetScores = () => {
 };
 
 export const modifyLabels = (labelIndex, operation) => {
-    console.log(labelIndex)
     return {
         type: actionTypes.MODIFY_LABELS,
         labelIndex, 
@@ -51,11 +50,15 @@ export const modifyLabels = (labelIndex, operation) => {
     };
 };
 
-export const randomizeLabels = (labelIndex, randomize) => {
-    console.log(labelIndex)
+export const randomizeLabels = () => {
     return {
-        type: actionTypes.RANDOMIZE_LABELS,
-        labelIndex, 
-        randomize
+        type: actionTypes.RANDOMIZE_LABELS
     };
 };
+
+export const randomizePlayersOrder = () => {
+    return {
+        type: actionTypes.RANDOMIZE_PLAYERS_ORDER,
+    };
+};
+
