@@ -16,7 +16,7 @@ import classes from './AddPlayer.module.css';
 
 
 const AddPlayer = (props) => {
-
+    
     const [open, setOpen] = useState(false);
     const [name, setName] = useState('');
     
@@ -31,23 +31,34 @@ const AddPlayer = (props) => {
     const addPlayerHandler = () => {
         if (name === '') { return; }
         props.onPlayerAdded(name) && setOpen(false);
-    }
-    
+    } 
+
     return (
         <div className={classes.addPlayer}>
-            <PersonAddTwoToneIcon style={{ cursor: 'pointer', fontSize: '50' }} onClick={handleClickOpen}/>
+            <PersonAddTwoToneIcon style={{ 
+                cursor: 'pointer', 
+                fontSize: '50' }} 
+                onClick={handleClickOpen}/>
             <Dialog
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
             >
                 <DialogTitle id="alert-dialog-title">{"Name"}</DialogTitle>
-                <DialogContent>
+                <DialogContent >
                     <DialogContentText>
                         Please Enter Your Name
                     </DialogContentText>
                     <TextField
-                        autoFocus
+                         onKeyPress={(ev) => {
+                            console.log(`Pressed keyCode ${ev.key}`);
+                            if (ev.key === 'Enter') {
+                              addPlayerHandler();
+                              ev.preventDefault();
+                            }
+                          }}
+                        
+                        autoFocus="true"
                         margin="dense"
                         id="name"
                         label="Name"
@@ -61,7 +72,7 @@ const AddPlayer = (props) => {
                         Nah
                     </Button>
                     <Button onClick={addPlayerHandler} color="primary" autoFocus>
-                        Yeah, sure
+                        Yeah!
                     </Button>
                 </DialogActions>
             </Dialog>     

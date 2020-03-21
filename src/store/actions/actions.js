@@ -58,7 +58,7 @@ export const randomizeLabels = () => {
 
 export const randomizePlayersOrder = () => {
     return {
-        type: actionTypes.RANDOMIZE_PLAYERS_ORDER,
+        type: actionTypes.RANDOMIZE_PLAYERS_ORDER
     };
 };
 

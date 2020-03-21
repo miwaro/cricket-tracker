@@ -1,4 +1,15 @@
 .randomize {
-    display: flex;
-    justify-content: center;
+    margin-left: 50px;
+    font-size: 14px;
+    border: none;
+    background-color: rgba(38, 255, 0, 0.472);
+    color: #FFF;
 }
+
+.randomize-disabled{
+    margin-left: 50px;
+    opacity: .3;
+    background-color: red;
+    color: #FFF;
+}
+

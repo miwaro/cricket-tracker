@@ -12,16 +12,14 @@
 
 .Header-title {
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   font-family: 'Spicy Rice', cursive;
   font-size: 80px;
-  letter-spacing: 4px;
-
   img {
-    padding-top: 5px;
-    width: 140px;
+    padding-top: 10px;
+    width: 120px;
     height: 100px;
   }
 }

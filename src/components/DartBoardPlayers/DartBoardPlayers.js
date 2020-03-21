@@ -7,7 +7,7 @@ import classes from './DartBoardPlayers.module.css';
 class dartBoardPlayers extends Component {
 
     render() {
-        const dartBoardPlayer = (
+        return (
             <div className={classes.dartBoardPlayers}>
                 {this.props.players.map((player, i) => (
                     <DartBoardPlayer
@@ -18,7 +18,6 @@ class dartBoardPlayers extends Component {
                 ))}             
             </div>
         );
-        return ( dartBoardPlayer );
     };
 };
 
