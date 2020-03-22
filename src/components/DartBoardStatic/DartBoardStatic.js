@@ -34,7 +34,7 @@ class dartBoardStatic extends Component {
                         variant="contained"
                         color='primary'
                         onClick={this.randomizeLabelHandler}>
-                            RANDOMIZE TARGETS
+                            RANDOMIZE
                         </Button>
                 </div>    
             </div>

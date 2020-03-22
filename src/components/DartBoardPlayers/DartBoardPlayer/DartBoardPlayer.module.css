@@ -7,7 +7,7 @@
     height: 80px;
     border-bottom: 4px solid #dbe4eb;
     border-left: 4px solid #dbe4eb;
-    /* padding-right: 80px; */
+    padding-right: 8%;
 }
 
 .removePlayer {

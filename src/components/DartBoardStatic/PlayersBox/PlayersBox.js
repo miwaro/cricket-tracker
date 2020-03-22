@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+// import { Typography } from '@material-ui/core';
 import AddPlayer from '../../NavBar/NavButtons/AddPlayer/AddPlayer';
 
 
@@ -15,7 +15,7 @@ const styles = {
     },
     h4: {
         fontSize: 35,
-        paddingRight: 24,
+        // paddingRight: 24,
         fontFamily: 'Spicy Rice, cursive'
     },
     root: {
@@ -31,7 +31,7 @@ const PlayersBox = props => {
     return(  
         <>
             <div className={classes.PlayersBox}>
-                <Typography children={'Players'} variant={'h4'} className={classes.h4}/>
+                {/* <Typography children={'Players'} variant={'h4'} className={classes.h4}/> */}
                 <AddPlayer />
             </div> 
             

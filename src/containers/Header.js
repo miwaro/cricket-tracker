@@ -8,10 +8,12 @@ class Header extends Component {
       <div className="Header-container">
         <div>
           <div className="Header-title-line-container">
-            <div className="Header-title theme-color-1">
-              <span style={{paddingLeft: '30px'}}>Bar</span>
+            <div className="Header-title theme-color-1"> 
+              {/* <span style={{paddingLeft: '30px'}}>Simple</span> */}
+              <span>Simple</span>
               <img src={darts} alt="3 darts pointing downward"/>
-              <span style={{paddingLeft: '15px'}}>Darts</span>
+              {/* <span style={{paddingLeft: '15px'}}>Cricket</span> */}
+              <span>Cricket</span>
             </div>
           </div>
             <Nav />

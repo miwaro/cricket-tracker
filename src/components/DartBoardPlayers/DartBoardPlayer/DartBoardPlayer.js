@@ -30,14 +30,14 @@ const dartBoardPlayer = (props) => {
                             color="secondary"
                             backgroundColor="white"
                             style={{
-                                paddingRight: 20, 
+                                paddingRight: 15, 
                                 paddingTop: 10, 
-                                fontSize: 32,
+                                fontSize: props.players.length > 3 ? 24 : 32,
                                 cursor: 'pointer'}} 
                         />
                     </IconButton>
                 </Tooltip>
-                {props.player.name} 
+                <div style={{fontSize: props.players.length > 3 ? 32 : 40}}>{props.player.name}</div>
             </div>    
             
                 {

@@ -24,9 +24,10 @@ const DartBoardItem = (props) => {
             <div className={classes.DartBoardItem}>
                 {props.label !== 'B' && props.history.length < 1 &&
                      <ArrowLeftTwoToneIcon 
-                        style={{fontSize : 50,
-                        cursor: 'pointer',
-                        color: '#dbe4eb'
+                        style={{
+                            fontSize : 50,
+                            cursor: 'pointer',
+                            color: '#dbe4eb'
                     }}
                         
                         onClick={decrementLabelHandler}/>}

@@ -21,7 +21,7 @@ const AddPlayer = (props) => {
     const [name, setName] = useState('');
     
     const handleClickOpen = () => {
-    if (props.players.length > 3) {return;}
+    if (props.players.length > 4) {return;}
       setOpen(true);
     }
   
@@ -38,7 +38,7 @@ const AddPlayer = (props) => {
         <div className={classes.addPlayer}>
             <PersonAddTwoToneIcon style={{ 
                 cursor: 'pointer', 
-                fontSize: '50' }} 
+                fontSize: '65' }} 
                 onClick={handleClickOpen}/>
             <Dialog
                 open={open}
