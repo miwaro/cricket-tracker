@@ -42,6 +42,7 @@ const GameOverMessage = (props) => {
     return (
         <div className={classes.newGame}>
             <Dialog
+                disableBackdropClick={true}
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
@@ -54,7 +55,7 @@ const GameOverMessage = (props) => {
                 <Button onClick={handleClose} color="secondary">
                     No
                 </Button>
-                <Button onClick={resetScoresHandler} color="primary" autoFocus>
+                <Button  onClick={resetScoresHandler} color="primary" autoFocus>
                     Yes
                 </Button>
                 </DialogActions>

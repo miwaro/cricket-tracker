@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { randomizePlayersOrder } from '../../store/actions/actions';
+import UndoMove from '../NavBar/NavButtons/UndoMove';
+import Button from '@material-ui/core/Button';
+import ResetBoard from '../NavBar/NavButtons/ResetBoard';
 import DartBoardPlayer from './DartBoardPlayer/DartBoardPlayer';
 import classes from './DartBoardPlayers.module.css';
 
 class dartBoardPlayers extends Component {
 
+    randomizePlayersHandler = () => {
+        this.props.onRandomizePlayers();
+    }
+
     render() {
-        const dartBoardPlayer = (
+        return (
+        <>
             <div className={classes.dartBoardPlayers}>
                 {this.props.players.map((player, i) => (
                     <DartBoardPlayer
@@ -17,15 +26,35 @@ class dartBoardPlayers extends Component {
                     />
                 ))}             
             </div>
+            
+            {this.props.players.length > 0 && <div className={classes.randomizePlayers}>
+                <UndoMove />
+                <Button 
+                    variant="contained"
+                    color='primary'
+                    onClick={this.randomizePlayersHandler}>
+                    RANDOMIZE PLAYERS
+                </Button>
+          
+                <ResetBoard />  
+            </div>}
+            
+        </>
         );
-        return ( dartBoardPlayer );
     };
 };
 
 const mapStateToProps = state => {
     return {
-        players: state.players
+        players: state.players,
+        history: state.history
     };
 }
 
-export default connect(mapStateToProps)(dartBoardPlayers);
+const mapDispatchToProps = dispatch => {
+    return {
+        onRandomizePlayers: () => dispatch(randomizePlayersOrder())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(dartBoardPlayers);

@@ -1,16 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { 
-    updateScore, 
-    undoMove, 
-    removePlayer,
-    randomizePlayersOrder } from '../../../store/actions/actions';
-
+import { updateScore, undoMove, removePlayer } from '../../../store/actions/actions';
+// import Button from '@material-ui/core/Button';
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 import classes from './DartBoardPlayer.module.css';
-import Button from '@material-ui/core/Button';
-
+import Tooltip from '@material-ui/core/Tooltip';
+import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
+import IconButton from '@material-ui/core/IconButton';
 
 const dartBoardPlayer = (props) => {
 
@@ -21,15 +18,27 @@ const dartBoardPlayer = (props) => {
         props.onRemovePlayer(props.playerIndex)
     }
 
-    const randomizePlayersHandler = () => {
-        props.onRandomizePlayers()
-    }
-
     return (
+        <>
         <div className={"Player-name"} style={{width: '100%'}}>
-            <div className={classes.dartBoardPlayer} onClick={removePlayerHandler}> 
+            <div className={classes.dartBoardPlayer}>
+                <Tooltip title="Delete">
+                    <IconButton aria-label="delete">
+                        <RemoveCircleIcon 
+                            onClick={removePlayerHandler}
+                            variant="contained"
+                            color="secondary"
+                            backgroundColor="white"
+                            style={{
+                                paddingRight: 20, 
+                                paddingTop: 10, 
+                                fontSize: 32,
+                                cursor: 'pointer'}} 
+                        />
+                    </IconButton>
+                </Tooltip>
                 {props.player.name} 
-            </div>
+            </div>    
             
                 {
                     (props.players[props.playerIndex].score).map((num, i) => (
@@ -42,25 +51,16 @@ const dartBoardPlayer = (props) => {
                         />  
                     ))
                 }
-            <div className={classes.removePlayer}> 
-                <Button 
-                    variant="contained" 
-                    color="secondary" 
-                    onClick={removePlayerHandler}
-                    style={{ cursor: 'pointer'}}>
-                    Remove Player
+            {/* <div className={classes.removePlayer}> 
+                <Button
+                    variant="contained"
+                    color='secondary'
+                    onClick={removePlayerHandler}>
+                        REMOVE PLAYER
                 </Button>
-            </div>
-            <div className={classes.removePlayer}> 
-                <Button 
-                    variant="contained" 
-                    color="primary" 
-                    onClick={randomizePlayersHandler}
-                    style={{ cursor: 'pointer'}}>
-                    Randomize Player Order
-                </Button>
-            </div>
+            </div> */}
         </div>
+    </>
     )  
 };
 
@@ -74,8 +74,7 @@ const mapDispatchToProps = dispatch => {
     return {
         onUpdateScore: (playerIndex, scoreIndex) => dispatch(updateScore(playerIndex, scoreIndex)),
         onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex)),
-        onRemovePlayer: (playerIndex) => dispatch(removePlayer(playerIndex)),
-        onRandomizePlayers: () => dispatch(randomizePlayersOrder())
+        onRemovePlayer: (playerIndex) => dispatch(removePlayer(playerIndex))
     }
 }
     

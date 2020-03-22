@@ -25,7 +25,10 @@ const DartBoardItem = (props) => {
                 {props.label !== 'B' && props.history.length < 1 &&
                      <ArrowLeftTwoToneIcon 
                         style={{fontSize : 50,
-                        cursor: 'pointer'}}
+                        cursor: 'pointer',
+                        color: '#dbe4eb'
+                    }}
+                        
                         onClick={decrementLabelHandler}/>}
 
                 {props.label}
@@ -33,7 +36,9 @@ const DartBoardItem = (props) => {
                 {props.label !== 'B' && props.history.length < 1 &&
                     <ArrowRightTwoToneIcon 
                         style={{fontSize : 50, 
-                        cursor: 'pointer'}}
+                        cursor: 'pointer',
+                        color: '#dbe4eb'
+                    }}
                         onClick={incrementLabelHandler}/>}  
             </div>
         </>

@@ -4,27 +4,27 @@
     color: #dbe4eb;
     justify-content: center;
     align-items: center;
-    height: 90px;
+    height: 80px;
     border-bottom: 4px solid #dbe4eb;
     border-left: 4px solid #dbe4eb;
+    /* padding-right: 80px; */
 }
 
 .removePlayer {
     display: flex;
-    color: #dbe4eb;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     border-left: 4px solid #dbe4eb;
+    border-bottom: 4px solid #dbe4eb;
+    padding: 6px 0;
 }
 
-/* .dartBoardButtons {
+.randomizeTargets {
     display: flex;
-    display: grid;
-    grid-gap: 4rem;
-    grid-template-columns: 1fr 1fr;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    height: 80px;
+    justify-content: center;
     align-items: center;
-} */
+}
+
 
 

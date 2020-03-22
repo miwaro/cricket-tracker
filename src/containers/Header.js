@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../components/NavBar/Nav';
-import darts from '../img/darts.png';
+import darts from '../img/darts2.png';
 
 class Header extends Component {
   render() {
