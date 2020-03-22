@@ -21,6 +21,7 @@ const AddPlayer = (props) => {
     const [name, setName] = useState('');
     
     const handleClickOpen = () => {
+    if (props.players.length > 3) {return;}
       setOpen(true);
     }
   
@@ -79,6 +80,12 @@ const AddPlayer = (props) => {
         </div>
     ) 
 }
+
+const mapStateToProps = state => {
+    return {
+        players: state.players
+    }
+}
     
 const mapDispatchToProps = dispatch => {
     return {
@@ -86,4 +93,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(AddPlayer);
+export default connect(mapStateToProps, mapDispatchToProps)(AddPlayer);

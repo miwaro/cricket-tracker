@@ -7,6 +7,7 @@
     height: 80px;
     border-bottom: 4px solid #dbe4eb;
     border-left: 4px solid #dbe4eb;
+    /* padding-right: 80px; */
 }
 
 .removePlayer {
@@ -20,7 +21,7 @@
 
 .randomizeTargets {
     display: flex;
-    height: 104px;
+    height: 80px;
     justify-content: center;
     align-items: center;
 }

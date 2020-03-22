@@ -27,8 +27,6 @@ class dartBoardPlayers extends Component {
                 ))}             
             </div>
             
-            
-
             {this.props.players.length > 0 && <div className={classes.randomizePlayers}>
                 <UndoMove />
                 <Button 
