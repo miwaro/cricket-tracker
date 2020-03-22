@@ -29,8 +29,11 @@ const ResetBoard = (props) => {
 
     return (
         <div className={classes.addPlayer}>
-            <Button variant="contained" color="secondary" onClick={handleClickOpen}>
-                Reset Board
+            <Button 
+                onClick={handleClickOpen}
+                variant="contained"
+                color='secondary'>
+                    RESET BOARD
             </Button>
             <Dialog
                 open={open}

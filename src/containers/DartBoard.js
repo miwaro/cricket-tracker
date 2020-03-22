@@ -11,9 +11,8 @@ const styles = {
         backgroundColor: '#0a1f1f',
         color: '#e2e2e2',
         borderRadius: 20,
-        opacity: .9,
-        border: '3px solid #e2e2e2',
-        boxShadow: '0 0 0 6px hsl(208, 50%, 36%, 1), 0 0 0 9px hsl(0, 0%, 90%);'
+        opacity: .93,
+        border: '8px solid #e2e2e2',
     }
 }
 

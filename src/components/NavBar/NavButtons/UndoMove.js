@@ -16,10 +16,7 @@ const undoMoves = (props) => {
     return (
         <Button 
             variant="contained"
-            style={{backgroundColor: "#9e7f2a", 
-                    color: "#FFF",
-                    display: "flex",
-                    justifyContent: "center"}}
+            color='secondary'
             onClick={undoMoveHandler}>
             Undo Score
         </Button>

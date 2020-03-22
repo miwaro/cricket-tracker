@@ -1,14 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { updateScore } from '../../../store/actions/actions';
-import {  undoMove } from '../../../store/actions/actions';
-import { removePlayer } from '../../../store/actions/actions';
-    
-
+import { updateScore, undoMove, removePlayer } from '../../../store/actions/actions';
+import Button from '@material-ui/core/Button';
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 import classes from './DartBoardPlayer.module.css';
-import Button from '@material-ui/core/Button';
+
 
 
 const dartBoardPlayer = (props) => {
@@ -39,12 +36,11 @@ const dartBoardPlayer = (props) => {
                     ))
                 }
             <div className={classes.removePlayer}> 
-                <Button 
-                    variant="contained" 
-                    color="secondary" 
-                    onClick={removePlayerHandler}
-                    style={{ cursor: 'pointer'}}>
-                    Remove Player
+                <Button
+                    variant="contained"
+                    color='secondary'
+                    onClick={removePlayerHandler}>
+                        REMOVE PLAYER
                 </Button>
             </div>
         </div>

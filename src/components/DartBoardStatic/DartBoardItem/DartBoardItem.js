@@ -26,7 +26,7 @@ const DartBoardItem = (props) => {
                      <ArrowLeftTwoToneIcon 
                         style={{fontSize : 50,
                         cursor: 'pointer',
-                        color: 'orangered'
+                        color: '#dbe4eb'
                     }}
                         
                         onClick={decrementLabelHandler}/>}
@@ -37,7 +37,7 @@ const DartBoardItem = (props) => {
                     <ArrowRightTwoToneIcon 
                         style={{fontSize : 50, 
                         cursor: 'pointer',
-                        color: 'orangered'
+                        color: '#dbe4eb'
                     }}
                         onClick={incrementLabelHandler}/>}  
             </div>

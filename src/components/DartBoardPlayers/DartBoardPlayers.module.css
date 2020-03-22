@@ -1,3 +1,13 @@
 .dartBoardPlayers {
     display: flex;
+    cursor: 'pointer';
+    width: 100%;
+}
+
+.randomizePlayers {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-left: 4px solid #dbe4eb;
+    padding: 6px 0;
 }

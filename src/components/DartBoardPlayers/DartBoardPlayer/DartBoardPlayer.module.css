@@ -4,17 +4,25 @@
     color: #dbe4eb;
     justify-content: center;
     align-items: center;
-    height: 90px;
+    height: 80px;
     border-bottom: 4px solid #dbe4eb;
     border-left: 4px solid #dbe4eb;
 }
 
 .removePlayer {
     display: flex;
-    color: #dbe4eb;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     border-left: 4px solid #dbe4eb;
+    border-bottom: 4px solid #dbe4eb;
+    padding: 6px 0;
+}
+
+.randomizeTargets {
+    display: flex;
+    height: 104px;
+    justify-content: center;
+    align-items: center;
 }
 
 
