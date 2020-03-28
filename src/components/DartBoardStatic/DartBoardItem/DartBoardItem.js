@@ -22,7 +22,7 @@ const DartBoardItem = (props) => {
     return (
         <>
             <div className={classes.DartBoardItem}>
-                {props.label !== 'B' && props.history.length < 1 &&
+                {props.label !== 'B' &&
                      <ArrowLeftTwoToneIcon 
                         style={{
                             fontSize : 50,
@@ -34,7 +34,7 @@ const DartBoardItem = (props) => {
 
                 {props.label}
 
-                {props.label !== 'B' && props.history.length < 1 &&
+                {props.label !== 'B' &&
                     <ArrowRightTwoToneIcon 
                         style={{fontSize : 50, 
                         cursor: 'pointer',

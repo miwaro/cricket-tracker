@@ -46,7 +46,7 @@ const ResetBoard = (props) => {
                 <Button onClick={handleClose} color="secondary">
                     No
                 </Button>
-                <Button onClick={resetBoardHandler} color="primary" autoFocus>
+                <Button onClick={resetBoardHandler} color="primary">
                     Yes
                 </Button>
                 </DialogActions>

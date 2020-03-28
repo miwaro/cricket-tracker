@@ -38,7 +38,8 @@ const AddPlayer = (props) => {
         <div className={classes.addPlayer}>
             <PersonAddTwoToneIcon style={{ 
                 cursor: 'pointer', 
-                fontSize: '65' }} 
+                fontSize: '60',
+               paddingRight: '10'}} 
                 onClick={handleClickOpen}/>
             <Dialog
                 open={open}
@@ -59,7 +60,7 @@ const AddPlayer = (props) => {
                             }
                           }}
                         
-                        autoFocus="true"
+                        autoFocus
                         margin="dense"
                         id="name"
                         label="Name"
@@ -72,7 +73,7 @@ const AddPlayer = (props) => {
                     <Button onClick={handleClose} color="secondary">
                         Nah
                     </Button>
-                    <Button onClick={addPlayerHandler} color="primary" autoFocus>
+                    <Button onClick={addPlayerHandler} color="primary">
                         Yeah!
                     </Button>
                 </DialogActions>

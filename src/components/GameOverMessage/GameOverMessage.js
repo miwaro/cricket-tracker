@@ -55,7 +55,7 @@ const GameOverMessage = (props) => {
                 <Button onClick={handleClose} color="secondary">
                     No
                 </Button>
-                <Button  onClick={resetScoresHandler} color="primary" autoFocus>
+                <Button  onClick={resetScoresHandler} color="primary">
                     Yes
                 </Button>
                 </DialogActions>

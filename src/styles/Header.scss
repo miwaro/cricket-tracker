@@ -8,20 +8,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .Header-title {
-  margin-top: 15px;
-  margin-bottom: 20px;
+  margin-top: 12px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   font-family: 'Spicy Rice', cursive;
-  font-size: 80px;
+  font-size: 70px;
   img {
-    padding-top: 10px;
-    width: 120px;
+    width: 100px;
     height: 100px;
+    padding-left: 4px;
   }
 }
 

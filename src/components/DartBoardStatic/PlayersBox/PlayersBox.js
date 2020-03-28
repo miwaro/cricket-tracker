@@ -10,7 +10,7 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: 80,
+        height: 70,
         borderBottom: '4px solid #dbe4eb'
     },
     h4: {

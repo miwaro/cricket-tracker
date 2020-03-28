@@ -4,7 +4,7 @@
     color: #dbe4eb;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 70px;
     border-bottom: 4px solid #dbe4eb;
     border-left: 4px solid #dbe4eb;
     padding-right: 8%;
@@ -21,7 +21,7 @@
 
 .randomizeTargets {
     display: flex;
-    height: 80px;
+    height: 70px;
     justify-content: center;
     align-items: center;
 }

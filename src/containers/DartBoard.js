@@ -8,11 +8,11 @@ import DartBoardPlayers from '../components/DartBoardPlayers/DartBoardPlayers';
 
 const styles = {
     root: { 
-        backgroundColor: '#0a1f1f',
+        backgroundColor: '#000',
         color: '#e2e2e2',
         borderRadius: 20,
-        opacity: .93,
-        border: '8px solid #e2e2e2'
+        opacity: .8,
+        border: '8px solid #dbe4eb'
     }
 }
 
@@ -20,7 +20,7 @@ const dartBoard = (props) => {
     const { classes } = props;
     let p = props.players.length
     return (
-        <div style={{margin: 'auto', width: p === 0 ? '33%': p === 1 ? '75%': '100%'}}>
+        <div style={{margin: 'auto', width: p === 0 ? '40%': '100%'}}>
             <Grid className={classes.root} item xs={12}>
                 <Grid container spacing={0}>
                     <Grid item xs={p === 0 ? 12 : 3 } >
