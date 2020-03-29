@@ -33,7 +33,7 @@ class dartBoardPlayers extends Component {
                     variant="contained"
                     color='primary'
                     onClick={this.randomizePlayersHandler}>
-                    RANDOMIZE PLAYERS
+                    Randomize Players
                 </Button>
           
                 <ResetBoard />  

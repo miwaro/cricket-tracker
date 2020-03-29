@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { updateScore, undoMove, removePlayer } from '../../../store/actions/actions';
-// import Button from '@material-ui/core/Button';
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 import classes from './DartBoardPlayer.module.css';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -20,24 +19,22 @@ const dartBoardPlayer = (props) => {
 
     return (
         <>
-        <div className={"Player-name"} style={{width: '100%'}}>
+        <div onClick={removePlayerHandler} className={"Player-name"} style={{width: '100%'}}>
             <div className={classes.dartBoardPlayer}>
                 <Tooltip title="Delete">
                     <IconButton aria-label="delete">
                         <RemoveCircleIcon 
-                            onClick={removePlayerHandler}
                             variant="contained"
                             color="secondary"
-                            backgroundColor="white"
                             style={{
                                 paddingRight: 15, 
                                 paddingTop: 10, 
-                                fontSize: props.players.length > 3 ? 24 : 32,
+                                fontSize: props.players.length > 2 ? 24 : 32,
                                 cursor: 'pointer'}} 
                         />
                     </IconButton>
                 </Tooltip>
-                <div style={{fontSize: props.players.length > 3 ? 32 : 40}}>{props.player.name}</div>
+                <div style={{fontSize: props.players.length > 2 ? 32 : 40}}>{props.player.name}</div>
             </div>    
             
                 {
@@ -51,14 +48,6 @@ const dartBoardPlayer = (props) => {
                         />  
                     ))
                 }
-            {/* <div className={classes.removePlayer}> 
-                <Button
-                    variant="contained"
-                    color='secondary'
-                    onClick={removePlayerHandler}>
-                        REMOVE PLAYER
-                </Button>
-            </div> */}
         </div>
     </>
     )  

@@ -147,10 +147,15 @@ const reducer = ( state = initialState, action) => {
                 players
             }
             case actionTypes.RESET_BOARD:
+                players = state.players.map(player => {
+                    player.score = [0, 0, 0, 0, 0, 0, 0];
+                    return player;
+                });
             return {
                 ...state,
-                players: [],
-                winningPlayerIndex: -1
+                players,
+                winningPlayerIndex: -1,
+                labels: [20, 19, 18, 17, 16, 15, 'B']
             } 
                       
         default:

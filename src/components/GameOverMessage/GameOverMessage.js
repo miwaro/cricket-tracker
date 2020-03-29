@@ -48,16 +48,17 @@ const GameOverMessage = (props) => {
                 aria-labelledby="alert-dialog-title"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {`${winningPlayerName} has won the game! Do you wish to play a new game?`}
+                    {`${winningPlayerName} hit all targets!-------CONTINUE?`}
                 </DialogTitle>
                 
                 <DialogActions>
-                <Button onClick={handleClose} color="secondary">
+                <Button  onClick={resetScoresHandler} color="secondary">
                     No
                 </Button>
-                <Button  onClick={resetScoresHandler} color="primary">
+                <Button onClick={handleClose} color="primary">
                     Yes
                 </Button>
+                
                 </DialogActions>
             </Dialog>     
         </div>

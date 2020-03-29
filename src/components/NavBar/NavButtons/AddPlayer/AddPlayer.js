@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { addPlayer } from '../../../../store/actions/actions';
+// import { withStyles } from '@material-ui/core/styles';
 
 import Button from '@material-ui/core/Button';
 import PersonAddTwoToneIcon from '@material-ui/icons/PersonAddTwoTone';
@@ -11,9 +12,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
 import classes from './AddPlayer.module.css';
-
 
 const AddPlayer = (props) => {
     
@@ -37,9 +36,10 @@ const AddPlayer = (props) => {
     return (
         <div className={classes.addPlayer}>
             <PersonAddTwoToneIcon style={{ 
-                cursor: 'pointer', 
+                cursor: 'pointer',
+                onMouseOver:'this.style.font-size= 70',
                 fontSize: '60',
-               paddingRight: '10'}} 
+                paddingRight: '10'}} 
                 onClick={handleClickOpen}/>
             <Dialog
                 open={open}
