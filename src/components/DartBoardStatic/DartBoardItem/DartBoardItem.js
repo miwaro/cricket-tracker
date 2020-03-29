@@ -9,8 +9,6 @@ import classes from './DartBoardItem.module.css';
 
 const DartBoardItem = (props) => {
 
-    // const last_element = props.labels[props.labels.length - 1];
-
     const incrementLabelHandler = () => {
         props.onModifyLabels(props.labelIndex, 'increment');
     }
@@ -25,7 +23,7 @@ const DartBoardItem = (props) => {
                 {props.label !== 'B' &&
                      <ArrowLeftTwoToneIcon 
                         style={{
-                            fontSize : 50,
+                            fontSize : 45,
                             cursor: 'pointer',
                             color: '#dbe4eb'
                     }}
@@ -36,7 +34,7 @@ const DartBoardItem = (props) => {
 
                 {props.label !== 'B' &&
                     <ArrowRightTwoToneIcon 
-                        style={{fontSize : 50, 
+                        style={{fontSize : 45, 
                         cursor: 'pointer',
                         color: '#dbe4eb'
                     }}

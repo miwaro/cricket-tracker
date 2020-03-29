@@ -1,8 +1,8 @@
 .addPlayer {
     display: flex;
-    font-size: 60px;
     justify-content: center;
     align-items: center;
     height: 40px;
     border-radius: 4px;
-}
+};
+
