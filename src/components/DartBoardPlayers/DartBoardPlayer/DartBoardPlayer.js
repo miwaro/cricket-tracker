@@ -19,11 +19,11 @@ const dartBoardPlayer = (props) => {
 
     return (
         <>
-        <div onClick={removePlayerHandler} className={"Player-name"} style={{width: '100%'}}>
+        <div className={"Player-name"} style={{width: '100%'}}>
             <div className={classes.dartBoardPlayer}>
                 <Tooltip title="Delete">
-                    <IconButton aria-label="delete">
-                        <RemoveCircleIcon 
+                    <IconButton onClick={removePlayerHandler} aria-label="delete">
+                        <RemoveCircleIcon
                             variant="contained"
                             color="secondary"
                             style={{
