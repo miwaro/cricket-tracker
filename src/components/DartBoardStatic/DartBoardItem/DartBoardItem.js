@@ -4,18 +4,28 @@ import { connect } from 'react-redux';
 import ArrowLeftTwoToneIcon from '@material-ui/icons/ArrowLeftTwoTone';
 import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
 
+import reset from '../../../audioclips/arrow.wav';
+
 import { modifyLabels } from '../../../store/actions/actions';
 import classes from './DartBoardItem.module.css';
 
 const DartBoardItem = (props) => {
 
     const incrementLabelHandler = () => {
+        playSound(resetAudio);
         props.onModifyLabels(props.labelIndex, 'increment');
     }
 
     const decrementLabelHandler = () => {
+        playSound(resetAudio);
         props.onModifyLabels(props.labelIndex, 'decrement');
     }
+
+    const resetAudio = new Audio(reset);
+      
+    const playSound = audioFile => {
+            audioFile.play();
+        }
 
     return (
         <>

@@ -8,4 +8,10 @@
     height: 70px;
     border-bottom: 4px solid #dbe4eb;
     border-left: 4px solid #dbe4eb;
+    opacity: .9;
+}
+
+.DartBoardPlayerControl:hover {
+    opacity: 1;
+    transition: all .4 ease-in-out;
 }

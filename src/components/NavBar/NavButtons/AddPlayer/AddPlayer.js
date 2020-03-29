@@ -13,6 +13,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import classes from './AddPlayer.module.css';
+import addplayer from '../../../../audioclips/addplayers.wav';
+import addplayers from '../../../../audioclips/notification_ambient.wav';
 
 const AddPlayer = (props) => {
     
@@ -20,6 +22,7 @@ const AddPlayer = (props) => {
     const [name, setName] = useState('');
     
     const handleClickOpen = () => {
+    playSound(addplayerAudio);
     if (props.players.length > 4) {return;}
       setOpen(true);
     }
@@ -30,8 +33,16 @@ const AddPlayer = (props) => {
 
     const addPlayerHandler = () => {
         if (name === '') { return; }
+        playSound(addplayersAudio);
         props.onPlayerAdded(name) && setOpen(false);
     } 
+
+    const addplayerAudio = new Audio(addplayer);
+    const addplayersAudio = new Audio(addplayers);
+      
+    const playSound = audioFile => {
+            audioFile.play();
+        }
 
     return (
         <div className={classes.addPlayer}>
@@ -53,7 +64,6 @@ const AddPlayer = (props) => {
                     </DialogContentText>
                     <TextField
                          onKeyPress={(ev) => {
-                            console.log(`Pressed keyCode ${ev.key}`);
                             if (ev.key === 'Enter') {
                               addPlayerHandler();
                               ev.preventDefault();

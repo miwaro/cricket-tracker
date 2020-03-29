@@ -7,8 +7,9 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import reset from '../../../audioclips/ui_loading.wav';
 
-import classes from './AddPlayer/AddPlayer.module.css';
+
 
 const ResetBoard = (props) => {
     
@@ -19,7 +20,7 @@ const ResetBoard = (props) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
-        if (props.players.length === 0) { return; }
+        playSound(resetAudio);
         setOpen(true);
     };
   
@@ -27,8 +28,17 @@ const ResetBoard = (props) => {
       setOpen(false);
     };
 
+    
+    const resetAudio = new Audio(reset);
+      
+    const playSound = audioFile => {
+            audioFile.play();
+        }
+        
+         
+
     return (
-        <div className={classes.addPlayer}>
+        <div>
             <Button 
                 onClick={handleClickOpen}
                 variant="contained"

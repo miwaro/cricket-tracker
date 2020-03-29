@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../components/NavBar/Nav';
 import dartImg from '../img/darts2.png';
+import classes from './imageStyles.module.css';
 
 class Header extends Component {
   render() {
@@ -9,13 +10,15 @@ class Header extends Component {
         <div>
           <div className="Header-title-line-container">
             <div className="Header-title theme-color-1"> 
-              <span style={{fontStyle: 'italic'}}>Simple</span>
-              <img src={dartImg} alt="3 darts pointing downward"/>
-              <span style={{fontStyle: 'italic'}}>Cricket</span>
+              {/* <span style={{fontStyle: 'italic'}}>Simple</span> */}
+              <span className={classes.simple}>Simple</span>
+              <img className={classes.darts} src={dartImg} alt="3 darts pointing downward"/>
+              {/* <span style={{fontStyle: 'italic'}}>Cricket</span> */}
+              <span className={classes.cricket}>Cricket</span>
             </div>
           </div>
             <Nav />
-        </div>  
+        </div>   
       </div>
     );
   }

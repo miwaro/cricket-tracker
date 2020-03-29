@@ -21,9 +21,10 @@
 
 .randomizeTargets {
     display: flex;
-    height: 70px;
+    /* height: 70px; */
     justify-content: center;
     align-items: center;
+    padding: 19px 0;
 }
 
 

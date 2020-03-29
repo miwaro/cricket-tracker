@@ -1,24 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { randomizePlayersOrder } from '../../store/actions/actions';
+import randomize from '../../audioclips/randomize.wav';
 import UndoMove from '../NavBar/NavButtons/UndoMove';
 import Button from '@material-ui/core/Button';
 import ResetBoard from '../NavBar/NavButtons/ResetBoard';
 import DartBoardPlayer from './DartBoardPlayer/DartBoardPlayer';
 import classes from './DartBoardPlayers.module.css';
 
-class dartBoardPlayers extends Component {
+const dartBoardPlayers = (props) => {
 
-    randomizePlayersHandler = () => {
-        this.props.onRandomizePlayers();
+    const randomizePlayersHandler = () => {
+        playSound(randomizeAudio);
+        props.onRandomizePlayers();
     }
 
-    render() {
+    const randomizeAudio = new Audio(randomize);
+      
+    const playSound = audioFile => {
+            audioFile.play();
+        }
+
         return (
         <>
             <div className={classes.dartBoardPlayers}>
-                {this.props.players.map((player, i) => (
+                {props.players.map((player, i) => (
                     <DartBoardPlayer
                         player={player}
                         playerIndex={i}
@@ -27,12 +34,12 @@ class dartBoardPlayers extends Component {
                 ))}             
             </div>
             
-            {this.props.players.length > 0 && <div className={classes.randomizePlayers}>
+            {props.players.length > 0 && <div className={classes.randomizePlayers}>
                 <UndoMove />
                 <Button 
                     variant="contained"
                     color='primary'
-                    onClick={this.randomizePlayersHandler}>
+                    onClick={randomizePlayersHandler}>
                     Randomize Players
                 </Button>
           
@@ -42,7 +49,6 @@ class dartBoardPlayers extends Component {
         </>
         );
     };
-};
 
 const mapStateToProps = state => {
     return {

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { randomizeLabels } from '../../store/actions/actions';
@@ -6,22 +6,28 @@ import DartBoardItem from './DartBoardItem/DartBoardItem';
 import Button from '@material-ui/core/Button';
 import PlayersBox from './PlayersBox/PlayersBox';
 import classes from '../DartBoardPlayers/DartBoardPlayer/DartBoardPlayer.module.css';
+import reset from '../../audioclips/randomize.wav';
 
 
-class dartBoardStatic extends Component {
-
-    randomizeLabelHandler = () => {
-        this.props.onRandomizeLabels();
+const dartBoardStatic = (props) => {
+    const randomizeLabelHandler = () => {
+        playSound(resetAudio);
+        props.onRandomizeLabels();
     }
 
-    render(){
+    const resetAudio = new Audio(reset);
+      
+    const playSound = audioFile => {
+            audioFile.play();
+        }
+    
         return (
       
             <div className="Label-style">
 
                 <PlayersBox />
 
-                {this.props.labels.map((label, i) => (
+                {props.labels.map((label, i) => (
                     <DartBoardItem
                         key={i}
                         label={label}
@@ -33,15 +39,16 @@ class dartBoardStatic extends Component {
                         <Button
                         variant="contained"
                         color='primary'
-                        onClick={this.randomizeLabelHandler}>
+                        onClick={randomizeLabelHandler}>
                             Randomize
                         </Button>
                 </div>    
-            </div>
-    
-        )
-    }
-};
+            </div>  
+        );
+}
+
+   
+
 
 const mapStateToProps = state => {
     return {

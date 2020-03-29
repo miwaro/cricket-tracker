@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import randomize from '../../../audioclips/undo.wav';
 
 import { undoMove } from '../../../store/actions/actions';
 import Button from '@material-ui/core/Button';
@@ -10,8 +11,15 @@ const undoMoves = (props) => {
         if (props.history.length === 0) {
             return;
         }
+        playSound(randomizeAudio);
         props.onUndoMove(props.playerIndex, scoreIndex)
     }
+
+    const randomizeAudio = new Audio(randomize);
+      
+    const playSound = audioFile => {
+            audioFile.play();
+        }
 
     return (
         <Button 

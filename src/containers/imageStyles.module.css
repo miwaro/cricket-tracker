@@ -1,0 +1,12 @@
+.darts {
+    animation: spin .2s 6 linear;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotateY(0);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
+}

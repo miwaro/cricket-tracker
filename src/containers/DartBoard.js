@@ -20,6 +20,7 @@ const dartBoard = (props) => {
     const { classes } = props;
     let p = props.players.length
     return (
+        
         <div style={{margin: 'auto', width: p === 0 ? '40%': '100%'}}>
             <Grid className={classes.root} item xs={12}>
                 <Grid container spacing={0}>
@@ -31,7 +32,7 @@ const dartBoard = (props) => {
                     </Grid>
                 </Grid>
             </Grid>
-        </div>
+        </div>  
     )
 };
 

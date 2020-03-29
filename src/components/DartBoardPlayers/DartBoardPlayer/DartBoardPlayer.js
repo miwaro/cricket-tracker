@@ -7,6 +7,7 @@ import classes from './DartBoardPlayer.module.css';
 import Tooltip from '@material-ui/core/Tooltip';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 import IconButton from '@material-ui/core/IconButton';
+import reset from '../../../audioclips/navigation_transition-right.wav';
 
 const dartBoardPlayer = (props) => {
 
@@ -14,8 +15,15 @@ const dartBoardPlayer = (props) => {
         props.onUpdateScore(props.playerIndex, scoreIndex)
     }
     const removePlayerHandler = () => {
+        playSound(resetAudio);
         props.onRemovePlayer(props.playerIndex)
     }
+
+    const resetAudio = new Audio(reset);
+      
+    const playSound = audioFile => {
+            audioFile.play();
+        }
 
     return (
         <>
