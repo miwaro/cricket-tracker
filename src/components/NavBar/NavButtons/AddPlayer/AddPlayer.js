@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { addPlayer } from '../../../../store/actions/actions';
-// import { withStyles } from '@material-ui/core/styles';
 
 import Button from '@material-ui/core/Button';
 import PersonAddTwoToneIcon from '@material-ui/icons/PersonAddTwoTone';
@@ -48,7 +47,6 @@ const AddPlayer = (props) => {
         <div className={classes.addPlayer}>
             <PersonAddTwoToneIcon style={{ 
                 cursor: 'pointer',
-                onMouseOver:'this.style.font-size= 70',
                 fontSize: '60',
                 paddingRight: '10'}} 
                 onClick={handleClickOpen}/>

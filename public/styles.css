@@ -1,9 +1,8 @@
-.darts {
-	animation: spin .2s 6 linear;
+.board >  {
+    animation: rotation .2s 6 linear;
 }
 
-
-@keyframes spin {
+@keyframes rotation {
 	0% {
 		transform: rotateY(0);
 	}

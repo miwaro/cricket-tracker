@@ -18,10 +18,12 @@
   justify-content: center;
   font-family: 'Spicy Rice', cursive;
   font-size: 70px;
+  text-shadow: -2px -2px 0 #01579b, 2px -2px 0 #0277bd, -2px 2px 0 #0288d1, 2px 2px 0 #039be5;
   img {
+    position: relative;
     width: 100px;
     height: 100px;
-    // padding-left: 12px;
+    padding-right: 4px;
   }
 }
 

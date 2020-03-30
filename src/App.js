@@ -8,16 +8,23 @@ import DartBoard from './containers/DartBoard';
 
 const theme = createMuiTheme({
   palette: {
+    // primary: {
+    //   light: '#32db0a',
+    //   main: '#1d9500',
+    //   dark: '#32db0a',
+    //   contrastText: '#FFF'
+    // },
     primary: {
-      light: '#32db0a',
-      main: '#1d9500',
-      dark: '#32db0a',
+      light: '01579b',
+      main: '#0277bd',
+      dark: '#0288d1',
+      
       contrastText: '#FFF'
     },
     secondary: {
-      light: '#000000',
-      main: '#b11111',
-      dark: '#d91840',
+      light: '#212121',
+      main: '#424242',
+      dark: '#616161',
       contrastText: '#FFF'
     }
   },

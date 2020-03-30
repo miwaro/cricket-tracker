@@ -10,7 +10,7 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         height: 70,
-        borderBottom: '4px solid #dbe4eb'
+        borderBottom: '4px solid #FFF'
     }
 };
 

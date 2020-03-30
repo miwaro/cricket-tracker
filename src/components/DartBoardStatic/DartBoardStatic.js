@@ -27,13 +27,13 @@ const dartBoardStatic = (props) => {
 
                 <PlayersBox />
 
-                {props.labels.map((label, i) => (
-                    <DartBoardItem
-                        key={i}
-                        label={label}
-                        labelIndex={i}
-                    /> 
-                ))}
+                    {props.labels.map((label, i) => (
+                        <DartBoardItem
+                            key={i}
+                            label={label}
+                            labelIndex={i}
+                        /> 
+                    ))}
 
                 <div className={classes.randomizeTargets}>
                         <Button

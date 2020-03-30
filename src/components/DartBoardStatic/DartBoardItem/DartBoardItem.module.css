@@ -1,21 +1,21 @@
 .DartBoardItem {
-    display: flex;
-    font-size: 40px;
-    justify-content: center;
-    align-items: center;
-    height: 70px;
-    border-bottom: 4px solid #dbe4eb;
-}
-
-.DartBoardNumbers {
-    display: flex;
-    font-size: 40px;
-    justify-content: center;
-    align-items: center;
-    height: 70px;
-    border-bottom: 4px solid #dbe4eb;
+    font-size : 45px !important;
+    cursor: 'pointer';
+    color: #FFF;
 }
 
 .DartBoardItem:hover {
-    font-size: 46px;
+    font-size: 52px !important;
+    /* color: #616161; */
+}
+
+.numbers {
+    color: #0288d1;
+    font-size: 40px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    border-bottom: 4px solid #FFF;
 }

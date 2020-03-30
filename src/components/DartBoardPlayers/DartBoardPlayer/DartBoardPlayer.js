@@ -29,20 +29,25 @@ const dartBoardPlayer = (props) => {
         <>
         <div className={"Player-name"} style={{width: '100%'}}>
             <div className={classes.dartBoardPlayer}>
-                <Tooltip title="Delete">
+                <Tooltip title="Remove Player">
                     <IconButton onClick={removePlayerHandler} aria-label="delete">
                         <RemoveCircleIcon
                             variant="contained"
-                            color="secondary"
                             style={{
                                 paddingRight: 15, 
-                                paddingTop: 10, 
-                                fontSize: props.players.length > 2 ? 24 : 32,
+                                paddingTop: 10,
+                                color: '#FFF',
+                                fontSize: props.players.length > 2 ? 24 : 26,
                                 cursor: 'pointer'}} 
                         />
                     </IconButton>
                 </Tooltip>
-                <div style={{fontSize: props.players.length > 2 ? 32 : 40}}>{props.player.name}</div>
+                <div 
+                    style={{
+                        fontSize: props.players.length > 2 ? 32 : 40,
+                        color: '#039be5'}}>
+                            {props.player.name}
+                </div>
             </div>    
             
                 {

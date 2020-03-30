@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 
 import ArrowLeftTwoToneIcon from '@material-ui/icons/ArrowLeftTwoTone';
 import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
-
 import reset from '../../../audioclips/arrow.wav';
-
 import { modifyLabels } from '../../../store/actions/actions';
 import classes from './DartBoardItem.module.css';
 
@@ -29,30 +27,24 @@ const DartBoardItem = (props) => {
 
     return (
         <>
-            <div className={classes.DartBoardItem}>
+            <div className={classes.numbers}>
                 {props.label !== 'B' &&
-                     <ArrowLeftTwoToneIcon 
-                        style={{
-                            fontSize : 45,
-                            cursor: 'pointer',
-                            color: '#dbe4eb'
-                    }}
-                        
+                
+                    <ArrowLeftTwoToneIcon
+                        className={classes.DartBoardItem}
                         onClick={decrementLabelHandler}/>}
 
-                {props.label}
+                    {props.label}
 
                 {props.label !== 'B' &&
                     <ArrowRightTwoToneIcon 
-                        style={{fontSize : 45, 
-                        cursor: 'pointer',
-                        color: '#dbe4eb'
-                    }}
+                        className={classes.DartBoardItem}
                         onClick={incrementLabelHandler}/>}  
             </div>
         </>
     );  
 }
+                
 
 const mapStateToProps = state => {
     return {

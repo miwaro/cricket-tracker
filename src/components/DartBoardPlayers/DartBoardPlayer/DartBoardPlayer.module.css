@@ -1,12 +1,12 @@
 .dartBoardPlayer {
     display: flex;
     font-size: 40px;
-    color: #dbe4eb;
+    color: #FFF;
     justify-content: center;
     align-items: center;
     height: 70px;
-    border-bottom: 4px solid #dbe4eb;
-    border-left: 4px solid #dbe4eb;
+    border-bottom: 4px solid #FFF;
+    border-left: 4px solid #FFF;
     padding-right: 8%;
 }
 
@@ -14,8 +14,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-left: 4px solid #dbe4eb;
-    border-bottom: 4px solid #dbe4eb;
+    border-left: 4px solid #FFF;
+    border-bottom: 4px solid #FFF;
     padding: 6px 0;
 }
 

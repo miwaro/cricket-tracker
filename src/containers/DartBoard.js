@@ -9,10 +9,10 @@ import DartBoardPlayers from '../components/DartBoardPlayers/DartBoardPlayers';
 const styles = {
     root: { 
         backgroundColor: '#000',
-        color: '#e2e2e2',
+        color: '#FFF',
         borderRadius: 20,
         opacity: .8,
-        border: '8px solid #dbe4eb'
+        border: '6px solid #FFF'
     }
 }
 

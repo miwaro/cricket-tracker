@@ -43,14 +43,14 @@ const ResetBoard = (props) => {
                 onClick={handleClickOpen}
                 variant="contained"
                 color='secondary'>
-                    RESET BOARD
+                    RESET GAME
             </Button>
             <Dialog
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
             >
-                <DialogTitle id="alert-dialog-title">{"Are you sure you want to clear the board?"}</DialogTitle>
+                <DialogTitle id="alert-dialog-title">{"Are you sure you want to reset the targets and scores?"}</DialogTitle>
                 
                 <DialogActions>
                 <Button onClick={handleClose} color="secondary">

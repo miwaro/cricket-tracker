@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { connect, useSelector } from 'react-redux';
-import { resetScores } from '../../store/actions/actions';
+import { useSelector } from 'react-redux';
+
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -27,10 +27,6 @@ const GameOverMessage = (props) => {
         }
     });
 
-    const resetScoresHandler = () => {
-        props.onResetScores() && setOpen(false);
-    }
-
     const handleOpen = () => {
       setOpen(true);
     };
@@ -48,27 +44,16 @@ const GameOverMessage = (props) => {
                 aria-labelledby="alert-dialog-title"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {`${winningPlayerName} hit all targets!-------CONTINUE?`}
-                </DialogTitle>
-                
+                    {`${winningPlayerName} hit all the targets!!!`}
+                </DialogTitle>              
                 <DialogActions>
-                <Button  onClick={resetScoresHandler} color="secondary">
-                    No
+                <Button onClick={handleClose} color="secondary">
+                    Close
                 </Button>
-                <Button onClick={handleClose} color="primary">
-                    Yes
-                </Button>
-                
                 </DialogActions>
             </Dialog>     
         </div>
     ) 
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onResetScores: () => dispatch(resetScores()),
-    }
-}
-
-export default connect(null, mapDispatchToProps)(GameOverMessage);
+export default GameOverMessage;

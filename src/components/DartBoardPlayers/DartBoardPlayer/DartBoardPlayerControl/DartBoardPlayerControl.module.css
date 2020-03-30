@@ -1,17 +1,22 @@
 .DartBoardPlayerControl {
     display: flex;
-    font-size: 40px;
-    font-weight: 700;
-    color: "red";
     justify-content: center;
     align-items: center;
+    font-size: 40px;
     height: 70px;
-    border-bottom: 4px solid #dbe4eb;
-    border-left: 4px solid #dbe4eb;
-    opacity: .9;
+    border-bottom: 4px solid #FFF;
+    border-left: 4px solid #FFF;
 }
 
-.DartBoardPlayerControl:hover {
+
+.circle {
+    cursor: 'pointer';
+    font-size: 35px !important;
+    opacity: .85;
+}
+
+.circle:hover {
+    font-size: 40px !important;
     opacity: 1;
     transition: all .4 ease-in-out;
 }
