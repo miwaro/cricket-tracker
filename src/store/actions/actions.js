@@ -62,3 +62,8 @@ export const randomizePlayersOrder = () => {
     };
 };
 
+export const toggleMute = () => {
+    return {
+        type: actionTypes.TOGGLE_MUTE
+    };
+};

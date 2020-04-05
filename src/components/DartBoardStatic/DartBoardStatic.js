@@ -9,17 +9,16 @@ import classes from '../DartBoardPlayers/DartBoardPlayer/DartBoardPlayer.module.
 import reset from '../../audioclips/randomize.wav';
 
 
-const dartBoardStatic = (props) => {
+const DartBoardStatic = (props) => {
+
     const randomizeLabelHandler = () => {
-        playSound(resetAudio);
         props.onRandomizeLabels();
+        playSound(resetAudio);
     }
 
     const resetAudio = new Audio(reset);
       
-    const playSound = audioFile => {
-            audioFile.play();
-        }
+    const playSound = audioFile => {if (!props.muted) audioFile.play();}
     
         return (
       
@@ -37,9 +36,9 @@ const dartBoardStatic = (props) => {
 
                 <div className={classes.randomizeTargets}>
                         <Button
-                        variant="contained"
-                        color='primary'
-                        onClick={randomizeLabelHandler}>
+                            variant="contained"
+                            color='primary'
+                            onClick={randomizeLabelHandler}>
                             Randomize
                         </Button>
                 </div>    
@@ -47,14 +46,12 @@ const dartBoardStatic = (props) => {
         );
 }
 
-   
-
-
 const mapStateToProps = state => {
     return {
         players: state.players,
         history: state.history,
-        labels: state.labels
+        labels: state.labels,
+        muted: state.muted
     }
 }
  
@@ -64,4 +61,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
   
-export default connect(mapStateToProps, mapDispatchToProps)(dartBoardStatic);
+export default connect(mapStateToProps, mapDispatchToProps)(DartBoardStatic);

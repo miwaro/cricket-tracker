@@ -41,5 +41,5 @@ const mapStateToProps = state => {
         players: state.players
     };
 }
-   
+
 export default connect(mapStateToProps)(withStyles(styles)(dartBoard));

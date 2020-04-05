@@ -1,9 +1,10 @@
 .addPlayer {
-    transition: all .3s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 .addPlayer:hover {
-    color: #0277bd;
+    color: #03a9f4;
 };
+
 
 

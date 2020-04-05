@@ -19,7 +19,7 @@ const dartBoardPlayers = (props) => {
     const randomizeAudio = new Audio(randomize);
       
     const playSound = audioFile => {
-            audioFile.play();
+        if (!props.muted) audioFile.play();
         }
 
         return (
@@ -53,7 +53,8 @@ const dartBoardPlayers = (props) => {
 const mapStateToProps = state => {
     return {
         players: state.players,
-        history: state.history
+        history: state.history,
+        muted: state.muted
     };
 }
 

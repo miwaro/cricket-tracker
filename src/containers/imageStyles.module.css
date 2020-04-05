@@ -1,5 +1,64 @@
 .darts {
 	animation: spin .2s 6 linear;
+	HTML CSSResult
+EDIT ON
+div, div::before, div::after {
+  position: relative;
+  box-sizing: border-box;
+}
+
+
+/* CSS Transform Animations */
+div::before {
+  animation: squeeze var(--squeeze-duration) 0ms infinite alternate ease-in-out;
+  animation-play-state: var(--squeeze-state, paused);
+  transform-origin: left center;
+}
+div::after {
+  animation: go-with-squeeze var(--squeeze-duration) 0ms infinite alternate ease-in-out;
+  animation-play-state: var(--squeeze-state, paused);
+  will-change: transform;
+}
+div {
+  animation: go-against-squeeze var(--squeeze-duration) 0ms infinite alternate ease-in-out;
+  animation-play-state: var(--squeeze-state, paused);
+  will-change: transform;
+  transition: text-shadow 2000ms ease-in-out;
+}
+
+@keyframes squeeze {
+  80%, 0% {
+    transform: scaleX(1) translate3d(0,0,0);
+  }
+  40% {
+    transform: scaleX(.8) translate3d(0,0,0);
+  }
+  100%, 60%, 13% {
+    transform: scaleX(.3) translate3d(0,0,0);
+  }
+}
+@keyframes go-with-squeeze {
+  80%, 0% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(calc(var(--bellow-width) * -.2));
+  }
+  100%, 60%, 13% {
+    transform: translateX(calc(var(--bellow-width) * -.7));
+  }
+}
+@keyframes go-against-squeeze {
+  80%, 0% {
+    transform: translateX(calc(var(--bellow-width) * -.66));
+  }
+  40% {
+    transform: translateX(calc(var(--bellow-width) * -.56));
+  }
+  100%, 60%, 13% {
+    transform: translateX(calc(var(--bellow-width) * -.31));
+  }
+}
 }
 
 
@@ -11,3 +70,4 @@
 		transform: rotateY(360deg);
 	}
 }
+

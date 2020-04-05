@@ -18,7 +18,7 @@ const undoMoves = (props) => {
     const randomizeAudio = new Audio(randomize);
       
     const playSound = audioFile => {
-            audioFile.play();
+        if (!props.muted) audioFile.play();
         }
 
     return (
@@ -33,7 +33,8 @@ const undoMoves = (props) => {
 
 const mapStateToProps = state => {
     return {
-        history: state.history
+        history: state.history,
+        muted: state.muted
     }
   }
 

@@ -15,7 +15,7 @@ const dartBoardPlayer = (props) => {
         props.onUpdateScore(props.playerIndex, scoreIndex)
     }
     const removePlayerHandler = () => {
-        playSound(resetAudio);
+        if (!props.muted)playSound(resetAudio);
         props.onRemovePlayer(props.playerIndex)
     }
 
@@ -68,7 +68,8 @@ const dartBoardPlayer = (props) => {
 
 const mapStateToProps = state => {
     return {
-        players: state.players
+        players: state.players,
+        muted: state.muted
     };
 }
 

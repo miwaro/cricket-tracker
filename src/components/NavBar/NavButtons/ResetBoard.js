@@ -32,7 +32,7 @@ const ResetBoard = (props) => {
     const resetAudio = new Audio(reset);
       
     const playSound = audioFile => {
-            audioFile.play();
+        if (!props.muted) audioFile.play();
         }
         
          
@@ -67,7 +67,8 @@ const ResetBoard = (props) => {
 
 const mapStateToProps = state => {
     return {
-        players: state.players
+        players: state.players,
+        muted: state.muted
     };
 }
     

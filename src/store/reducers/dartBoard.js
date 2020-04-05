@@ -4,7 +4,8 @@ const initialState = {
     players: [],
     history: [],
     labels: [20, 19, 18, 17, 16, 15, 'B'],
-    winningPlayerIndex: -1
+    winningPlayerIndex: -1,
+    muted: false
 };
 
 const reducer = ( state = initialState, action) => {
@@ -16,6 +17,12 @@ const reducer = ( state = initialState, action) => {
     let map;
 
     switch ( action.type ) {
+        
+        case actionTypes.TOGGLE_MUTE:
+            return {
+                ...state,
+                muted: !state.muted
+            }
 
         case actionTypes.RANDOMIZE_PLAYERS_ORDER: 
 

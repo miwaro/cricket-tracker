@@ -1,0 +1,6 @@
+.checkbox {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin: .6rem;
+}

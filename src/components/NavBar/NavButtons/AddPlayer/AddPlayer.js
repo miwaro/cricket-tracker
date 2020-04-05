@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { addPlayer } from '../../../../store/actions/actions';
 
 import Button from '@material-ui/core/Button';
-import PersonAddTwoToneIcon from '@material-ui/icons/PersonAddTwoTone';
+import PersonAddSharpIcon from '@material-ui/icons/PersonAddSharp';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -21,9 +21,9 @@ const AddPlayer = (props) => {
     const [name, setName] = useState('');
     
     const handleClickOpen = () => {
-    playSound(addplayerAudio);
-    if (props.players.length > 4) {return;}
-      setOpen(true);
+        if (props.players.length > 4) {return;}
+            playSound(addplayerAudio);
+            setOpen(true);
     }
   
     const handleClose = () => {
@@ -40,15 +40,18 @@ const AddPlayer = (props) => {
     const addplayersAudio = new Audio(addplayers);
       
     const playSound = audioFile => {
-            audioFile.play();
+        if (!props.muted) audioFile.play();
         }
 
     return (
         <div className={classes.addPlayer}>
-            <PersonAddTwoToneIcon style={{ 
-                cursor: 'pointer',
-                fontSize: '60',
-                paddingRight: '10'}} 
+            < PersonAddSharpIcon 
+                style={{ 
+                    cursor: 'pointer',
+                    fontSize: '65',
+                    paddingRight: '10',
+                    paddingTop: '5'
+                }} 
                 onClick={handleClickOpen}/>
             <Dialog
                 open={open}
@@ -92,7 +95,8 @@ const AddPlayer = (props) => {
 
 const mapStateToProps = state => {
     return {
-        players: state.players
+        players: state.players,
+        muted: state.muted
     }
 }
     

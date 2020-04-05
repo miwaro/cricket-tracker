@@ -5,20 +5,14 @@ import { Container } from '@material-ui/core';
 
 import Header from './containers/Header';
 import DartBoard from './containers/DartBoard';
+import Checkbox from './components/Checkbox/Checkbox';
 
 const theme = createMuiTheme({
   palette: {
-    // primary: {
-    //   light: '#32db0a',
-    //   main: '#1d9500',
-    //   dark: '#32db0a',
-    //   contrastText: '#FFF'
-    // },
     primary: {
       light: '01579b',
       main: '#0277bd',
-      dark: '#0288d1',
-      
+      dark: '#03a9f4',
       contrastText: '#FFF'
     },
     secondary: {
@@ -39,6 +33,7 @@ const App = (props) => {
       <Header />
       <Container> 
         <DartBoard />
+        <Checkbox />
       </Container>
     </MuiThemeProvider>
   );

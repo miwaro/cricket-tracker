@@ -22,7 +22,7 @@ const DartBoardItem = (props) => {
     const resetAudio = new Audio(reset);
       
     const playSound = audioFile => {
-            audioFile.play();
+        if (!props.muted) audioFile.play();
         }
 
     return (
@@ -48,7 +48,8 @@ const DartBoardItem = (props) => {
 
 const mapStateToProps = state => {
     return {
-        history: state.history
+        history: state.history,
+        muted: state.muted
     };
 }
 
