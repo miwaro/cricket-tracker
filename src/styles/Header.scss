@@ -29,15 +29,32 @@
 
 .Player-name {
   font-family: 'Spicy Rice', cursive;
-  font-size: 30px;
 }
 
-.Header-helpIconContainer {
-  position: absolute;
-  right: 2%;
+@media (max-width: 768px) {
+  .Header-title{
+    font-size: 50px;
+    img {
+      width: 75px;
+      height: 75px;
+    }
+  }
 }
 
-// .Dart-img {
-//   display: flex;
-//   justify-content: center;
-// }
+@media (max-width: 450px) {
+  .Header-title{
+    font-size: 35px;
+    img {
+      width: 55px;
+      height: 55px;
+    }
+    }
+    .Header-title-line-container {
+      margin-top: 0;
+  }
+  .Header-title {
+    margin-bottom: 0;
+  }
+}
+
+

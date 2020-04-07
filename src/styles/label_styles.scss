@@ -2,3 +2,9 @@
     font-family: 'Spicy Rice', cursive;
     font-size: 20px;
 }
+
+@media (max-width: 450px) {
+    .Label-style {
+        font-family: sans-serif;
+      }    
+}

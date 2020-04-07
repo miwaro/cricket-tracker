@@ -2,17 +2,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
     height: 70px;
     border-bottom: 4px solid #FFF;
     border-left: 4px solid #FFF;
 }
 
-
 .circle {
-    cursor: 'pointer';
+    cursor: pointer;
     font-size: 35px !important;
-    opacity: .85;
+}
+
+.close {
+    font-family: sans-serif;
+    cursor: pointer;
+    font-size: 40px !important; 
+    color: #FFF;
+}
+
+.slash {
+    font-family: serif;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 40px;
 }
 
 .circle:hover {
@@ -20,3 +33,23 @@
     opacity: 1;
     transition: all .4 ease-in-out;
 }
+
+@media (max-width: 768px) {
+  .close {
+    font-size: 40px;
+  }
+    .DartBoardPlayerControl{
+      height: 55px;
+    }
+    .circle {
+        font-size: 25px !important;
+        opacity: 1;
+    }
+    .slash {
+      font-size: 25px;
+    }
+  }
+
+@media (max-width: 450px) {
+
+  }

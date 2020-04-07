@@ -13,8 +13,6 @@ import './styles/base_styles.scss';
 import './styles/index.scss';
 import './styles/label_styles.scss';
 import './styles/Nav.scss';
-import './styles/Dartboard_styles.scss';
-
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

@@ -37,13 +37,17 @@ const dartBoardPlayers = (props) => {
             {props.players.length > 0 && <div className={classes.randomizePlayers}>
                 <UndoMove />
                 <Button 
+                    size="small"
                     variant="contained"
                     color='primary'
                     onClick={randomizePlayersHandler}>
+                        
                     Randomize Players
                 </Button>
-          
-                <ResetBoard />  
+                <span className={classes.reset}>
+                    <ResetBoard />
+                </span>
+                 
             </div>}
             
         </>

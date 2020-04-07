@@ -11,7 +11,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+
 import classes from './AddPlayer.module.css';
+
 import addplayer from '../../../../audioclips/addplayers.wav';
 import addplayers from '../../../../audioclips/notification_ambient.wav';
 
@@ -44,15 +46,8 @@ const AddPlayer = (props) => {
         }
 
     return (
-        <div className={classes.addPlayer}>
-            < PersonAddSharpIcon 
-                style={{ 
-                    cursor: 'pointer',
-                    fontSize: '65',
-                    paddingRight: '10',
-                    paddingTop: '5'
-                }} 
-                onClick={handleClickOpen}/>
+        <div>
+            < PersonAddSharpIcon className={classes.addPlayer} onClick={handleClickOpen}/>
             <Dialog
                 open={open}
                 onClose={handleClose}

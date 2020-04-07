@@ -1,0 +1,11 @@
+.DartBoardContainer {
+    margin: auto;
+    max-width: 1000px;
+    padding: 0 16px;
+}
+
+@media (max-width: 450px) {
+    .DartBoardContainer {
+        padding: 0;
+    }
+}

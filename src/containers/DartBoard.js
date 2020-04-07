@@ -10,7 +10,7 @@ const styles = {
     root: { 
         backgroundColor: '#000',
         color: '#FFF',
-        borderRadius: 20,
+        borderRadius: 12,
         opacity: .8,
         border: '6px solid #FFF'
     }
@@ -31,6 +31,7 @@ const dartBoard = (props) => {
                         <DartBoardPlayers />
                     </Grid>
                 </Grid>
+
             </Grid>
         </div>  
     )

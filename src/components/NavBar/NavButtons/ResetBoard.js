@@ -35,11 +35,11 @@ const ResetBoard = (props) => {
         if (!props.muted) audioFile.play();
         }
         
-         
-
     return (
         <div>
-            <Button 
+            <Button
+                style={{width: '100%'}}
+                size="small"
                 onClick={handleClickOpen}
                 variant="contained"
                 color='secondary'>
@@ -56,12 +56,15 @@ const ResetBoard = (props) => {
                 <Button onClick={handleClose} color="secondary">
                     No
                 </Button>
-                <Button onClick={resetBoardHandler} color="primary">
+                <Button 
+                    size="small"
+                    onClick={resetBoardHandler} 
+                    color="primary">
                     Yes
                 </Button>
                 </DialogActions>
-            </Dialog>     
-        </div>
+            </Dialog>    
+        </div> 
     ) 
 }
 

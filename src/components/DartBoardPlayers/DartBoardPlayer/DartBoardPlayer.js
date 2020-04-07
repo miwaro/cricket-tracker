@@ -7,6 +7,7 @@ import classes from './DartBoardPlayer.module.css';
 import Tooltip from '@material-ui/core/Tooltip';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 import reset from '../../../audioclips/navigation_transition-right.wav';
 
 const dartBoardPlayer = (props) => {
@@ -28,26 +29,24 @@ const dartBoardPlayer = (props) => {
     return (
         <>
         <div className={"Player-name"} style={{width: '100%'}}>
+
             <div className={classes.dartBoardPlayer}>
+
                 <Tooltip title="Remove Player">
                     <IconButton onClick={removePlayerHandler} aria-label="delete">
                         <RemoveCircleIcon
-                            variant="contained"
-                            style={{
-                                paddingRight: 15, 
-                                paddingTop: 10,
-                                color: '#FFF',
-                                fontSize: props.players.length > 2 ? 24 : 26,
-                                cursor: 'pointer'}} 
-                        />
+                            className={classes.removeCircle}/>
                     </IconButton>
                 </Tooltip>
-                <div 
+
+                <div className={classes.name}
                     style={{
-                        fontSize: props.players.length > 2 ? 32 : 40,
+                        fontSize: props.players.length > 2 ? 27 : 34,
                         color: '#039be5'}}>
+                            
                             {props.player.name}
                 </div>
+
             </div>    
             
                 {
@@ -61,6 +60,15 @@ const dartBoardPlayer = (props) => {
                         />  
                     ))
                 }
+                <div className={classes.removePlayer}> 
+                <Button
+                    size="small"
+                    variant="contained"
+                    color='secondary'
+                    onClick={removePlayerHandler}>
+                        REMOVE PLAYER
+                </Button>
+            </div>
         </div>
     </>
     )  

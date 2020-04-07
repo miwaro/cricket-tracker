@@ -23,6 +23,7 @@ const undoMoves = (props) => {
 
     return (
         <Button 
+            size="small"
             variant="contained"
             color='secondary'
             onClick={undoMoveHandler}>

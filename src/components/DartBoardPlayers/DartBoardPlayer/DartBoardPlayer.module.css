@@ -1,6 +1,5 @@
 .dartBoardPlayer {
     display: flex;
-    font-size: 40px;
     color: #FFF;
     justify-content: center;
     align-items: center;
@@ -11,12 +10,17 @@
 }
 
 .removePlayer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-left: 4px solid #FFF;
-    border-bottom: 4px solid #FFF;
-    padding: 6px 0;
+  display: none;
+}
+
+.removeCircle {
+    color: #FFF;
+    font-size: 28px !important;
+    cursor: pointer;
+}
+
+.resetGame {
+  display: none;
 }
 
 .randomizeTargets {
@@ -24,10 +28,50 @@
     justify-content: center;
     align-items: center;
     padding: 19px 0;
-    margin-right: 4px;
 }
 
 
+@media (max-width: 768px) {
+    .dartBoardPlayer{
+      height: 55px;
+    }
+    .randomizeTargets {
+        padding: 4px;
+    }
+  }
 
+  @media (max-width: 450px) {
+    .dartBoardPlayer{
+      height: 55px;
+      padding-right: 0;
+      border-top: 4px solid #FFF;
 
+    }
+    .name {
+        font-size: 20px !important;
+        padding-top: 0;
+        display: flex;
+        justify-content: left;
+    }
+    .randomizeTargets {
+      border-bottom: 4px solid #FFF;
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 0;
+    }
+    .removeCircle {
+      display: none !important;
+    }
+    .removePlayer {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      border-left: 4px solid #dbe4eb;
+      border-bottom: 4px solid #dbe4eb;
+    }
+    .resetGame {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
 

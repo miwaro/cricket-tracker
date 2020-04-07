@@ -1,0 +1,19 @@
+.PlayersBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    border-bottom: 4px solid #FFF;
+}
+
+@media (max-width: 768px) {
+    .PlayersBox{
+      height: 55px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .PlayersBox{
+      border-top: 4px solid #FFF;
+    }
+  }

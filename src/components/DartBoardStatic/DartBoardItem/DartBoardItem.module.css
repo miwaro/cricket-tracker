@@ -19,3 +19,25 @@
     height: 70px;
     border-bottom: 4px solid #FFF;
 }
+
+@media (max-width: 768px) {
+    .numbers{
+      font-size: 35px;
+      height: 55px;
+    }
+    .DartBoardItem {
+        font-size: 35px !important;
+    }
+    .DartBoardItem:hover {
+        font-size: 40px !important;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .numbers {
+      font-size: 25px;
+    }
+    .DartBoardItem {
+        font-size: 25px !important;
+    }
+  }

@@ -36,29 +36,21 @@ const DartBoardPlayerControl = (props) => {
                         onClick={() => playSound(likeAudio)}/>}
 
                {props.score === 1 && 
-                    <div onClick={() => playSound(warningAudio)} 
-                        style={{
-                            fontFamily: 'serif',
-                            fontWeight: 'bold',
-                            fontStyle: 'italic', 
-                            cursor: 'pointer', 
-                            color: '#FFF',
-                            fontSize: '35'
-                        }}> / </div>}
+                    <div className={classes.slash} onClick={() => playSound(warningAudio)}> / </div>}
                {props.score === 2 && 
                     <CloseIcon onClick={() => playSound(successAudio)} 
                         style={{
-                            fontFamily: 'sans-serif', 
-                            cursor: 'pointer', 
-                            fontSize: '45', 
-                            color: "#FFF"}}/>}
+                            cursor: 'pointer',
+                            color:'#FFF',
+                            fontSize: '40'}}
+                    />}
 
                {props.score === 3 && 
                     <HighlightOffIcon  
                         style={{
                             cursor: 'pointer',
                             color:'#FFF',
-                            fontSize: '50'}}/>}
+                            fontSize: '40'}}/>}
             </div>
         )
     }

@@ -11,3 +11,21 @@
     border-left: 4px solid #FFF;
     padding: 19px 0;
 }
+
+@media (max-width: 768px) {
+    .randomizePlayers {
+        padding: 4px 0;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .randomizePlayers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: 4px solid #FFF;
+        padding: 0;
+    }
+    .reset {
+        display: none !important;
+    }
+  }

@@ -1,13 +1,16 @@
 import React from 'react';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { Container } from '@material-ui/core';
+import { MuiThemeProvider, createMuiTheme, StylesProvider } from '@material-ui/core/styles';
+
+// import { Container } from '@material-ui/core';
 
 import Header from './containers/Header';
 import DartBoard from './containers/DartBoard';
 import Checkbox from './components/Checkbox/Checkbox';
+import classes from './App.module.css';
 
 const theme = createMuiTheme({
+
   palette: {
     primary: {
       light: '01579b',
@@ -29,13 +32,16 @@ const theme = createMuiTheme({
 
 const App = (props) => {
   return (
-    <MuiThemeProvider theme={theme}>
-      <Header />
-      <Container> 
-        <DartBoard />
+    <StylesProvider injectFirst>
+      <MuiThemeProvider theme={theme}>
+        <Header />
+        <div className={classes.DartBoardContainer}> 
+          <DartBoard />
+        </div>
         <Checkbox />
-      </Container>
-    </MuiThemeProvider>
+      </MuiThemeProvider>
+    </StylesProvider>
+    
   );
 }
 
