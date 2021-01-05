@@ -17,42 +17,41 @@ const dartBoardPlayers = (props) => {
     }
 
     const randomizeAudio = new Audio(randomize);
-      
+
     const playSound = audioFile => {
         if (!props.muted) audioFile.play();
-        }
+    }
 
-        return (
+    return (
         <>
             <div className={classes.dartBoardPlayers}>
                 {props.players.map((player, i) => (
                     <DartBoardPlayer
                         player={player}
                         playerIndex={i}
-                        key={i}   
+                        key={i}
                     />
-                ))}             
+                ))}
             </div>
-            
+
             {props.players.length > 0 && <div className={classes.randomizePlayers}>
                 <UndoMove />
-                <Button 
+                <Button
                     size="small"
                     variant="contained"
                     color='primary'
                     onClick={randomizePlayersHandler}>
-                        
-                    Randomize Players
+
+                    Randomize<br></br>Players
                 </Button>
                 <span className={classes.reset}>
                     <ResetBoard />
                 </span>
-                 
             </div>}
-            
+
         </>
-        );
-    };
+    );
+};
 
 const mapStateToProps = state => {
     return {

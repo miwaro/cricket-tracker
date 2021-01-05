@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { randomizeLabels, resetBoard } from '../../store/actions/actions';
+import { randomizeLabels } from '../../store/actions/actions';
 import DartBoardItem from './DartBoardItem/DartBoardItem';
 import Button from '@material-ui/core/Button';
 import PlayersBox from './PlayersBox/PlayersBox';
@@ -41,7 +41,7 @@ const DartBoardStatic = (props) => {
                             variant="contained"
                             color='primary'
                             onClick={randomizeLabelHandler}>
-                            Randomize
+                            Randomize<br></br>Targets
                         </Button>
                 </div>
                     

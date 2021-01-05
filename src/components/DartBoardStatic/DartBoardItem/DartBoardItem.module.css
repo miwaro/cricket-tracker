@@ -6,7 +6,6 @@
 
 .DartBoardItem:hover {
     font-size: 52px !important;
-    /* color: #616161; */
 }
 
 .numbers {
@@ -20,16 +19,21 @@
     border-bottom: 4px solid #FFF;
 }
 
+.numbers:nth-of-type(9) {
+  color: white;
+  background-color: #0288d1;
+}
+
 @media (max-width: 768px) {
     .numbers{
       font-size: 35px;
-      height: 55px;
+      height: 50px;
     }
     .DartBoardItem {
         font-size: 35px !important;
     }
     .DartBoardItem:hover {
-        font-size: 40px !important;
+        display:none;
     }
   }
 

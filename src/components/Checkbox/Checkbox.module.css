@@ -1,24 +1,10 @@
 .checkbox {
     display: flex;
     justify-content: center;
-    /* max-width:150px; */
-    /* border-radius: 4px; */
     color: white;
-    /* background-color:#01579b; */
+    font-size: 13px;
     margin: .6rem;
     padding: .4rem;
-    opacity: .6;
+    opacity: .9;
 }
 
-/* .group {
-    font-size: 5px !important;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    display: flex;
-    flex-direction: row !important;
-    justify-content: center;
-} */
-/* 
-.input {
-    background-color: rgb(165, 165, 165);
-    border-radius: 60px;
-} */

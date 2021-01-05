@@ -11,6 +11,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
 import classes from './AddPlayer.module.css';
 
@@ -22,10 +24,11 @@ const AddPlayer = (props) => {
     const [open, setOpen] = useState(false);
     const [name, setName] = useState('');
     
-    const handleClickOpen = () => {
-        if (props.players.length > 4) {return;}
+    const handleClickOpen = (event) => {
+        if (props.players.length > 3) {return;}
             playSound(addplayerAudio);
             setOpen(true);
+            event.stopPropagation();
     }
   
     const handleClose = () => {
@@ -65,6 +68,10 @@ const AddPlayer = (props) => {
                               ev.preventDefault();
                             }
                           }}
+
+                          inputProps={{
+                            maxLength: 12,
+                          }}
                         
                         autoFocus
                         margin="dense"
@@ -72,6 +79,13 @@ const AddPlayer = (props) => {
                         label="Name"
                         type="string"
                         fullWidth
+                        InputProps={{
+                            startAdornment: (
+                              <InputAdornment position="start">
+                                <AccountCircle />
+                              </InputAdornment>
+                            ),
+                          }}
                         onChange={e => setName(e.target.value)}
                     />
                 </DialogContent>

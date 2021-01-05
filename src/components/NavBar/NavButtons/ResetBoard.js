@@ -43,7 +43,7 @@ const ResetBoard = (props) => {
                 onClick={handleClickOpen}
                 variant="contained"
                 color='secondary'>
-                    RESET GAME
+                    RESET<br></br>GAME
             </Button>
             <Dialog
                 open={open}

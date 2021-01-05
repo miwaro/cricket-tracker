@@ -39,14 +39,14 @@
     font-size: 40px;
   }
     .DartBoardPlayerControl{
-      height: 55px;
+      height: 50px;
     }
     .circle {
         font-size: 25px !important;
         opacity: 1;
     }
     .slash {
-      font-size: 25px;
+      font-size: 30px;
     }
   }
 

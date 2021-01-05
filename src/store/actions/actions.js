@@ -1,31 +1,39 @@
 import * as actionTypes from './actionTypes';
 
-export const addPlayer = ( name ) => {
+export const addPlayer = (name) => {
     return {
         type: actionTypes.ADD_PLAYER,
         name
     };
 };
 
-export const removePlayer = ( playerIndex ) => {
+export const removePlayer = (playerIndex) => {
     return {
         type: actionTypes.REMOVE_PLAYER,
         playerIndex,
     };
 };
 
-export const updateScore = ( playerIndex, scoreIndex ) => {
+export const updateScore = (playerIndex, scoreIndex) => {
     return {
         type: actionTypes.UPDATE_SCORE,
-        playerIndex, 
+        playerIndex,
         scoreIndex
     };
 };
 
-export const undoMove = ( playerIndex, scoreIndex ) => {
+export const updateTotalScore = (playerIndex, scoreIndex) => {
+    return {
+        type: actionTypes.UPDATE_TOTAL_SCORE,
+        playerIndex,
+        scoreIndex
+    };
+};
+
+export const undoMove = (playerIndex, scoreIndex) => {
     return {
         type: actionTypes.UNDO_MOVE,
-        playerIndex, 
+        playerIndex,
         scoreIndex
     };
 };
@@ -45,7 +53,7 @@ export const resetScores = () => {
 export const modifyLabels = (labelIndex, operation) => {
     return {
         type: actionTypes.MODIFY_LABELS,
-        labelIndex, 
+        labelIndex,
         operation
     };
 };

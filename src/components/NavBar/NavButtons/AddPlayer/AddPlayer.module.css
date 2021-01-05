@@ -1,14 +1,14 @@
 .addPlayer {
-    transition: all .5s ease-in-out;
+    transition: all .4s ease-in-out;
     cursor: pointer;
-    /* font-size: 65px; */
+    font-size: 65px;
     padding-right: 10px;
     padding-top: 5px
 
 }
 
 .addPlayer:hover {
-    color: #03a9f4;
+    color: #ccc;
 };
 
 @media (max-width: 450px) {

@@ -20,31 +20,31 @@ const DartBoardItem = (props) => {
     }
 
     const resetAudio = new Audio(reset);
-      
+
     const playSound = audioFile => {
         if (!props.muted) audioFile.play();
-        }
+    }
 
     return (
         <>
             <div className={classes.numbers}>
-                {props.label !== 'B' &&
-                
+                {props.label !== 'B' && props.label !== 'Total' &&
+
                     <ArrowLeftTwoToneIcon
                         className={classes.DartBoardItem}
-                        onClick={decrementLabelHandler}/>}
+                        onClick={decrementLabelHandler} />}
 
-                    {props.label}
+                {props.label}
 
-                {props.label !== 'B' &&
-                    <ArrowRightTwoToneIcon 
+                {props.label !== 'B' && props.label !== 'Total' &&
+                    <ArrowRightTwoToneIcon
                         className={classes.DartBoardItem}
-                        onClick={incrementLabelHandler}/>}  
+                        onClick={incrementLabelHandler} />}
             </div>
         </>
-    );  
+    );
 }
-                
+
 
 const mapStateToProps = state => {
     return {
@@ -58,5 +58,5 @@ const mapDispatchToProps = dispatch => {
         onModifyLabels: (labelIndex, operation) => dispatch(modifyLabels(labelIndex, operation))
     }
 }
-      
+
 export default connect(mapStateToProps, mapDispatchToProps)(DartBoardItem);

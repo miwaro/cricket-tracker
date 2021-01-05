@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import * as serviceWorker from './serviceWorker';
-
 import App from './App';
 import dartBoardReducer from './store/reducers/dartBoard';
 

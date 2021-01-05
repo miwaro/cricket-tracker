@@ -27,7 +27,7 @@ const undoMoves = (props) => {
             variant="contained"
             color='secondary'
             onClick={undoMoveHandler}>
-            Undo Score
+            Undo<br></br>Score
         </Button>
     )
 }
