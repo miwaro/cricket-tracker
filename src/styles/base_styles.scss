@@ -5,19 +5,11 @@
 }
 
 .theme-font-1 {
-  font-family: 'Spicy Rice', cursive !important;
+  font-family: 'Spicy Rice';
 }
 
 .theme-color-1 {
   color: #FFF !important;
-}
-
-.MuiButton-label {
-  font-family: cursive;
-}
-
-.MuiButton-containedSizeSmall {
-  border: 1px solid white;
 }
 
 @media (max-width: 768px) {
@@ -40,6 +32,10 @@
   }
   .MuiButton-contained {
     box-shadow: none;
+  }
+  .MuiButton-label {
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(2,136,209,1) 100%);
+
   }
   .dartBoard-root-16 {
     border: none;

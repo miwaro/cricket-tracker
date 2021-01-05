@@ -51,5 +51,8 @@
   }
 
 @media (max-width: 450px) {
+    .DartBoardPlayerControl {
+    border-left: 4px solid #FFF;
 
+  }
   }

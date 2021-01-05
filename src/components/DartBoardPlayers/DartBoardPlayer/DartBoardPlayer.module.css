@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 19px 0;
+    padding: 30px 0;
 }
 
 
@@ -45,6 +45,7 @@
       height: 55px;
       padding-right: 0;
       border-top: 4px solid #FFF;
+      border-left: 4px solid #FFF;
 
     }
     .name {
@@ -54,7 +55,6 @@
       border-bottom: 4px solid #FFF;
       display: grid;
       grid-template-columns: 1fr;
-      padding: 0;
     }
     .removeCircle {
       display: none !important;
@@ -63,7 +63,7 @@
       display: grid;
       grid-template-columns: 1fr;
       align-items: center;
-      border-left: 6px solid #ff0000de;
+      border-left: 8px solid #ff0000de;
       border-bottom: 4px solid #dbe4eb;
     }
     .resetGame {
@@ -72,3 +72,8 @@
     }
   }
 
+  @media (max-width: 450px) {
+    .removePlayer {
+      border-left: 4px solid #FFF;
+    }
+  }

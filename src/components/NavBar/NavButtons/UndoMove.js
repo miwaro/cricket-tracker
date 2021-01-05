@@ -23,8 +23,8 @@ const undoMoves = (props) => {
 
     return (
         <Button
-            style={{ fontFamily: 'cursive' }}
-            size="small"
+            // style={{ fontFamily: 'Spicy Rice' }}
+            // size="small"
             variant="contained"
             color='secondary'
             onClick={undoMoveHandler}>

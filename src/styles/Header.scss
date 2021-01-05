@@ -11,7 +11,6 @@
   transform: translate(0, 16px)
 }
 
-
 .Header-title {
   display: flex;
   box-sizing: border-box;
@@ -19,7 +18,7 @@
   background-color: rgba(0, 0, 0, 0.671);
   padding: 10px;
   justify-content: center;
-  font-family: cursive;
+  font-family: 'Spicy Rice';
   font-size: 40px;
   img {
     position: relative;
@@ -30,7 +29,7 @@
 }
 
 .Player-name {
-  font-family: cursive;
+  font-family: 'Spicy Rice';
 }
 
 @media (max-width: 1024px) {

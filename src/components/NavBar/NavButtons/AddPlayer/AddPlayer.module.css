@@ -13,6 +13,7 @@
 
 @media (max-width: 450px) {
     .addPlayer {
-      font-size: 10px !important;
+      padding-right: 0;
+      font-size: 12px !important;
     }
   }

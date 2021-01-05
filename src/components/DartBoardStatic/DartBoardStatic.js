@@ -37,13 +37,11 @@ const DartBoardStatic = (props) => {
 
             <div className={classes.randomizeTargets}>
                 <Button
-                    style={{ fontFamily: 'cursive' }}
-                    size="small"
                     variant="contained"
                     color='primary'
                     onClick={randomizeLabelHandler}>
-                    Randomize<br></br>Targets
-                        </Button>
+                    Randomize
+                </Button>
             </div>
 
 

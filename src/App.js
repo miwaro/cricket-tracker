@@ -10,14 +10,14 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       light: '01579b',
-      main: '#0277bd',
+      main: '#424242',
       dark: '#03a9f4',
       contrastText: '#FFF'
     },
     secondary: {
-      light: '#212121',
-      main: '#424242',
-      dark: '#616161',
+      light: 'rgb(255 0 0 / 87%)',
+      main: '#212121',
+      dark: 'rgb(255 0 0 / 87%)',
       contrastText: '#FFF'
     }
   },
@@ -25,6 +25,7 @@ const theme = createMuiTheme({
     useNextVariants: true,
   }
 });
+
 
 const App = () => {
   return (

@@ -22,7 +22,10 @@
     .randomizePlayers {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        border-bottom: 4px solid #ff0000de;
+        border-left: 4px solid #FFF;
+
+        border-bottom: 4px solid #FFF;
+
         padding: 0;
     }
     .reset {
