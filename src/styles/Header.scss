@@ -8,27 +8,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 18px;
+  transform: translate(0, 16px)
 }
 
+
 .Header-title {
-  margin-top: 12px;
-  margin-bottom: 10px;
   display: flex;
+  box-sizing: border-box;
+  width: 347px;
+  background-color: rgba(0, 0, 0, 0.671);
+  padding: 10px;
   justify-content: center;
-  font-family: 'Spicy Rice', cursive;
-  font-size: 60px;
-  text-shadow: -2px -2px 0 #01579b, 2px -2px 0 #0277bd, -2px 2px 0 #0288d1, 2px 2px 0 #039be5;
+  font-family: cursive;
+  font-size: 40px;
   img {
     position: relative;
-    width: 95px;
-    height: 95px;
+    width: 55px;
+    height: 60px;
     padding-right: 4px;
   }
 }
 
 .Player-name {
-  font-family: 'Spicy Rice', cursive;
+  font-family: cursive;
 }
 
 @media (max-width: 1024px) {

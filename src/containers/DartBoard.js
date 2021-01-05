@@ -10,9 +10,9 @@ const styles = {
     root: {
         backgroundColor: '#000',
         color: '#FFF',
-        borderRadius: 12,
+        borderRadius: '12px',
         opacity: .8,
-        border: '6px solid #FFF'
+        border: '8px solid #ff0000de'
     }
 }
 

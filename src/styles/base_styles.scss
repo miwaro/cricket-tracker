@@ -1,11 +1,23 @@
 @import './colors';
 
+* {
+  box-sizing: border-box;
+}
+
 .theme-font-1 {
   font-family: 'Spicy Rice', cursive !important;
 }
 
 .theme-color-1 {
   color: #FFF !important;
+}
+
+.MuiButton-label {
+  font-family: cursive;
+}
+
+.MuiButton-containedSizeSmall {
+  border: 1px solid white;
 }
 
 @media (max-width: 768px) {

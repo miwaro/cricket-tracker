@@ -18,39 +18,40 @@ const DartBoardStatic = (props) => {
     }
 
     const resetAudio = new Audio(reset);
-      
-    const playSound = audioFile => {if (!props.muted) audioFile.play();}
-    
-        return (
-            
-            <div className="Label-style">
 
-                <PlayersBox />
+    const playSound = audioFile => { if (!props.muted) audioFile.play(); }
 
-                    {props.labels.map((label, i) => (
-                        <DartBoardItem
-                            key={i}
-                            label={label}
-                            labelIndex={i}
-                        /> 
-                    ))}
+    return (
 
-                <div className={classes.randomizeTargets}>
-                        <Button
-                            size="small"
-                            variant="contained"
-                            color='primary'
-                            onClick={randomizeLabelHandler}>
-                            Randomize<br></br>Targets
+        <div className="Label-style">
+
+            <PlayersBox />
+
+            {props.labels.map((label, i) => (
+                <DartBoardItem
+                    key={i}
+                    label={label}
+                    labelIndex={i}
+                />
+            ))}
+
+            <div className={classes.randomizeTargets}>
+                <Button
+                    style={{ fontFamily: 'cursive' }}
+                    size="small"
+                    variant="contained"
+                    color='primary'
+                    onClick={randomizeLabelHandler}>
+                    Randomize<br></br>Targets
                         </Button>
-                </div>
-                    
-               
-                {props.players.length > 0 && <div className={classes.resetGame} style={{borderBottom:'4px solid #FFF'}}>
-                   <ResetBoard />
-                </div>}
             </div>
-        );
+
+
+            {props.players.length > 0 && <div className={classes.resetGame} style={{ borderBottom: '4px solid #FFF' }}>
+                <ResetBoard />
+            </div>}
+        </div>
+    );
 }
 
 const mapStateToProps = state => {
@@ -61,11 +62,11 @@ const mapStateToProps = state => {
         muted: state.muted
     }
 }
- 
+
 const mapDispatchToProps = dispatch => {
     return {
         onRandomizeLabels: () => dispatch(randomizeLabels())
     }
 }
-  
+
 export default connect(mapStateToProps, mapDispatchToProps)(DartBoardStatic);

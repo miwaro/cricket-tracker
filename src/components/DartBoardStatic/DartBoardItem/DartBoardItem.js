@@ -28,7 +28,7 @@ const DartBoardItem = (props) => {
     return (
         <>
             <div className={classes.numbers}>
-                {props.label !== 'B' && props.label !== 'Total' &&
+                {props.label !== '🎯' && props.label !== 'Total' &&
 
                     <ArrowLeftTwoToneIcon
                         className={classes.DartBoardItem}
@@ -36,7 +36,7 @@ const DartBoardItem = (props) => {
 
                 {props.label}
 
-                {props.label !== 'B' && props.label !== 'Total' &&
+                {props.label !== '🎯' && props.label !== 'Total' &&
                     <ArrowRightTwoToneIcon
                         className={classes.DartBoardItem}
                         onClick={incrementLabelHandler} />}

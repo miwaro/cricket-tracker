@@ -44,7 +44,9 @@ const dartBoardPlayers = (props) => {
 
                     Randomize<br></br>Players
                 </Button>
-                <span className={classes.reset}>
+                <span
+                    className={classes.reset}
+                >
                     <ResetBoard />
                 </span>
             </div>}

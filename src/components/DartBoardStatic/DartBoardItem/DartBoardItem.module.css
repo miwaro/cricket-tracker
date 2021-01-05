@@ -9,8 +9,7 @@
 }
 
 .numbers {
-    color: #0288d1;
-    font-size: 40px;
+    font-size: 39px;
     display: flex;
     cursor: pointer;
     justify-content: center;
@@ -20,8 +19,15 @@
 }
 
 .numbers:nth-of-type(9) {
+  font-size: 30px;
+  font-style: bold;
   color: white;
-  background-color: #0288d1;
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(2,136,209,1) 100%);
+  cursor: default;
+}
+
+.numbers:nth-of-type(8) {
+  cursor: default;
 }
 
 @media (max-width: 768px) {

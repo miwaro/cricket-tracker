@@ -16,13 +16,14 @@ const undoMoves = (props) => {
     }
 
     const randomizeAudio = new Audio(randomize);
-      
+
     const playSound = audioFile => {
         if (!props.muted) audioFile.play();
-        }
+    }
 
     return (
-        <Button 
+        <Button
+            style={{ fontFamily: 'cursive' }}
             size="small"
             variant="contained"
             color='secondary'
@@ -37,12 +38,12 @@ const mapStateToProps = state => {
         history: state.history,
         muted: state.muted
     }
-  }
+}
 
 const mapDispatchToProps = dispatch => {
     return {
         onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex))
     }
-  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(undoMoves);

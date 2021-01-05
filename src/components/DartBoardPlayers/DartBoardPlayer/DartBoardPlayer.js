@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
-import { updateScore, updateTotalScore, undoMove, removePlayer } from '../../../store/actions/actions';
+import { updateScore, undoMove, removePlayer } from '../../../store/actions/actions';
 import TotalScore from '../../DartBoardPlayers/TotalScore';
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 import classes from './DartBoardPlayer.module.css';
@@ -13,15 +13,10 @@ import reset from '../../../audioclips/navigation_transition-right.wav';
 
 function DartBoardPlayer(props) {
 
-
-
     const handleUpdateScore = (scoreIndex) => {
         props.onUpdateScore(props.playerIndex, scoreIndex)
     }
 
-    const handleUpdateTotalScore = (scoreIndex) => {
-        props.onUpdateTotalScore(props.playerIndex, scoreIndex)
-    }
     const removePlayerHandler = () => {
         if (!props.muted) playSound(resetAudio);
         props.onRemovePlayer(props.playerIndex)
@@ -34,10 +29,8 @@ function DartBoardPlayer(props) {
     }
 
     const getScore = () => {
-
         const player = props.players[props.playerIndex];
         const score = player.score.reduce((a, b) => a + b);
-        console.log(score);
         return score;
     }
 
@@ -57,7 +50,6 @@ function DartBoardPlayer(props) {
                     <div className={classes.name}
                         style={{
                             fontSize: props.players.length > 2 ? 27 : 34,
-                            color: '#039be5'
                         }}>
 
                         {props.player.name}
@@ -74,7 +66,6 @@ function DartBoardPlayer(props) {
                             scoreIndex={i}
                             totalScore={num}
                             onUpdateScore={handleUpdateScore}
-                            onUpdateTotalScore={handleUpdateTotalScore}
                         />
                     ))
                 }

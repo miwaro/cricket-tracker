@@ -10,14 +10,14 @@ class Header extends Component {
       <div className="Header-container">
         <div>
           <div className="Header-title-line-container">
-            <div className="Header-title theme-color-1"> 
+            <div className="Header-title theme-color-1">
               <span className={classes.simple}>Simple</span>
-              <img className={classes.darts} src={dartImg} alt="3 darts pointing downward"/>
+              <img className={classes.darts} src={dartImg} alt="3 darts pointing downward" />
               <span className={classes.cricket}>Cricket</span>
             </div>
           </div>
-            <Nav />
-        </div>   
+          <Nav />
+        </div>
       </div>
     );
   }

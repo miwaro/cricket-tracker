@@ -1,6 +1,7 @@
 .checkbox {
     display: flex;
     justify-content: center;
+    font-family: cursive;
     color: white;
     font-size: 13px;
     margin: .6rem;

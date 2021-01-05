@@ -6,7 +6,7 @@ import Checkbox from './components/Checkbox/Checkbox';
 import classes from './App.module.css';
 
 const theme = createMuiTheme({
-  
+
   palette: {
     primary: {
       light: '01579b',
@@ -31,13 +31,13 @@ const App = () => {
     <StylesProvider injectFirst>
       <MuiThemeProvider theme={theme}>
         <Header />
-        <div className={classes.DartBoardContainer}> 
+        <div className={classes.DartBoardContainer}>
           <DartBoard />
         </div>
         <Checkbox />
       </MuiThemeProvider>
     </StylesProvider>
-    
+
   );
 }
 
