@@ -50,4 +50,7 @@
     .DartBoardItem {
         font-size: 25px !important;
     }
+    .numbers:nth-of-type(9) {
+      font-size: 20px;
+    }
   }

@@ -23,8 +23,9 @@
 }
 
 @media (max-width: 450px) {
-.MuiSvgIcon-root {
-    font-size: 1.75em;
+
+  .MuiButton-containedSizeSmall {
+   padding: 10px 10px;
   }
   .MuiIconButton-root {
     padding: 0;
@@ -33,14 +34,9 @@
   .MuiButton-contained {
     box-shadow: none;
   }
-  .MuiButton-label {
-    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(2,136,209,1) 100%);
-
-  }
   .dartBoard-root-16 {
     border: none;
     border-top: 3px !important;
-    opacity: 1;
   }
 
 }

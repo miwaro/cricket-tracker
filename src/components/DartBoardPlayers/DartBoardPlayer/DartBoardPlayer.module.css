@@ -5,7 +5,7 @@
     align-items: center;
     height: 70px;
     border-bottom: 4px solid #FFF;
-    border-left: 8px solid #ff0000de;
+    border-left: 6px solid #ff0000de;
     padding-right: 8%;
 }
 
@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 0;
+    padding: 19px 0;
 }
 
 
@@ -63,7 +63,7 @@
       display: grid;
       grid-template-columns: 1fr;
       align-items: center;
-      border-left: 8px solid #ff0000de;
+      border-left: 6px solid #ff0000de;
       border-bottom: 4px solid #dbe4eb;
     }
     .resetGame {
