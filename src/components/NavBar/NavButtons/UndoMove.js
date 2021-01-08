@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import randomize from '../../../audioclips/undo.wav';
 
 import { undoMove } from '../../../store/actions/actions';
-import Button from '@material-ui/core/Button';
+import classes from './AddPlayer/AddPlayer.module.css'
 
 const undoMoves = (props) => {
 
@@ -22,14 +22,11 @@ const undoMoves = (props) => {
     }
 
     return (
-        <Button
-            // style={{ fontFamily: 'Audiowide' }}
-            // size="small"
-            variant="contained"
-            color='secondary'
+        <button
+            className="redButton"
             onClick={undoMoveHandler}>
-            Undo<br></br>Score
-        </Button>
+            Undo Score
+        </button>
     )
 }
 

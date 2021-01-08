@@ -1,9 +1,5 @@
 @import './colors';
 
-* {
-  box-sizing: border-box;
-}
-
 .theme-font-1 {
   font-family: 'Audiowide';
 }
@@ -12,14 +8,20 @@
   color: #FFF !important;
 }
 
+.MuiIconButton-root {
+  padding: 0;
+  box-shadow: none;
+}
+
 @media (max-width: 768px) {
-  .MuiSvgIcon-root {
-    font-size: 2.25em;
-  }
+  // .MuiSvgIcon-root {
+  //   font-size: 2.25em;
+  // }
   .MuiButtonBase-root {
     border-radius: 0;
     font-size: 0.75rem;
   }
+
 }
 
 @media (max-width: 450px) {
@@ -27,11 +29,7 @@
   .MuiButton-containedSizeSmall {
    padding: 7px 7px;
   }
-  .MuiIconButton-root {
-    padding: 0;
 
-    box-shadow: none;
-  }
   .MuiButton-contained {
     box-shadow: none;
   }

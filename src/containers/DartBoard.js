@@ -13,7 +13,7 @@ const styles = {
         borderRadius: '12px',
         opacity: .9,
         // border: '8px solid #ff0000de'
-        border: '12px solid #747474de'
+        // border: '12px solid #747474de'
 
     }
 }

@@ -1,10 +1,8 @@
 .addPlayer {
     transition: all .4s ease-in-out;
     cursor: pointer;
-    font-size: 65px;
-    padding-right: 10px;
+    font-size: 60px;
     padding-top: 5px
-
 }
 
 .addPlayer:hover {

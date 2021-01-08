@@ -5,29 +5,49 @@
     align-items: center;
     height: 70px;
     border-radius: 10px;
-    border: 4px solid #ff0000de;
-    padding-right: 8%;
-}
-
-.removePlayer {
-  display: none;
-}
-
-.removeCircle {
-    color: #FFF;
-    font-size: 28px !important;
-    cursor: pointer;
+    border-bottom: 4px solid #ff0000de;
+    border-left: 4px solid #ff0000de;
 }
 
 .resetGame {
   display: none;
 }
 
+.playerInfo {
+  font-size: 19px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 70px;
+  border-radius: 10px;
+  border-bottom: 2px solid steelblue;
+  cursor: default;
+}
+
 .randomizeTargets {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 19px 0;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+.randomizeTargets > button {
+  transition: all .4s ease-in-out;
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%);
+  cursor: pointer;
+  color: #FFF;
+  padding: 4px;
+  font-family: 'Audiowide';
+  font-size: 13px;
+  border-radius: 5%;
+  letter-spacing: 1px;
+}
+
+ .randomizeTargets > button:hover {
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(50, 98, 138) 100%);
 }
 
 
@@ -35,15 +55,18 @@
     .dartBoardPlayer{
       height: 55px;
     }
+    .playerInfo {
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 587px) {
     .randomizeTargets {
-        padding: 4px;
+      padding: 32px 15px;
     }
   }
 
   @media (max-width: 568px) {
-    .removeCircle {
-      display: none !important;
-    }
     .removePlayer {
       display: grid;
       grid-template-columns: 1fr;
@@ -71,8 +94,9 @@
     .randomizeTargets {
       display: grid;
       grid-template-columns: 1fr;
-      padding: 2px;
     }
   }
+
+
 
 

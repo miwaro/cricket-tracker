@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { resetBoard } from '../../../store/actions/actions';
-
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -17,7 +16,7 @@ const ResetBoard = (props) => {
         props.onResetBoard() && setOpen(false);
     }
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         playSound(resetAudio);
@@ -37,13 +36,14 @@ const ResetBoard = (props) => {
 
     return (
         <div>
-            <Button
+            <button
+                className="redButton"
                 style={{ width: '100%' }}
                 onClick={handleClickOpen}
-                variant="contained"
-                color='secondary'>
-                RESET<br></br>GAME
-            </Button>
+            >
+                Reset Game
+            </button>
+
             <Dialog
                 open={open}
                 onClose={handleClose}

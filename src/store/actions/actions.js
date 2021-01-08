@@ -22,14 +22,6 @@ export const updateScore = (playerIndex, scoreIndex) => {
     };
 };
 
-// export const updateTotalScore = (playerIndex, scoreIndex) => {
-//     return {
-//         type: actionTypes.UPDATE_TOTAL_SCORE,
-//         playerIndex,
-//         scoreIndex
-//     };
-// };
-
 export const undoMove = (playerIndex, scoreIndex) => {
     return {
         type: actionTypes.UNDO_MOVE,

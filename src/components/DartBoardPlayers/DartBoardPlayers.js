@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { randomizePlayersOrder } from '../../store/actions/actions';
 import randomize from '../../audioclips/randomize.wav';
 import UndoMove from '../NavBar/NavButtons/UndoMove';
-import Button from '@material-ui/core/Button';
 import ResetBoard from '../NavBar/NavButtons/ResetBoard';
 import DartBoardPlayer from './DartBoardPlayer/DartBoardPlayer';
 import classes from './DartBoardPlayers.module.css';
@@ -36,14 +35,13 @@ const dartBoardPlayers = (props) => {
 
             {props.players.length > 0 && <div className={classes.randomizePlayers}>
                 <UndoMove />
-                <Button
-                    size="small"
-                    variant="contained"
-                    color='primary'
-                    onClick={randomizePlayersHandler}>
+                <button
+                    className={classes.randomizeButton}
+                    onClick={randomizePlayersHandler}
+                >
+                    Randomize Players
+                </button>
 
-                    Randomize<br></br>Players
-                </Button>
                 <span
                     className={classes.reset}
                 >

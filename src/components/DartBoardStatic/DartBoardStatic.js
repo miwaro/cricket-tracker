@@ -3,12 +3,10 @@ import { connect } from 'react-redux';
 
 import { randomizeLabels } from '../../store/actions/actions';
 import DartBoardItem from './DartBoardItem/DartBoardItem';
-import Button from '@material-ui/core/Button';
 import PlayersBox from './PlayersBox/PlayersBox';
 import classes from '../DartBoardPlayers/DartBoardPlayer/DartBoardPlayer.module.css';
 import reset from '../../audioclips/randomize.wav';
 import ResetBoard from '../NavBar/NavButtons/ResetBoard';
-
 
 const DartBoardStatic = (props) => {
 
@@ -18,7 +16,6 @@ const DartBoardStatic = (props) => {
     }
 
     const resetAudio = new Audio(reset);
-
     const playSound = audioFile => { if (!props.muted) audioFile.play(); }
 
     return (
@@ -35,20 +32,19 @@ const DartBoardStatic = (props) => {
                 />
             ))}
 
+            {
+                props.players.length > 0 &&
+                <div className={classes.playerInfo}>
+                    Player Info
+                </div>
+            }
+
             <div className={classes.randomizeTargets}>
-                <Button
-
-                    variant="contained"
-                    color='primary'
+                <button
                     onClick={randomizeLabelHandler}>
-                    Randomize<br></br>Targets
-                </Button>
+                    Randomize Targets
+                </button>
             </div>
-
-
-            {props.players.length > 0 && <div className={classes.resetGame} style={{ borderBottom: '4px solid #FFF' }}>
-                <ResetBoard />
-            </div>}
         </div>
     );
 }

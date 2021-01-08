@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { addPlayer } from '../../../../store/actions/actions';
-
 import Button from '@material-ui/core/Button';
 import PersonAddSharpIcon from '@material-ui/icons/PersonAddSharp';
 import TextField from '@material-ui/core/TextField';
@@ -13,44 +12,42 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-
 import classes from './AddPlayer.module.css';
-
 import addplayer from '../../../../audioclips/addplayers.wav';
 import addplayers from '../../../../audioclips/notification_ambient.wav';
 
 const AddPlayer = (props) => {
-    
+
     const [open, setOpen] = useState(false);
     const [name, setName] = useState('');
-    
+
     const handleClickOpen = (event) => {
-        if (props.players.length > 3) {return;}
-            playSound(addplayerAudio);
-            setOpen(true);
-            event.stopPropagation();
+        if (props.players.length > 3) { return; }
+        playSound(addplayerAudio);
+        setOpen(true);
+        event.stopPropagation();
     }
-  
+
     const handleClose = () => {
-      setOpen(false);
+        setOpen(false);
     }
 
     const addPlayerHandler = () => {
         if (name === '') { return; }
         playSound(addplayersAudio);
         props.onPlayerAdded(name) && setOpen(false);
-    } 
+    }
 
     const addplayerAudio = new Audio(addplayer);
     const addplayersAudio = new Audio(addplayers);
-      
+
     const playSound = audioFile => {
         if (!props.muted) audioFile.play();
-        }
+    }
 
     return (
         <div>
-            < PersonAddSharpIcon className={classes.addPlayer} onClick={handleClickOpen}/>
+            < PersonAddSharpIcon className={classes.addPlayer} onClick={handleClickOpen} />
             <Dialog
                 open={open}
                 onClose={handleClose}
@@ -62,17 +59,17 @@ const AddPlayer = (props) => {
                         Please Enter Your Name
                     </DialogContentText>
                     <TextField
-                         onKeyPress={(ev) => {
+                        onKeyPress={(ev) => {
                             if (ev.key === 'Enter') {
-                              addPlayerHandler();
-                              ev.preventDefault();
+                                addPlayerHandler();
+                                ev.preventDefault();
                             }
-                          }}
+                        }}
 
-                          inputProps={{
+                        inputProps={{
                             maxLength: 12,
-                          }}
-                        
+                        }}
+
                         autoFocus
                         margin="dense"
                         id="name"
@@ -81,11 +78,11 @@ const AddPlayer = (props) => {
                         fullWidth
                         InputProps={{
                             startAdornment: (
-                              <InputAdornment position="start">
-                                <AccountCircle />
-                              </InputAdornment>
+                                <InputAdornment position="start">
+                                    <AccountCircle />
+                                </InputAdornment>
                             ),
-                          }}
+                        }}
                         onChange={e => setName(e.target.value)}
                     />
                 </DialogContent>
@@ -97,9 +94,9 @@ const AddPlayer = (props) => {
                         Yeah!
                     </Button>
                 </DialogActions>
-            </Dialog>     
+            </Dialog>
         </div>
-    ) 
+    )
 }
 
 const mapStateToProps = state => {
@@ -108,7 +105,7 @@ const mapStateToProps = state => {
         muted: state.muted
     }
 }
-    
+
 const mapDispatchToProps = dispatch => {
     return {
         onPlayerAdded: (name) => dispatch(addPlayer(name))

@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     players: [],
     history: [],
-    labels: [20, 19, 18, 17, 16, 15, '🎯', 'Total'],
+    labels: [20, 19, 18, 17, 16, 15, '🎯'],
     winningPlayerIndex: -1,
     muted: false
 };
@@ -55,9 +55,6 @@ const reducer = (state = initialState, action) => {
             map = {};
             labels = state.labels.map(label => {
                 if (label === '🎯') {
-                    return label;
-                }
-                if (label === 'Total') {
                     return label;
                 }
                 else {
@@ -167,7 +164,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 players,
                 winningPlayerIndex: -1,
-                labels: [20, 19, 18, 17, 16, 15, '🎯', 'Total']
+                labels: [20, 19, 18, 17, 16, 15, '🎯']
             }
 
         default:
