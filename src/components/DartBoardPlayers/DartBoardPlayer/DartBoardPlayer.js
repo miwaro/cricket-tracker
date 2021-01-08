@@ -32,6 +32,54 @@ function DartBoardPlayer(props) {
         const player = props.players[props.playerIndex];
         const score = player.score.reduce((a, b) => a + b);
         return score;
+
+    }
+
+    const getRank = () => {
+        const players = props.players.slice();
+        const scores = players.map(player => player.score.reduce((a, b) => a + b));  // [ 12, 4, 16]
+        const currentPlayerScore = scores[props.playerIndex]; // 12
+        scores.splice(props.playerIndex, 1); // [ 4, 16 ]
+        scores.sort((a, b) => b - a); // [ 16, 4 ]
+        let rank;
+        let i = 0;
+        while (!rank && i < scores.length) {
+            if (currentPlayerScore >= scores[i]) {
+                rank = i + 1; // rank = 2
+            }
+            i++;
+        }
+        if (!rank) {
+            rank = scores.length + 1;
+        }
+
+        if (rank === 1) {
+            rank = '1st'
+        } else if (rank === 2) {
+            rank = '2nd'
+        } else if (rank === 3) {
+            rank = '3rd'
+        } else if (rank === 4) {
+            rank = '4th'
+        }
+        return rank; // 2
+
+
+        // const playerArr = [];
+        // const score = getScore();
+        // const allPlayers = [...props.players];
+        // let len = allPlayers.length;
+
+        // for (let i = 0; i < len; i += 1) {
+        //     const newScores = allPlayers[i].score.reduce((a, b) => a + b);
+        //     playerArr.push(newScores);
+        // }
+
+        // const sortedScores = playerArr.sort((a, b) => b - a);
+
+        // const found = sortedScores.findIndex(element => element === score);
+
+        // return found + 1;
     }
 
     return (
@@ -72,6 +120,7 @@ function DartBoardPlayer(props) {
 
                 < TotalScore
                     score={getScore()}
+                    rank={getRank()}
                 />
 
                 <div className={classes.removePlayer}>

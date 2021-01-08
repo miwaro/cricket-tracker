@@ -23,7 +23,7 @@ const undoMoves = (props) => {
 
     return (
         <Button
-            // style={{ fontFamily: 'Spicy Rice' }}
+            // style={{ fontFamily: 'Audiowide' }}
             // size="small"
             variant="contained"
             color='secondary'

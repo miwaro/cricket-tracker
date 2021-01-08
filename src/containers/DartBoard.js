@@ -11,8 +11,10 @@ const styles = {
         backgroundColor: '#000',
         color: '#FFF',
         borderRadius: '12px',
-        opacity: .8,
-        border: '8px solid #ff0000de'
+        opacity: .9,
+        // border: '8px solid #ff0000de'
+        border: '12px solid #747474de'
+
     }
 }
 

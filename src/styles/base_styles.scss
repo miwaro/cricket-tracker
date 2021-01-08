@@ -5,7 +5,7 @@
 }
 
 .theme-font-1 {
-  font-family: 'Spicy Rice';
+  font-family: 'Audiowide';
 }
 
 .theme-color-1 {
@@ -25,10 +25,11 @@
 @media (max-width: 450px) {
 
   .MuiButton-containedSizeSmall {
-   padding: 10px 10px;
+   padding: 7px 7px;
   }
   .MuiIconButton-root {
     padding: 0;
+
     box-shadow: none;
   }
   .MuiButton-contained {
@@ -36,6 +37,7 @@
   }
   .dartBoard-root-16 {
     border: none;
+    border-radius: none;
     border-top: 3px !important;
   }
 

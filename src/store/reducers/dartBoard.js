@@ -167,7 +167,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 players,
                 winningPlayerIndex: -1,
-                labels: [20, 19, 18, 17, 16, 15, 'B', 'Total']
+                labels: [20, 19, 18, 17, 16, 15, '🎯', 'Total']
             }
 
         default:

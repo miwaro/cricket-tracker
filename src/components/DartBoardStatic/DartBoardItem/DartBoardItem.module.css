@@ -15,14 +15,21 @@
     justify-content: center;
     align-items: center;
     height: 70px;
+    border-radius: 10px;
     border-bottom: 4px solid #FFF;
+}
+
+.numbers:nth-of-type(8) {
+  border-bottom: none;
 }
 
 .numbers:nth-of-type(9) {
   font-size: 30px;
+  border: 4px solid #ff0000de;
   font-style: bold;
   color: white;
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(2,136,209,1) 100%);
+  /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(2,136,209,1) 100%); */
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%);
   cursor: default;
 }
 

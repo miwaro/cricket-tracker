@@ -4,8 +4,8 @@
     justify-content: center;
     align-items: center;
     height: 70px;
-    border-bottom: 4px solid #FFF;
-    border-left: 6px solid #ff0000de;
+    border-radius: 10px;
+    border: 4px solid #ff0000de;
     padding-right: 8%;
 }
 
@@ -40,22 +40,7 @@
     }
   }
 
-  @media (max-width: 450px) {
-    .dartBoardPlayer{
-      height: 55px;
-      padding-right: 0;
-      border-top: 4px solid #FFF;
-      border-left: 4px solid #FFF;
-
-    }
-    .name {
-        font-size: 16px !important;
-    }
-    .randomizeTargets {
-      border-bottom: 4px solid #FFF;
-      display: grid;
-      grid-template-columns: 1fr;
-    }
+  @media (max-width: 568px) {
     .removeCircle {
       display: none !important;
     }
@@ -63,8 +48,8 @@
       display: grid;
       grid-template-columns: 1fr;
       align-items: center;
-      border-left: 6px solid #ff0000de;
-      border-bottom: 4px solid #dbe4eb;
+      border-left: none;
+      border-bottom: none;
     }
     .resetGame {
       display: grid;
@@ -73,7 +58,21 @@
   }
 
   @media (max-width: 450px) {
-    .removePlayer {
-      border-left: 4px solid #FFF;
+    .dartBoardPlayer{
+      height: 55px;
+      padding-right: 0;
+      border-radius: 10px 10px 0 0;
+      border-top: none;
+      border-left: 4px solid #ff0000de;
+    }
+    .name {
+        font-size: 16px !important;
+    }
+    .randomizeTargets {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 2px;
     }
   }
+
+

@@ -2,14 +2,14 @@
 import React from 'react'
 import classes from './DartBoardPlayer/DartBoardPlayerControl/DartBoardPlayerControl.module.css';
 
-export const TotalScore = ({ score }) => {
+export const TotalScore = ({ score, rank }) => {
 
     return (
         <div
             className={classes.DartBoardPlayerControl}
-            style={{ fontSize: '28px' }}
+
         >
-            {`${score}/21`}
+            {`${score}/21 \u00A0 ${rank}`}
         </div>
     )
 }

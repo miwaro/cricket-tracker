@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 
@@ -55,6 +55,7 @@ const DartBoardPlayerControl = (props) => {
 
                 {props.score === 3 &&
                     <HighlightOffIcon
+                        className={classes.complete}
                         style={{
                             cursor: 'pointer',
                             color: '#FFF',

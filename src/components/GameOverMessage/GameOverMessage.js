@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import classes from './GameOverMessage.module.css';
 
 const GameOverMessage = (props) => {
-    
+
     const [open, setOpen] = useState(false);
     const [winningPlayerIndex, setWinnningPlayerIndex] = useState(-1);
     const [winningPlayerName, setWinnningPlayerName] = useState('');
@@ -21,18 +21,18 @@ const GameOverMessage = (props) => {
             setWinnningPlayerName(name);
 
             handleOpen();
-            
+
         } else if (state.winningPlayerIndex !== winningPlayerIndex) {
             setWinnningPlayerIndex(state.winningPlayerIndex);
         }
     });
 
     const handleOpen = () => {
-      setOpen(true);
+        setOpen(true);
     };
-  
+
     const handleClose = () => {
-      setOpen(false);
+        setOpen(false);
     };
 
     return (
@@ -44,16 +44,16 @@ const GameOverMessage = (props) => {
                 aria-labelledby="alert-dialog-title"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {`${winningPlayerName} hit all the targets!!!`}
-                </DialogTitle>              
+                    {`${winningPlayerName} hit all the targets!!! 🏆`}
+                </DialogTitle>
                 <DialogActions>
-                <Button onClick={handleClose} color="secondary">
-                    Close
+                    <Button onClick={handleClose} color="secondary">
+                        Close
                 </Button>
                 </DialogActions>
-            </Dialog>     
+            </Dialog>
         </div>
-    ) 
+    )
 }
 
 export default GameOverMessage;

@@ -12,7 +12,7 @@ import reset from '../../../audioclips/ui_loading.wav';
 
 
 const ResetBoard = (props) => {
-    
+
     const resetBoardHandler = () => {
         props.onResetBoard() && setOpen(false);
     }
@@ -23,27 +23,26 @@ const ResetBoard = (props) => {
         playSound(resetAudio);
         setOpen(true);
     };
-  
+
     const handleClose = () => {
-      setOpen(false);
+        setOpen(false);
     };
 
-    
+
     const resetAudio = new Audio(reset);
-      
+
     const playSound = audioFile => {
         if (!props.muted) audioFile.play();
-        }
-        
+    }
+
     return (
         <div>
             <Button
-                style={{width: '100%'}}
-                size="small"
+                style={{ width: '100%' }}
                 onClick={handleClickOpen}
                 variant="contained"
                 color='secondary'>
-                    RESET<br></br>GAME
+                RESET<br></br>GAME
             </Button>
             <Dialog
                 open={open}
@@ -51,21 +50,21 @@ const ResetBoard = (props) => {
                 aria-labelledby="alert-dialog-title"
             >
                 <DialogTitle id="alert-dialog-title">{"Are you sure you want to reset the targets and scores?"}</DialogTitle>
-                
+
                 <DialogActions>
-                <Button onClick={handleClose} color="secondary">
-                    No
+                    <Button onClick={handleClose} color="secondary">
+                        No
                 </Button>
-                <Button 
-                    size="small"
-                    onClick={resetBoardHandler} 
-                    color="primary">
-                    Yes
+                    <Button
+                        size="small"
+                        onClick={resetBoardHandler}
+                        color="primary">
+                        Yes
                 </Button>
                 </DialogActions>
-            </Dialog>    
-        </div> 
-    ) 
+            </Dialog>
+        </div>
+    )
 }
 
 const mapStateToProps = state => {
@@ -74,7 +73,7 @@ const mapStateToProps = state => {
         muted: state.muted
     };
 }
-    
+
 const mapDispatchToProps = dispatch => {
     return {
         onResetBoard: () => dispatch(resetBoard()),

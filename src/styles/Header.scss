@@ -14,11 +14,12 @@
 .Header-title {
   display: flex;
   box-sizing: border-box;
-  width: 347px;
+  width: 380px;
+  text-shadow: 1px 1px 0px #ff0000de;
+  font-family: 'Audiowide', 'Audiowide';
   background-color: rgba(0, 0, 0, 0.671);
   padding: 10px;
   justify-content: center;
-  font-family: 'Spicy Rice';
   font-size: 40px;
   img {
     position: relative;
@@ -29,22 +30,18 @@
 }
 
 .Player-name {
-  font-family: 'Spicy Rice';
-}
-
-@media (max-width: 1024px) {
-  .Header-title-line-container {
-    margin-top: 130px;
-  }
-
+  font-family: 'Audiowide';
 }
 
 @media (max-width: 768px) {
+    .Header-title-line-container {
+    margin-top: 100px;
+  }
   .Header-title{
-    font-size: 50px;
+    font-size: 30px;
     img {
-      width: 75px;
-      height: 75px;
+      width: 45px;
+      height: 45px;
     }
   }
 }

@@ -1,15 +1,46 @@
 .DartBoardPlayerControl {
     display: flex;
+    font-size: 28px;
     justify-content: center;
     align-items: center;
     height: 70px;
+    border-radius: 10px;
     border-bottom: 4px solid #FFF;
-    border-left: 6px solid #ff0000de;
+    border-left: 4px solid #ff0000de;
+    border-right: 4px solid #ff0000de;
+}
+
+.Total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  border-radius: 10px;
+  border-bottom: 4px solid #FFF;
+  border-left: 4px solid #ff0000de;
+  border-right: 4px solid #ff0000de;
+}
+
+.DartBoardPlayerControl:nth-of-type(8) {
+  border-bottom: 4px solid #ff0000de;
+}
+
+.DartBoardPlayerControl:nth-of-type(9) {
+  border-bottom: 4px solid #ff0000de;
 }
 
 .circle {
+    border-radius: 50%;
+    /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(2,136,209,1) 100%); */
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%);
     cursor: pointer;
     font-size: 35px !important;
+}
+
+.complete {
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(2, 209, 30) 100%);
+  
 }
 
 .close {
@@ -40,6 +71,7 @@
   }
     .DartBoardPlayerControl{
       height: 50px;
+      font-size: 16px;
     }
     .circle {
         font-size: 25px !important;
@@ -52,7 +84,7 @@
 
 @media (max-width: 450px) {
     .DartBoardPlayerControl {
-    border-left: 4px solid #FFF;
+    /* border-left: 4px solid #FFF; */
 
   }
   }
