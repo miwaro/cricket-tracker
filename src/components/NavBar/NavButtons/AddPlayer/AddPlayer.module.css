@@ -9,9 +9,8 @@
     color: rgba(204, 204, 204, 0.692);
 };
 
-@media (max-width: 450px) {
-    .addPlayer {
-      padding-right: 0;
-      font-size: 12px !important;
-    }
+@media (max-width: 768px) {
+  .addPlayer {
+    font-size: 25px;
   }
+}

@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux';
 
 import classes from './DartBoardPlayer/DartBoardPlayerControl/DartBoardPlayerControl.module.css';
-import reset from '../../audioclips/navigation_transition-right.wav';
+import remove from '../../audioclips/navigation_transition-right.wav';
+import reset from '../../audioclips/ui_loading.wav';
+
 import { removePlayer } from '../../store/actions/actions';
 
 import Tooltip from '@material-ui/core/Tooltip';
@@ -15,19 +17,17 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 const TotalScore = (props) => {
 
-    console.log(props)
     const removePlayerHandler = () => {
-        if (!props.muted) playSound(resetAudio);
+        if (!props.muted) playSound(removeAudio);
         props.onRemovePlayer(props.playerIndex) && setOpen(false);
     }
 
     const resetAudio = new Audio(reset);
+    const removeAudio = new Audio(remove);
 
     const playSound = audioFile => {
         audioFile.play();
     }
-
-
 
     const [open, setOpen] = useState(false);
 

@@ -14,30 +14,12 @@
 }
 
 @media (max-width: 768px) {
-  // .MuiSvgIcon-root {
-  //   font-size: 2.25em;
-  // }
+  .MuiSvgIcon-root {
+    font-size: 2.25em;
+  }
   .MuiButtonBase-root {
     border-radius: 0;
     font-size: 0.75rem;
   }
 
 }
-
-@media (max-width: 450px) {
-
-  .MuiButton-containedSizeSmall {
-   padding: 7px 7px;
-  }
-
-  .MuiButton-contained {
-    box-shadow: none;
-  }
-  .dartBoard-root-16 {
-    border: none;
-    border-radius: none;
-    border-top: 3px !important;
-  }
-
-}
-

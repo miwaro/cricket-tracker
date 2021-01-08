@@ -1,22 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { randomizeLabels } from '../../store/actions/actions';
 import DartBoardItem from './DartBoardItem/DartBoardItem';
 import PlayersBox from './PlayersBox/PlayersBox';
 import classes from '../DartBoardPlayers/DartBoardPlayer/DartBoardPlayer.module.css';
-import reset from '../../audioclips/randomize.wav';
-import ResetBoard from '../NavBar/NavButtons/ResetBoard';
 
 const DartBoardStatic = (props) => {
-
-    const randomizeLabelHandler = () => {
-        props.onRandomizeLabels();
-        playSound(resetAudio);
-    }
-
-    const resetAudio = new Audio(reset);
-    const playSound = audioFile => { if (!props.muted) audioFile.play(); }
 
     return (
 
@@ -34,17 +23,15 @@ const DartBoardStatic = (props) => {
 
             {
                 props.players.length > 0 &&
-                <div className={classes.playerInfo}>
-                    Player Info
-                </div>
+                <>
+                    <div className={classes.playerInfo}>
+                        Player Info
+                    </div>
+                    <div className={classes.playerInfo}>
+                        Actions
+                    </div>
+                </>
             }
-
-            <div className={classes.randomizeTargets}>
-                <button
-                    onClick={randomizeLabelHandler}>
-                    Randomize Targets
-                </button>
-            </div>
         </div>
     );
 }
@@ -58,10 +45,5 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onRandomizeLabels: () => dispatch(randomizeLabels())
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(DartBoardStatic);
+export default connect(mapStateToProps)(DartBoardStatic);

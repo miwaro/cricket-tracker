@@ -21,6 +21,7 @@
   align-items: center;
   text-align: center;
   height: 70px;
+  padding: 1px 0;
   border-radius: 10px;
   border-bottom: 2px solid steelblue;
   cursor: default;
@@ -30,7 +31,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 20px;
+    padding: 20px 0;
     border-radius: 10px;
 }
 
@@ -62,7 +63,7 @@
 
   @media (max-width: 587px) {
     .randomizeTargets {
-      padding: 32px 15px;
+      padding: 35px 15px;
     }
   }
 

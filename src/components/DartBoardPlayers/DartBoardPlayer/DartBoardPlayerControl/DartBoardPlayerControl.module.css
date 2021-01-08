@@ -24,13 +24,8 @@
   border-left: 4px solid #ff0000de;
 }
 
-.DartBoardPlayerControl:nth-of-type(8) {
-  border-bottom: 4px solid #ff0000de;
-}
-
 .DartBoardPlayerControl:nth-of-type(9) {
   justify-content: space-evenly;
-  border-bottom: 4px solid #ff0000de;
   border-left: 4px solid #ff0000de;
 }
 

@@ -22,5 +22,14 @@
 @media (max-width: 450px) {
     .Label-style {
         font-family: 'Audiowide';
-      }    
+      }
+      .redButton {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 393px) {
+    .redButton {
+        font-size: 10px;
+    }
 }

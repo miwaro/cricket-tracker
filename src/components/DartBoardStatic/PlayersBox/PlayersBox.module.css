@@ -13,10 +13,3 @@
       height: 55px;
     }
   }
-
-  @media (max-width: 450px) {
-    .PlayersBox{
-      border-top: none;
-      border-radius: 0 10px 0 0;
-    }
-  }
