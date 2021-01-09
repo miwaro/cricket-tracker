@@ -22,7 +22,7 @@
     padding: 4px;
     font-family: 'Audiowide';
     font-size: 13px;
-    border-radius: 5%;
+    border-radius: 10px;
     letter-spacing: 1px;
 }
 
@@ -46,7 +46,8 @@
     .randomizePlayers {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding: 0;
+        grid-row-gap: 3px;
+        padding: 3px;
     }
     .randomizeButton {
         font-size: 11px;

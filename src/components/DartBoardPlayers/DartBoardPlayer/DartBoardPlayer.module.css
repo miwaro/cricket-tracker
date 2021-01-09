@@ -43,7 +43,7 @@
   padding: 4px;
   font-family: 'Audiowide';
   font-size: 13px;
-  border-radius: 5%;
+  border-radius: 10px;
   letter-spacing: 1px;
 }
 
@@ -85,12 +85,14 @@
     .dartBoardPlayer{
       height: 55px;
       padding-right: 0;
-      border-radius: 10px 10px 0 0;
       border-top: none;
       border-left: 4px solid #ff0000de;
     }
     .name {
         font-size: 16px !important;
+    }
+    .playerInfo {
+      height: 53px;
     }
     .randomizeTargets {
       display: grid;

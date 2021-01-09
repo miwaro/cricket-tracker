@@ -59,7 +59,7 @@ const DartBoardPlayerControl = (props) => {
                         style={{
                             cursor: 'pointer',
                             color: '#FFF',
-                            fontSize: '40'
+                            fontSize: '36'
                         }}
                     />}
             </div>
