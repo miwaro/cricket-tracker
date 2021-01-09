@@ -12,9 +12,9 @@ const styles = {
         color: '#FFF',
         borderRadius: '12px',
         opacity: .9,
-        // border: '8px solid #ff0000de'
-        // border: '12px solid #747474de'
-
+        borderLeft: '2px solid steelblue',
+        borderTop: '2px solid steelblue',
+        borderRight: '2px solid steelblue'
     }
 }
 
