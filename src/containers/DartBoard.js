@@ -11,10 +11,9 @@ const styles = {
         backgroundColor: '#000',
         color: '#FFF',
         borderRadius: '12px',
-        opacity: .9,
-        borderLeft: '2px solid steelblue',
-        borderTop: '2px solid steelblue',
-        borderRight: '2px solid steelblue'
+        opacity: .95,
+        padding: '10px',
+        border: '2px solid #ff0000de'
     }
 }
 

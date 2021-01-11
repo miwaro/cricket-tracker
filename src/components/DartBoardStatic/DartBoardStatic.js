@@ -27,7 +27,7 @@ const DartBoardStatic = (props) => {
                     <div className={classes.playerInfo}>
                         Player Info
                     </div>
-                    <div className={classes.playerInfo}>
+                    <div className={classes.actions}>
                         Actions
                     </div>
                 </>

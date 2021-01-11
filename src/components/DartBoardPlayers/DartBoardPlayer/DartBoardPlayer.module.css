@@ -9,12 +9,12 @@
     border-left: 4px solid #ff0000de;
 }
 
-.resetGame {
-  display: none;
+.dartBoardPlayer:nth-child(2n+1) {
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%) !important;
 }
 
-.Player-name {
-  background-color:blue;
+.resetGame {
+  display: none;
 }
 
 .playerInfo {
@@ -29,6 +29,25 @@
   border-radius: 10px;
   border-bottom: 2px solid steelblue;
   cursor: default;
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%);
+  /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(100, 5, 5) 100%); */
+
+}
+
+.actions {
+  font-size: 19px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 70px;
+  padding: 1px 0;
+  border-radius: 10px;
+  cursor: default;
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(138, 6, 6) 100%);
+  /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%); */
+
 }
 
 .randomizeTargets {
@@ -61,6 +80,11 @@
       height: 55px;
     }
     .playerInfo {
+      font-size: 17px;
+      height: 50px;
+    }
+    .actions {
+      font-size: 16px;
       height: 50px;
     }
     .name {
@@ -99,6 +123,11 @@
         font-size: 18px !important;
     }
     .playerInfo {
+      font-size: 16px;
+      height: 53px;
+    }
+    .actions {
+      font-size: 16px;
       height: 53px;
     }
     .randomizeTargets {

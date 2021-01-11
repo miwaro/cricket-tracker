@@ -27,6 +27,7 @@
 .DartBoardPlayerControl:nth-of-type(9) {
   justify-content: space-evenly;
   border-left: 4px solid #ff0000de;
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(138, 6, 6) 100%);
 }
 
 .circle {

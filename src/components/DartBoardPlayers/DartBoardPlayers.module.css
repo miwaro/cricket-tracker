@@ -10,8 +10,8 @@
     align-items: center;
     border-radius: 10px;
     border-left: 4px solid #ff0000de;
-    border-bottom: 2px solid steelblue;
     padding: 22px 0;
+    background-color: rgb(20, 20, 20);
 }
 
 .randomizeButton {
