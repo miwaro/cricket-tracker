@@ -53,13 +53,14 @@ const ResetBoard = (props) => {
                 <DialogActions>
                     <Button onClick={handleClose} color="secondary">
                         No
-                </Button>
+                    </Button>
                     <Button
                         size="small"
                         onClick={resetBoardHandler}
-                        color="primary">
+                        color="primary"
+                    >
                         Yes
-                </Button>
+                    </Button>
                 </DialogActions>
             </Dialog>
         </div>
