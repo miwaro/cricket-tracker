@@ -29,8 +29,14 @@
   }
 }
 
-.Player-name {
+.Player-name{
   font-family: 'Audiowide';
+}
+
+.Player-name:nth-child(2n){
+  font-family: 'Audiowide';
+  // background-color: rgb(31, 30, 30);
+  background-color: rgb(20, 20, 20);
 }
 
 @media (max-width: 768px) {

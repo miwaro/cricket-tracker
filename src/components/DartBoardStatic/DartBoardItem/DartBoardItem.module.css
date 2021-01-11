@@ -50,7 +50,7 @@
 
   @media (max-width: 450px) {
     .numbers {
-      font-size: 25px;
+      font-size: 21px;
     }
     .DartBoardItem {
         font-size: 25px !important;

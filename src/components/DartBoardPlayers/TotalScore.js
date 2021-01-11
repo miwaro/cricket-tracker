@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 import classes from './DartBoardPlayer/DartBoardPlayerControl/DartBoardPlayerControl.module.css';
 import remove from '../../audioclips/navigation_transition-right.wav';
 import reset from '../../audioclips/ui_loading.wav';
-
 import { removePlayer } from '../../store/actions/actions';
-
 import Tooltip from '@material-ui/core/Tooltip';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 import IconButton from '@material-ui/core/IconButton';
@@ -45,26 +43,12 @@ const TotalScore = (props) => {
         <div
             className={classes.DartBoardPlayerControl}
         >
-            {
-                props.players.length > 1 &&
-                <div>
-                    {`Total:\u00A0${props.score}/21 \u00A0`}
-                    {`Rank:\u00A0${props.rank} \u00A0`}
-                </div>
-
-            }
-
-            {props.players.length <= 1 &&
-                <>
-                    <span>
-                        {`Total:\u00A0${props.score}/21 \u00A0`}
-                    </span>
-                    <span>
-                        {`Rank:\u00A0${props.rank} \u00A0`}
-                    </span>
-                </>
-            }
-
+            <div>
+                {`${props.score}/21 \u00A0`}
+            </div>
+            <div>
+                {`\u00A0${props.rank} \u00A0`}
+            </div>
             <Tooltip title="Remove Player" placement="top">
                 <IconButton onClick={handleClickOpen} aria-label="delete">
                     <RemoveCircleIcon
