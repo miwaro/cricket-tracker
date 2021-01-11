@@ -38,7 +38,7 @@ function DartActions(props) {
                     <button
                         className={classes.randomizeButton}
                         onClick={randomizeLabelHandler}>
-                        Randomize Targets
+                        Randomize<br></br>Targets
                     </button>
                 </div>
                 <UndoMove />
@@ -46,7 +46,7 @@ function DartActions(props) {
                     className={classes.randomizeButton}
                     onClick={randomizePlayersHandler}
                 >
-                    Randomize Players
+                    Randomize<br></br>Players
                 </button>
 
                 <span

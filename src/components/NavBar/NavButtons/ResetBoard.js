@@ -38,10 +38,9 @@ const ResetBoard = (props) => {
         <div>
             <button
                 className="redButton"
-                style={{ width: '100%' }}
                 onClick={handleClickOpen}
             >
-                Reset Game
+                Reset<br></br>Game
             </button>
 
             <Dialog

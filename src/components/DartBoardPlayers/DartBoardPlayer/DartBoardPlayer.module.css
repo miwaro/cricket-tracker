@@ -43,10 +43,7 @@
   cursor: default;
   border-right: 2px solid black;
   margin-top: 10px;
-  /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(138, 6, 6) 100%); */
   background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(219, 32, 32) 100%);
-
-  
 }
 
 .randomizeTargets {
@@ -66,6 +63,8 @@
   font-family: 'Audiowide';
   font-size: 13px;
   border-radius: 10px;
+  border: none !important;
+  outline:none;
   letter-spacing: 1px;
 }
 
@@ -84,7 +83,7 @@
     }
     .actions {
       font-size: 16px;
-      height: 50px;
+      height: 64px;
     }
     .name {
       font-size: 20px !important;
@@ -116,18 +115,17 @@
       height: 55px;
       padding-right: 0;
       border-top: none;
-      border-left: 4px solid #ff0000de;
     }
     .name {
         font-size: 18px !important;
     }
     .playerInfo {
       font-size: 16px;
-      height: 53px;
+      height: 50px;
     }
     .actions {
       font-size: 16px;
-      height: 53px;
+      height: 59px;
     }
     .randomizeTargets {
       display: grid;

@@ -45,8 +45,11 @@ const AddPlayer = (props) => {
         if (!props.muted) audioFile.play();
     }
 
+
     return (
+
         <div>
+
             < PersonAddSharpIcon className={classes.addPlayer} onClick={handleClickOpen} />
             <Dialog
                 open={open}

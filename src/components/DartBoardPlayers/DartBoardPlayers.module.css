@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 21px 0;
+    padding: 15px 0;
     margin-top: 9px;
     background-color: rgb(20, 20, 20);
 }
@@ -22,6 +22,8 @@
     padding: 4px;
     font-family: 'Audiowide';
     font-size: 13px;
+    border: none;
+    outline:none;
     letter-spacing: 1px;
 }
 
@@ -31,23 +33,11 @@
 
   @media (max-width: 768px) {
       .randomizePlayers {
-          padding: 12px 0;
+          padding: 10px 0;
       }
   }
 
-  @media (max-width: 734px) {
-    .randomizePlayers {
-        padding: 3px 0;
-    }
-}
-
   @media (max-width: 450px) {
-    .randomizePlayers {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-row-gap: 3px;
-        padding: 3px;
-    }
     .randomizeButton {
         font-size: 10px;
     }
@@ -56,5 +46,8 @@
   @media (max-width: 393px) {
     .randomizeButton {
         font-size: 8px;
+    }
+    .randomizePlayers {
+        padding: 12px 0;
     }
 }

@@ -25,7 +25,7 @@ const undoMoves = (props) => {
         <button
             className="redButton"
             onClick={undoMoveHandler}>
-            Undo Score
+            Undo<br></br>Score
         </button>
     )
 }
