@@ -4,9 +4,8 @@
     justify-content: center;
     align-items: center;
     height: 70px;
-    border-radius: 10px;
-    border-bottom: 4px solid #ff0000de;
-    border-left: 4px solid #ff0000de;
+    border-bottom: 2px solid #ff0000de;
+    border-left: 2px solid #ff0000de;
 }
 
 .dartBoardPlayer:nth-child(2n+1) {
@@ -25,13 +24,11 @@
   align-items: center;
   text-align: center;
   height: 70px;
-  padding: 1px 0;
-  border-radius: 10px;
-  border-bottom: 2px solid steelblue;
+  border-radius: 10px 0 0 10px;
+  border-right: 2px solid black;
+  margin-top: 10px;
   cursor: default;
   background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%);
-  /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(100, 5, 5) 100%); */
-
 }
 
 .actions {
@@ -42,12 +39,14 @@
   align-items: center;
   text-align: center;
   height: 70px;
-  padding: 1px 0;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px;
   cursor: default;
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(138, 6, 6) 100%);
-  /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%); */
+  border-right: 2px solid black;
+  margin-top: 10px;
+  /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(138, 6, 6) 100%); */
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(219, 32, 32) 100%);
 
+  
 }
 
 .randomizeTargets {

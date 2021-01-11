@@ -44,10 +44,10 @@ const TotalScore = (props) => {
             className={classes.DartBoardPlayerControl}
         >
             <div>
-                {`${props.score}/21 \u00A0`}
+                {`${props.score}/21`}
             </div>
             <div>
-                {`\u00A0${props.rank} \u00A0`}
+                {`${props.rank}`}
             </div>
             <Tooltip title="Remove Player" placement="top">
                 <IconButton onClick={handleClickOpen} aria-label="delete">

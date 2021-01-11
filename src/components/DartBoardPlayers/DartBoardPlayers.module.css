@@ -8,9 +8,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 10px;
-    border-left: 4px solid #ff0000de;
-    padding: 22px 0;
+    padding: 21px 0;
+    margin-top: 9px;
     background-color: rgb(20, 20, 20);
 }
 
@@ -19,10 +18,10 @@
     background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%);
     cursor: pointer;
     color: #FFF;
+    border-radius: 10px;
     padding: 4px;
     font-family: 'Audiowide';
     font-size: 13px;
-    border-radius: 10px;
     letter-spacing: 1px;
 }
 
@@ -50,13 +49,12 @@
         padding: 3px;
     }
     .randomizeButton {
-        font-size: 11px;
+        font-size: 10px;
     }
-
-    @media (max-width: 393px) {
-        .randomizeButton {
-            font-size: 10px;
-        }
-    }
-
   }
+
+  @media (max-width: 393px) {
+    .randomizeButton {
+        font-size: 8px;
+    }
+}

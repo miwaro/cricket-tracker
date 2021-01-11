@@ -11,9 +11,9 @@ const styles = {
         backgroundColor: '#000',
         color: '#FFF',
         borderRadius: '12px',
-        opacity: .95,
-        padding: '10px',
-        border: '2px solid #ff0000de'
+        opacity: .97,
+        padding: '5px',
+        border: '4px double #ff0000de'
     }
 }
 
