@@ -48,7 +48,10 @@ const ResetBoard = (props) => {
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
             >
-                <DialogTitle id="alert-dialog-title">{"Are you sure you want to reset the targets and scores?"}</DialogTitle>
+                <DialogTitle
+                    className="modalStyle"
+                    id="alert-dialog-title">{"Are you sure you want to reset the targets and scores?"}
+                </DialogTitle>
 
                 <DialogActions>
                     <Button onClick={handleClose} color="secondary">

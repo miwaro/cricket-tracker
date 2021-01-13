@@ -31,7 +31,6 @@ const dartBoard = (props) => {
                         <DartBoardPlayers />
                     </Grid>
                 </Grid>
-
             </Grid>
         </div>
     )

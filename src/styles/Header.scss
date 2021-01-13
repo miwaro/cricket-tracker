@@ -16,9 +16,11 @@
   box-sizing: border-box;
   width: 392px;
   text-shadow: 2px 1px 0px #ff0000de;
-  font-family: 'Audiowide', 'Audiowide';
+  font-family: 'Audiowide';
   background-color: rgba(0, 0, 0, 0.671);
   padding: 10px;
+  cursor: default;
+  border-radius: 12px;
   justify-content: center;
   font-size: 40px;
   img {

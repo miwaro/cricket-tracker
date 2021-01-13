@@ -15,10 +15,10 @@
 
 .randomizeButton {
     transition: all .4s ease-in-out;
-    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%);
+    background: rgb(41 98 145) 100%;
     cursor: pointer;
     color: #FFF;
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 4px;
     font-family: 'Audiowide';
     font-size: 13px;

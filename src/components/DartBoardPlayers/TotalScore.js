@@ -46,9 +46,6 @@ const TotalScore = (props) => {
             <div>
                 {`${props.score}/21`}
             </div>
-            <div>
-                {`${props.rank}`}
-            </div>
             <Tooltip title="Remove Player" placement="top">
                 <IconButton onClick={handleClickOpen} aria-label="delete">
                     <RemoveCircleIcon
@@ -75,7 +72,9 @@ const TotalScore = (props) => {
                 </Button>
                 </DialogActions>
             </Dialog>
-
+            <div>
+                {`${props.rank}`}
+            </div>
         </div>
 
     )

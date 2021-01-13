@@ -11,6 +11,7 @@
 .removeCircle {
   color: #FFF;
   cursor: pointer;
+  transform: translateX(-5px);
 }
 
 .Total {
@@ -24,13 +25,14 @@
 }
 
 .DartBoardPlayerControl:nth-of-type(9) {
+  display: flex;
   justify-content: space-evenly;
   border-left: none;
   border-right: 2px solid #000000de;
   border-bottom: none;
   border-radius: 0;
   margin-top: 10px;
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(219, 32, 32) 100%);
+  background: radial-gradient(circle, rgba(0,0,0,1) -10%, rgb(219, 32, 32) 100%);
 }
 
 .circle {
@@ -81,5 +83,11 @@
     }
     .slash {
       font-size: 30px;
+    }
+  }
+
+  @media(max-width: 550px) {
+    .removeCircle {
+      transform: none;
     }
   }
