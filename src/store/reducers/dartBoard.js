@@ -3,9 +3,18 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     players: [],
     history: [],
-    labels: [20, 19, 18, 17, 16, 15, '🎯'],
+    pointsHistory: [],
     winningPlayerIndex: -1,
-    muted: false
+    muted: false,
+    targets: [
+        { target: 20, isClosed: false },
+        { target: 19, isClosed: false },
+        { target: 18, isClosed: false },
+        { target: 17, isClosed: false },
+        { target: 16, isClosed: false },
+        { target: 15, isClosed: false },
+        { target: 25, isClosed: false }
+    ]
 };
 
 const reducer = (state = initialState, action) => {
@@ -13,7 +22,7 @@ const reducer = (state = initialState, action) => {
     let player;
     let players;
     let record;
-    let labels;
+    let targets;
     let map;
 
     switch (action.type) {
@@ -53,28 +62,24 @@ const reducer = (state = initialState, action) => {
         case actionTypes.RANDOMIZE_LABELS:
 
             map = {};
-            labels = state.labels.map(label => {
-                if (label === '🎯') {
-                    return label;
+            targets = state.targets.map(label => {
+                let num = label.target;
+                num = Math.floor(Math.random() * (20 - 1) + 1);
+                while (map[num]) {
+                    num = Math.floor(Math.random() * (20 - 1) + 1);
                 }
-                else {
-                    let num = Math.floor(Math.random() * (20 - 1) + 1);
-                    while (map[num]) {
-                        num = Math.floor(Math.random() * (20 - 1) + 1);
-                    }
-                    map[num] = num;
-                    return num;
-                }
+                map[num] = num;
+                return { target: num, isClosed: false };
             }).sort((a, b) => b - a);
 
             return {
                 ...state,
-                labels
+                targets
             }
 
         case actionTypes.MODIFY_LABELS:
 
-            let label = state.labels[action.labelIndex];
+            let label = state.targets[action.labelIndex].target;
 
             if (action.operation === 'decrement' && label === 1) {
                 label = 20;
@@ -83,17 +88,20 @@ const reducer = (state = initialState, action) => {
             } else {
                 label = action.operation === 'decrement' ? label - 1 : label + 1;
             }
-            labels = state.labels.map((el, i) => i === action.labelIndex ? label : el);
+            targets = state.targets.map((el, i) => i === action.labelIndex ?
+                ({ target: label, isClosed: false }) :
+                ({ target: el.target, isClosed: false }));
 
             return {
                 ...state,
-                labels
+                targets
             }
 
         case actionTypes.ADD_PLAYER:
             player = {
                 name: action.name,
                 score: [0, 0, 0, 0, 0, 0, 0],
+                points: 0
             }
             players = [...state.players, player]
             return {
@@ -110,10 +118,48 @@ const reducer = (state = initialState, action) => {
 
         case actionTypes.UPDATE_SCORE:
             player = state.players[action.playerIndex];
+            let maxNum = state.players.length;
+            let indexArr = []
+
+            state.players.map((player) => {
+                player.score.forEach((target, i) => {
+                    if (target >= 2) {
+                        indexArr.push(i);
+                    }
+                })
+            })
+
+            let finalArr = [];
+
+            function getOccurrence(array, value) {
+                let count = 0;
+                array.forEach((v) => (v === value && count++));
+                if (count === maxNum) {
+                    finalArr.push(value)
+                }
+            }
+
+            // Obviously, the numerous function calls here are not ideal.
+            getOccurrence(indexArr, 0)
+            getOccurrence(indexArr, 1)
+            getOccurrence(indexArr, 2)
+            getOccurrence(indexArr, 3)
+            getOccurrence(indexArr, 4)
+            getOccurrence(indexArr, 5)
+            getOccurrence(indexArr, 6)
+
+            targets = state.targets;
+
+            if (finalArr.length !== 0) {
+                finalArr.forEach(val => {
+                    targets[val].isClosed = true;
+                })
+            }
+
             player.score[action.scoreIndex]++;
 
             let winningPlayerIndex = -1;
-            if (player.score.every(el => el === 3)) {
+            if (player.score.every(el => el >= 3)) {
                 winningPlayerIndex = action.playerIndex;
             }
 
@@ -126,12 +172,31 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 players,
                 history: [...state.history, record],
-                winningPlayerIndex
+                winningPlayerIndex,
+            }
+
+        case actionTypes.UPDATE_POINTS:
+            targets = state.targets;
+            player = state.players[action.playerIndex];
+
+            if (player.score[action.scoreIndex] > 3) {
+                player.points += targets[action.scoreIndex].target
+                players = state.players.slice();
+                record = {
+                    playerIndex: action.playerIndex,
+                    scoreIndex: action.scoreIndex
+                };
+            }
+
+            return {
+                ...state,
+                pointsHistory: [...state.pointsHistory, record],
             }
 
         case actionTypes.RESET_SCORES:
             players = state.players.map(player => {
                 player.score = [0, 0, 0, 0, 0, 0, 0];
+                player.points = 0;
                 return player;
             });
 
@@ -144,11 +209,21 @@ const reducer = (state = initialState, action) => {
 
         case actionTypes.UNDO_MOVE:
             if (state.history.length === 0) { return; }
+            if (state.pointsHistory.length === 0) { return; }
             record = state.history.pop();
+            let pointsRecord = state.pointsHistory.pop();
             let target = state.players[record.playerIndex].score[record.scoreIndex];
             if (target > 0) {
                 state.players[record.playerIndex].score[record.scoreIndex]--;
             }
+            if (pointsRecord) {
+                player = state.players[pointsRecord.playerIndex];
+                let lastTarget = state.targets[pointsRecord.scoreIndex];
+                let pointTotal = player.points - lastTarget.target;
+                player.points = pointTotal;
+            }
+
+
             players = state.players.slice();
             return {
                 ...state,
@@ -158,13 +233,14 @@ const reducer = (state = initialState, action) => {
             players = state.players.map(player => {
                 player.score = [0, 0, 0, 0, 0, 0, 0];
                 player.totalScore = 0;
+                player.points = 0;
                 return player;
             });
             return {
                 ...state,
                 players,
                 winningPlayerIndex: -1,
-                labels: [20, 19, 18, 17, 16, 15, '🎯']
+                targets: [20, 19, 18, 17, 16, 15, 25]
             }
 
         default:

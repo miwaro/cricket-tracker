@@ -1,11 +1,11 @@
 import React from 'react';
-import { MuiThemeProvider, createMuiTheme, StylesProvider } from '@material-ui/core/styles';
+import { MuiThemeProvider, createTheme, StylesProvider } from '@material-ui/core/styles';
 import Header from './containers/Header';
 import DartBoard from './containers/DartBoard';
 import Checkbox from './components/Checkbox/Checkbox';
 import classes from './App.module.css';
 
-const theme = createMuiTheme({
+const theme = createTheme({
 
   palette: {
     primary: {

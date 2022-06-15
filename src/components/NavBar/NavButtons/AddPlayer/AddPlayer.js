@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { addPlayer } from '../../../../store/actions/actions';
@@ -20,12 +20,30 @@ const AddPlayer = (props) => {
 
     const [open, setOpen] = useState(false);
     const [name, setName] = useState('');
+    const [hasScored, setHasScored] = useState(false);
 
-    const handleClickOpen = (event) => {
+    useEffect(() => {
+        if (props.players.length > 0) {
+            setHasScored(false);
+            props.players.forEach(player => {
+                player.score.forEach(mark => {
+                    if (mark > 0) {
+                        setHasScored(true)
+                    }
+                })
+            })
+        }
+
+    }, [props.players, hasScored])
+
+    const handleClickOpen = () => {
         if (props.players.length > 3) { return; }
-        playSound(addplayerAudio);
-        setOpen(true);
-        event.stopPropagation();
+        if (hasScored === true) {
+            alert('You have already started the game, please reset the game if you wish to add more players');
+        } else {
+            playSound(addplayerAudio);
+            setOpen(true);
+        }
     }
 
     const handleClose = () => {
@@ -69,9 +87,7 @@ const AddPlayer = (props) => {
                             }
                         }}
 
-                        inputProps={{
-                            maxLength: 12,
-                        }}
+                        inputProps={{ maxLength: 12 }}
 
                         autoFocus
                         margin="dense"

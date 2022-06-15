@@ -49,7 +49,7 @@ const GameOverMessage = (props) => {
                 <DialogActions>
                     <Button onClick={handleClose} color="secondary">
                         Close
-                </Button>
+                    </Button>
                 </DialogActions>
             </Dialog>
         </div>

@@ -13,10 +13,11 @@ const DartBoardStatic = (props) => {
 
             <PlayersBox />
 
-            {props.labels.map((label, i) => (
+            {props.targets.map((target, i) => (
                 <DartBoardItem
                     key={i}
-                    label={label}
+                    target={target.target}
+                    isClosed={target.isClosed}
                     labelIndex={i}
                 />
             ))}
@@ -40,7 +41,7 @@ const mapStateToProps = state => {
     return {
         players: state.players,
         history: state.history,
-        labels: state.labels,
+        targets: state.targets,
         muted: state.muted
     }
 }

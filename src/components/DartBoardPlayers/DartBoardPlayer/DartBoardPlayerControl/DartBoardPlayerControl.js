@@ -16,9 +16,9 @@ import success from '../../../../audioclips/hero_decorative-celebration-01.wav';
 const DartBoardPlayerControl = (props) => {
 
     const updateScoreHandler = () => {
-        if (props.score === 3) { return; }
+        if (props.targets[props.scoreIndex].isClosed === true) return;
         props.onUpdateScore(props.scoreIndex)
-
+        props.onUpdatePoints(props.scoreIndex)
     }
 
     const likeAudio = new Audio(like);
@@ -26,6 +26,7 @@ const DartBoardPlayerControl = (props) => {
     const successAudio = new Audio(success);
 
     const playSound = audioFile => {
+        if (props.targets[props.scoreIndex].isClosed === true) return;
         if (!props.muted) audioFile.play();
     }
 
@@ -53,9 +54,10 @@ const DartBoardPlayerControl = (props) => {
                         }}
                     />}
 
-                {props.score === 3 &&
+                {props.score >= 3 &&
                     <HighlightOffIcon
                         className={classes.complete}
+                        onClick={() => playSound(likeAudio)}
                         style={{
                             cursor: 'pointer',
                             color: '#FFF',
@@ -68,6 +70,12 @@ const DartBoardPlayerControl = (props) => {
     )
 }
 
-const mapStateToProps = state => { return { muted: state.muted } }
+const mapStateToProps = state => {
+    return {
+        muted: state.muted,
+        players: state.players,
+        targets: state.targets
+    };
+}
 
 export default connect(mapStateToProps)(DartBoardPlayerControl);

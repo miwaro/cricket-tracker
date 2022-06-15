@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { updateScore, undoMove } from '../../../store/actions/actions';
+import { updateScore, updatePoints, undoMove } from '../../../store/actions/actions';
 import TotalScore from '../../DartBoardPlayers/TotalScore';
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 import classes from './DartBoardPlayer.module.css';
@@ -10,6 +10,10 @@ function DartBoardPlayer(props) {
 
     const handleUpdateScore = (scoreIndex) => {
         props.onUpdateScore(props.playerIndex, scoreIndex)
+    }
+
+    const handleUpdatePoints = (scoreIndex) => {
+        props.onUpdatePoints(props.playerIndex, scoreIndex)
     }
 
     const getScore = () => {
@@ -68,6 +72,7 @@ function DartBoardPlayer(props) {
                             scoreIndex={i}
                             totalScore={num}
                             onUpdateScore={handleUpdateScore}
+                            onUpdatePoints={handleUpdatePoints}
                         />
                     ))
                 }
@@ -93,6 +98,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onUpdateScore: (playerIndex, scoreIndex) => dispatch(updateScore(playerIndex, scoreIndex)),
+        onUpdatePoints: (playerIndex, scoreIndex) => dispatch(updatePoints(playerIndex, scoreIndex)),
         onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex)),
     }
 }

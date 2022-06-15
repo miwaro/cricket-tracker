@@ -19,13 +19,15 @@
     border-bottom: 2px solid steelblue;
 }
 
-.numbers:nth-of-type(8) {
-  font-size: 40px;
+.numbers:nth-of-type(8):before {
+  content: '🎯';
+  font-size: 25px;
   cursor: default;
-}
-
-.numbers:nth-of-type(8):hover {
-  font-size: 45px;
+} 
+ .numbers:nth-of-type(8)::after {
+  content: '🎯';
+  font-size: 25px;
+  cursor: default;
 }
 
 @media (max-width: 768px) {
@@ -34,12 +36,9 @@
       height: 50px;
     }
     .numbers:nth-of-type(8) {
-      font-size: 30px;
+      font-size: 20px;
     }
     
-    .numbers:nth-of-type(8):hover {
-      font-size: 35px;
-    }
     .DartBoardItem {
         font-size: 35px !important;
     }

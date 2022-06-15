@@ -22,6 +22,14 @@ export const updateScore = (playerIndex, scoreIndex) => {
     };
 };
 
+export const updatePoints = (playerIndex, scoreIndex) => {
+    return {
+        type: actionTypes.UPDATE_POINTS,
+        playerIndex,
+        scoreIndex
+    };
+};
+
 export const undoMove = (playerIndex, scoreIndex) => {
     return {
         type: actionTypes.UNDO_MOVE,

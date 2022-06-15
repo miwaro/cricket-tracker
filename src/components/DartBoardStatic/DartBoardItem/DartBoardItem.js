@@ -28,18 +28,16 @@ const DartBoardItem = (props) => {
     return (
         <>
             <div className={classes.numbers}>
-                {props.label !== '🎯' && props.label !== 'Total' &&
 
-                    <ArrowLeftTwoToneIcon
-                        className={classes.DartBoardItem}
-                        onClick={decrementLabelHandler} />}
+                <ArrowLeftTwoToneIcon
+                    className={classes.DartBoardItem}
+                    onClick={decrementLabelHandler} />
 
-                {props.label}
 
-                {props.label !== '🎯' && props.label !== 'Total' &&
-                    <ArrowRightTwoToneIcon
-                        className={classes.DartBoardItem}
-                        onClick={incrementLabelHandler} />}
+                {props.target}
+                <ArrowRightTwoToneIcon
+                    className={classes.DartBoardItem}
+                    onClick={incrementLabelHandler} />
             </div>
         </>
     );
@@ -49,7 +47,8 @@ const DartBoardItem = (props) => {
 const mapStateToProps = state => {
     return {
         history: state.history,
-        muted: state.muted
+        muted: state.muted,
+        targets: state.targets
     };
 }
 
