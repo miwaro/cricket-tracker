@@ -1,4 +1,4 @@
-# Bar-Darts
+# Cricket-Tracker
 
 Record the score of your cricket game, with the option to compete by tracking the targets hit or the traditional way of tracking points.
 
