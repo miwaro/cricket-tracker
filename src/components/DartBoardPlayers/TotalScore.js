@@ -16,7 +16,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 const TotalScore = (props) => {
 
     const removePlayerHandler = () => {
-        if (!props.muted) playSound(removeAudio);
+        playSound(removeAudio);
         props.onRemovePlayer(props.playerIndex) && setOpen(false);
     }
 
@@ -24,7 +24,7 @@ const TotalScore = (props) => {
     const removeAudio = new Audio(remove);
 
     const playSound = audioFile => {
-        audioFile.play();
+        if (!props.muted) audioFile.play();
     }
 
     const [open, setOpen] = useState(false);
@@ -43,11 +43,9 @@ const TotalScore = (props) => {
         <div
             className={classes.DartBoardPlayerControl}
         >
-            <div>
-                {`${props.score}/21`}
-            </div>
+
             {props.players.length > 1 &&
-                <div>Points: {props.player.points}</div>
+                <div style={{ fontSize: '14px' }}>Points: {props.player.points}</div>
             }
             <Tooltip title="Remove Player" placement="top">
                 <IconButton onClick={handleClickOpen} aria-label="delete">
@@ -75,9 +73,13 @@ const TotalScore = (props) => {
                     </Button>
                 </DialogActions>
             </Dialog>
-            <div>
-                {`${props.rank}`}
-            </div>
+            {props.players.length > 1 &&
+                <div>
+                    {`${props.rank}`}
+                </div>
+            }
+
+
         </div>
 
     )

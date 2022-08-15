@@ -4,31 +4,40 @@
     color: #FFF;
 }
 
+.targetClosed {
+  position: absolute;
+  font-size: 22px;
+  padding: 5px 15px;
+  letter-spacing: 1px;
+  background: radial-gradient(circle, rgb(124, 44, 44) -10%, rgb(219, 32, 32) 100%);
+}
+
 .DartBoardItem:hover {
     font-size: 52px !important;
 }
 
 .numbers {
-    font-size: 34px;
+    font-size: 31px;
     display: flex;
     cursor: pointer;
     justify-content: center;
     align-items: center;
     height: 70px;
-    border-radius: 10px;
     border-bottom: 2px solid steelblue;
+    box-shadow:  0 0 4px 1px rgba(63, 156, 175, 0.928);
 }
 
+.numbers:nth-of-type(8) {
+  border-bottom: none;
+  font-size: 1px;
+} 
 .numbers:nth-of-type(8):before {
-  content: '🎯';
-  font-size: 25px;
+  position: absolute;
+  background-color: rgb(20, 20, 20);
+  content: 'Bullseye';
+  font-size: 22px;
   cursor: default;
 } 
- .numbers:nth-of-type(8)::after {
-  content: '🎯';
-  font-size: 25px;
-  cursor: default;
-}
 
 @media (max-width: 768px) {
     .numbers{

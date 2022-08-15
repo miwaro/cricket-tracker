@@ -3,15 +3,35 @@
     justify-content: center;
     align-items: center;
     height: 70px;
-    border-radius: 0 0 10px 10px;
+    animation: slideDown 1.5s;
     border-bottom: 2px solid steelblue;
-    border-left: 2px solid #ff0000de;
+    box-shadow:  0 0 4px 1px rgba(63, 156, 175, 0.928);
+}
+
+.DartBoardPlayerControl:hover {
+  background: rgb(20, 20, 20)
+}
+
+@keyframes slideDown{
+  from {
+    transform: translateY(-100%);
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    max-height: 70px;
+    opacity: 1;
+  }
 }
 
 .removeCircle {
   color: #FFF;
   cursor: pointer;
-  transform: translateX(-5px);
+}
+
+.removeCircle:active {
+  transform: scale(0.88);
 }
 
 .Total {
@@ -21,18 +41,20 @@
   height: 70px;
   border-radius: 10px;
   border-bottom: 2px solid steelblue;
-  border-left: 2px solid #ff0000de;
+  border-left: 2px solid steelblue;
+}
+
+.DartBoardPlayerControl:nth-of-type(8) {
+  border-bottom: none;
+  border-radius: 0;
 }
 
 .DartBoardPlayerControl:nth-of-type(9) {
   display: flex;
   justify-content: space-evenly;
-  border-left: none;
-  border-right: 2px solid #000000de;
   border-bottom: none;
   border-radius: 0;
-  margin-top: 10px;
-  background: radial-gradient(circle, rgba(0,0,0,1) -10%, rgb(219, 32, 32) 100%);
+  background: radial-gradient(circle, rgb(24, 92, 95) -10%, rgb(59, 180, 184) 100%);
 }
 
 .circle {
@@ -42,16 +64,49 @@
     font-size: 35px;
 }
 
+.circle:active {
+  transform: scale(0.88);
+  box-shadow:  0 0 8px 8px rgba(63, 156, 175, 0.928);
+}
+
 .complete {
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(2, 209, 30) 100%);
+  padding:2px;
+  background: #0d938fde;
+}
+
+.complete:active {
+  transform: scale(0.88);
+  box-shadow:  0 0 10px 10px rgba(63, 156, 175, 0.928);
+}
+
+.complete:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top:0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.bonusIcon {
+  font-size: 34px;
+}
+
+.bonusIcon:active {
+  transform: scale(0.88);
 }
 
 .close {
     font-family: sans-serif;
     cursor: pointer;
-    font-size: 40px !important; 
+    font-size: 40px;
     color: #FFF;
+}
+
+.close:active {
+  transform: scale(0.88);
 }
 
 .slash {
@@ -61,6 +116,10 @@
     cursor: pointer;
     color: #FFF;
     font-size: 40px;
+}
+
+.slash:active {
+  transform: scale(0.88);
 }
 
 .circle:hover {

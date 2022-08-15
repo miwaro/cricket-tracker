@@ -17,7 +17,10 @@ const Checkbox = (props) => {
                 onChange={toggleMuteHandler}
                 checked={props.muted}
             />
-            <label>MUTE SFX</label>
+            {props.muted ?
+                <label>UNMUTE SFX</label> :
+                <label>MUTE SFX</label>
+            }
         </div>
     );
 }

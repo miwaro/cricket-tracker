@@ -11,6 +11,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import Tooltip from '@material-ui/core/Tooltip';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import classes from './AddPlayer.module.css';
 import addplayer from '../../../../audioclips/addplayers.wav';
@@ -20,6 +21,7 @@ const AddPlayer = (props) => {
 
     const [open, setOpen] = useState(false);
     const [name, setName] = useState('');
+    const [nameArr, setNameArr] = useState([]);
     const [hasScored, setHasScored] = useState(false);
 
     useEffect(() => {
@@ -37,9 +39,9 @@ const AddPlayer = (props) => {
     }, [props.players, hasScored])
 
     const handleClickOpen = () => {
-        if (props.players.length > 3) { return; }
+        if (props.players.length > 5) { return; }
         if (hasScored === true) {
-            alert('You have already started the game, please reset the game if you wish to add more players');
+            alert('You have already started the game, please reset the game by selecting "New Game" if you wish to add more players');
         } else {
             playSound(addplayerAudio);
             setOpen(true);
@@ -50,10 +52,20 @@ const AddPlayer = (props) => {
         setOpen(false);
     }
 
+    useEffect(() => {
+        props.players.forEach(player => {
+            if (name === player.name) {
+                setName('wxyz')
+            };
+
+        })
+    }, [name, props.players])
+
     const addPlayerHandler = () => {
-        if (name === '') { return; }
+        if (name === '') return;
         playSound(addplayersAudio);
         props.onPlayerAdded(name) && setOpen(false);
+        setName('')
     }
 
     const addplayerAudio = new Audio(addplayer);
@@ -63,12 +75,12 @@ const AddPlayer = (props) => {
         if (!props.muted) audioFile.play();
     }
 
-
     return (
 
         <div>
-
-            < PersonAddSharpIcon className={classes.addPlayer} onClick={handleClickOpen} />
+            <Tooltip title="Add up to 6 Players or teams" placement="right">
+                < PersonAddSharpIcon className={classes.addPlayer} onClick={handleClickOpen} />
+            </Tooltip>
             <Dialog
                 open={open}
                 onClose={handleClose}
@@ -87,14 +99,14 @@ const AddPlayer = (props) => {
                             }
                         }}
 
-                        inputProps={{ maxLength: 12 }}
-
+                        inputProps={{ maxLength: 9 }}
                         autoFocus
                         margin="dense"
                         id="name"
-                        label="Name"
                         type="string"
                         fullWidth
+                        error={name === "wxyz"}
+                        helperText={name === "xyz" ? 'This name has already been selected' : ' '}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -106,10 +118,9 @@ const AddPlayer = (props) => {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} color="secondary">
-                        Nah
-                    </Button>
-                    <Button onClick={addPlayerHandler} color="primary">
+                    <Button
+                        disabled={name === '' || name === 'wxyz'}
+                        style={{ backgroundColor: '#00fff8de' }} onClick={addPlayerHandler}>
                         Yeah!
                     </Button>
                 </DialogActions>

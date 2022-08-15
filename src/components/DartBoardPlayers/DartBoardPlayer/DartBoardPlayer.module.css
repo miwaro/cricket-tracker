@@ -4,13 +4,16 @@
     justify-content: center;
     align-items: center;
     height: 70px;
-    border-bottom: 2px solid #ff0000de;
-    border-left: 2px solid #ff0000de;
+    border-bottom: 2px solid steelblue;
 }
 
 .dartBoardPlayer:nth-child(2n+1) {
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%) !important;
+  background: radial-gradient(circle, rgb(27 64 78) -10%, rgb(73 161 216) 100%);
 }
+
+ .dartBoardPlayer:nth-last-child(2n) {
+  background: radial-gradient(circle, rgb(24, 92, 95) -10%, rgb(59, 180, 184) 100%);
+} 
 
 .resetGame {
   display: none;
@@ -24,11 +27,9 @@
   align-items: center;
   text-align: center;
   height: 70px;
-  border-radius: 10px 0 0 10px;
-  border-right: 2px solid black;
-  margin-top: 10px;
   cursor: default;
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(70,130,180,1) 100%);
+  background: radial-gradient(circle, rgb(27 64 78) -10%, rgb(73 161 216) 100%);
+  animation: slideIn 1.5s;
 }
 
 .actions {
@@ -39,12 +40,12 @@
   align-items: center;
   text-align: center;
   height: 70px;
-  border-radius: 10px 0 0 10px;
   cursor: default;
-  border-right: 2px solid black;
-  margin-top: 10px;
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(219, 32, 32) 100%);
+  background: radial-gradient(circle, rgb(24, 92, 95) -10%, rgb(59, 180, 184) 100%);
+  animation: slideIn 1.5s;
 }
+
+
 
 .randomizeTargets {
     display: flex;
@@ -70,6 +71,19 @@
 
  .randomizeTargets > button:hover {
   background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(50, 98, 138) 100%);
+}
+
+@keyframes slideIn{
+  from {
+    transform: translateX(-100%);
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    max-height: 70px;
+    opacity: 1;
+  }
 }
 
 

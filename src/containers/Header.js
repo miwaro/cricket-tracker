@@ -10,9 +10,9 @@ class Header extends Component {
         <div>
           <div className="Header-title-line-container">
             <div className="Header-title theme-color-1">
-              <span>Simple</span>
-              <img src={dartImg} alt="3 darts pointing downward" />
               <span>Cricket</span>
+              <img src={dartImg} alt="3 darts pointing downward" />
+              <span>Tracker</span>
             </div>
           </div>
           <Nav />

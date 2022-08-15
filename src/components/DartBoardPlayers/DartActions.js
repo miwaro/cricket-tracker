@@ -1,27 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { randomizePlayersOrder, randomizeLabels } from '../../store/actions/actions';
+import Rules from '../../components/RulesSidebar'
+import Button from '@material-ui/core/Button';
 import UndoMove from '../NavBar/NavButtons/UndoMove';
 import ResetBoard from '../NavBar/NavButtons/ResetBoard';
 import randomize from '../../audioclips/randomize.wav';
 import reset from '../../audioclips/randomize.wav';
 import classes from './DartBoardPlayers.module.css';
+import { useEffect } from 'react';
 
 
 
 function DartActions(props) {
+    const [canRandomize, setCanRandomize] = useState(true)
 
     const randomizePlayersHandler = () => {
+
         playSound(randomizeAudio);
         props.onRandomizePlayers();
     }
 
-    const randomizeLabelHandler = () => {
-        playSound(resetAudio);
-        props.onRandomizeLabels();
-    }
+    useEffect(() => {
+        setCanRandomize(true);
+        props.players.forEach((player) => {
+            let total = player.score.reduce((a, b) => a + b);
+            if (total > 0) {
+                setCanRandomize(false)
+            }
+        }, [props.players]);
 
+    })
+
+    const randomizeLabelHandler = () => {
+        if (canRandomize === true) {
+            playSound(resetAudio);
+            props.onRandomizeLabels();
+        } else if (canRandomize === false) {
+            return alert('The game has already started so you can not randomize the targets')
+        }
+    }
 
     const randomizeAudio = new Audio(randomize);
     const resetAudio = new Audio(reset);
@@ -34,6 +53,7 @@ function DartActions(props) {
     return (
         <>
             {props.players.length > 0 && <div className={classes.randomizePlayers}>
+                <UndoMove />
                 <div className={classes.randomizeTargets}>
                     <button
                         className={classes.randomizeButton}
@@ -41,19 +61,18 @@ function DartActions(props) {
                         Randomize<br></br>Targets
                     </button>
                 </div>
-                <UndoMove />
+                <span
+                    className={classes.reset}
+                >
+                    <ResetBoard />
+                </span>
                 <button
                     className={classes.randomizeButton}
                     onClick={randomizePlayersHandler}
                 >
                     Randomize<br></br>Players
                 </button>
-
-                <span
-                    className={classes.reset}
-                >
-                    <ResetBoard />
-                </span>
+                <Rules />
             </div>}
         </>
     )

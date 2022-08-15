@@ -5,8 +5,13 @@
     padding-top: 5px
 }
 
+.addPlayer:active {
+  transform: scale(0.97);
+  color:#00fff8de
+}
+
 .addPlayer:hover {
-    color: rgba(204, 204, 204, 0.692);
+  transform: scale(1.05);
 };
 
 @media (max-width: 768px) {

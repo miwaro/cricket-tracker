@@ -6,8 +6,6 @@ import DartActions from './DartActions'
 import classes from './DartBoardPlayers.module.css';
 
 const dartBoardPlayers = (props) => {
-    // console.log(props)
-
     return (
         <>
             <div className={classes.dartBoardPlayers}>

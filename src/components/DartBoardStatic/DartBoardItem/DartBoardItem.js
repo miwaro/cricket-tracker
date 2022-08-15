@@ -28,16 +28,17 @@ const DartBoardItem = (props) => {
     return (
         <>
             <div className={classes.numbers}>
-
-                <ArrowLeftTwoToneIcon
-                    className={classes.DartBoardItem}
-                    onClick={decrementLabelHandler} />
-
-
+                {props.target !== 25 &&
+                    <ArrowLeftTwoToneIcon
+                        className={classes.DartBoardItem}
+                        onClick={decrementLabelHandler} />}
                 {props.target}
-                <ArrowRightTwoToneIcon
-                    className={classes.DartBoardItem}
-                    onClick={incrementLabelHandler} />
+                {props.target !== 25 &&
+                    <ArrowRightTwoToneIcon
+                        className={classes.DartBoardItem}
+                        onClick={incrementLabelHandler} />}
+                {props.isClosed === true &&
+                    <span className={classes.targetClosed}>closed</span>}
             </div>
         </>
     );

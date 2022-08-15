@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import randomize from '../../../audioclips/undo.wav';
 
 import { undoMove } from '../../../store/actions/actions';
-import classes from './AddPlayer/AddPlayer.module.css'
 
 const undoMoves = (props) => {
 

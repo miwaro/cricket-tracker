@@ -40,7 +40,7 @@ const ResetBoard = (props) => {
                 className="redButton"
                 onClick={handleClickOpen}
             >
-                Reset<br></br>Game
+                New<br></br>Game
             </button>
 
             <Dialog

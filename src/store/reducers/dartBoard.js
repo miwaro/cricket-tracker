@@ -5,14 +5,14 @@ const initialState = {
     history: [],
     pointsHistory: [],
     winningPlayerIndex: -1,
-    muted: false,
+    muted: true,
     targets: [
-        { target: 20, isClosed: false },
-        { target: 19, isClosed: false },
-        { target: 18, isClosed: false },
-        { target: 17, isClosed: false },
-        { target: 16, isClosed: false },
         { target: 15, isClosed: false },
+        { target: 16, isClosed: false },
+        { target: 17, isClosed: false },
+        { target: 18, isClosed: false },
+        { target: 19, isClosed: false },
+        { target: 20, isClosed: false },
         { target: 25, isClosed: false }
     ]
 };
@@ -59,18 +59,50 @@ const reducer = (state = initialState, action) => {
                 players: shuffledPlayers
             }
 
+        // case actionTypes.RANDOMIZE_LABELS:
+        //     map = {};
+        //     targets = state.targets.map(label => {
+        //         let num = label.target;
+        //         num = Math.floor(Math.random() * (60 - 1) + 1);
+        //         while (map[num]) {
+        //             num = Math.floor(Math.random() * (60 - 1) + 1);
+        //         }
+        //         map[num] = num;
+        //         return { target: num, isClosed: false };
+        //     }).sort((a, b) => b - a);
+
+        //     return {
+        //         ...state,
+        //         targets
+        //     }
+
         case actionTypes.RANDOMIZE_LABELS:
 
-            map = {};
-            targets = state.targets.map(label => {
-                let num = label.target;
-                num = Math.floor(Math.random() * (20 - 1) + 1);
-                while (map[num]) {
-                    num = Math.floor(Math.random() * (20 - 1) + 1);
+            function generateRandom(min, max, exclude) {
+                let random;
+                while (!random) {
+                    const x = Math.floor(Math.random() * (max - min + 1)) + min;
+                    if (exclude.indexOf(x) === -1) random = x;
                 }
-                map[num] = num;
-                return { target: num, isClosed: false };
-            }).sort((a, b) => b - a);
+                return random;
+            }
+
+            targets = state.targets.map(target => {
+                let newTarget;
+                let finalArr = [];
+                for (let i = 0; i < 7; i++) {
+                    // The third argument in generateRandom are all the values of a single shot in darts that you can not get. 
+                    // For example, you can hit a triple 20 which is equal to 60, but there is no shot that will equal 59.
+                    newTarget = generateRandom(1, 60, [59, 58, 56, 55, 53, 52, 49, 47, 46, 44, 43, 41, 37, 35, 31, 29, 23]);
+                    finalArr.push(newTarget)
+
+                }
+
+                let num = target.target;
+                num = newTarget
+                // console.log(newTarget)
+                return { target: num, isClosed: false }
+            })
 
             return {
                 ...state,
@@ -106,7 +138,16 @@ const reducer = (state = initialState, action) => {
             players = [...state.players, player]
             return {
                 ...state,
-                players
+                players,
+                targets: [
+                    { target: 15, isClosed: false },
+                    { target: 16, isClosed: false },
+                    { target: 17, isClosed: false },
+                    { target: 18, isClosed: false },
+                    { target: 19, isClosed: false },
+                    { target: 20, isClosed: false },
+                    { target: 25, isClosed: false }
+                ]
             }
 
         case actionTypes.REMOVE_PLAYER:
@@ -118,12 +159,13 @@ const reducer = (state = initialState, action) => {
 
         case actionTypes.UPDATE_SCORE:
             player = state.players[action.playerIndex];
+            player.score[action.scoreIndex]++;
             let maxNum = state.players.length;
             let indexArr = []
 
             state.players.map((player) => {
                 player.score.forEach((target, i) => {
-                    if (target >= 2) {
+                    if (target >= 3) {
                         indexArr.push(i);
                     }
                 })
@@ -133,34 +175,47 @@ const reducer = (state = initialState, action) => {
 
             function getOccurrence(array, value) {
                 let count = 0;
-                array.forEach((v) => (v === value && count++));
+                array.forEach((v) => (v === value && ++count));
                 if (count === maxNum) {
                     finalArr.push(value)
                 }
             }
 
-            // Obviously, the numerous function calls here are not ideal.
-            getOccurrence(indexArr, 0)
-            getOccurrence(indexArr, 1)
-            getOccurrence(indexArr, 2)
-            getOccurrence(indexArr, 3)
-            getOccurrence(indexArr, 4)
-            getOccurrence(indexArr, 5)
-            getOccurrence(indexArr, 6)
+            for (let i = 0; i <= 6; i++) {
+                getOccurrence(indexArr, i)
+            }
 
             targets = state.targets;
 
-            if (finalArr.length !== 0) {
+            if (finalArr.length !== 0 && player.score[action.scoreIndex] >= 3) {
                 finalArr.forEach(val => {
                     targets[val].isClosed = true;
                 })
             }
 
-            player.score[action.scoreIndex]++;
 
             let winningPlayerIndex = -1;
-            if (player.score.every(el => el >= 3)) {
+            let playerHasScored = false;
+            let allPlayersPointsArr = [];
+
+            state.players.forEach(player => {
+                player.score.forEach(hit => {
+                    if (hit > 3) {
+                        allPlayersPointsArr.push(player.points)
+                        allPlayersPointsArr.sort((a, b) => b - a);
+                        playerHasScored = true;
+                    }
+                })
+            })
+
+            if (playerHasScored === true && player.score.every(el => el >= 3) && player.points === allPlayersPointsArr[0]) {
                 winningPlayerIndex = action.playerIndex;
+            }
+
+            if (playerHasScored === false) {
+                if (player.score.every(el => el >= 3)) {
+                    winningPlayerIndex = action.playerIndex;
+                }
             }
 
             players = state.players.slice();
@@ -179,7 +234,7 @@ const reducer = (state = initialState, action) => {
             targets = state.targets;
             player = state.players[action.playerIndex];
 
-            if (player.score[action.scoreIndex] > 3) {
+            if (player.score[action.scoreIndex] >= 3) {
                 player.points += targets[action.scoreIndex].target
                 players = state.players.slice();
                 record = {
@@ -204,10 +259,13 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 players,
                 winningPlayerIndex: -1,
-                history: []
+                history: [],
             }
 
         case actionTypes.UNDO_MOVE:
+            if (state.winningPlayerIndex > -1) {
+                state.winningPlayerIndex = -1;
+            }
             if (state.history.length === 0) { return; }
             if (state.pointsHistory.length === 0) { return; }
             record = state.history.pop();
@@ -224,6 +282,9 @@ const reducer = (state = initialState, action) => {
             }
 
 
+            if (state.players[record.playerIndex].score[record.scoreIndex] < 3) {
+                state.targets[record.scoreIndex].isClosed = false;
+            }
             players = state.players.slice();
             return {
                 ...state,
@@ -240,7 +301,15 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 players,
                 winningPlayerIndex: -1,
-                targets: [20, 19, 18, 17, 16, 15, 25]
+                targets: [
+                    { target: 15, isClosed: false },
+                    { target: 16, isClosed: false },
+                    { target: 17, isClosed: false },
+                    { target: 18, isClosed: false },
+                    { target: 19, isClosed: false },
+                    { target: 20, isClosed: false },
+                    { target: 25, isClosed: false }
+                ]
             }
 
         default:

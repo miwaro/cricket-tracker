@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
 import { updateScore, updatePoints, undoMove } from '../../../store/actions/actions';
@@ -7,6 +7,7 @@ import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerCont
 import classes from './DartBoardPlayer.module.css';
 
 function DartBoardPlayer(props) {
+    const [rank, setRank] = useState('Rank');
 
     const handleUpdateScore = (scoreIndex) => {
         props.onUpdateScore(props.playerIndex, scoreIndex)
@@ -16,41 +17,60 @@ function DartBoardPlayer(props) {
         props.onUpdatePoints(props.playerIndex, scoreIndex)
     }
 
-    const getScore = () => {
-        const player = props.players[props.playerIndex];
-        const score = player.score.reduce((a, b) => a + b);
-        return score;
-    }
-
-    const getRank = () => {
+    useEffect(() => {
         const players = props.players.slice();
-        const scores = players.map(player => player.score.reduce((a, b) => a + b));  // [ 12, 4, 16]
-        const currentPlayerScore = scores[props.playerIndex]; // 12
-        scores.splice(props.playerIndex, 1); // [ 4, 16 ]
-        scores.sort((a, b) => b - a); // [ 16, 4 ]
+        const scores = players.map(player => player.score.reduce((a, b) => a + b));
+        const points = players.map(player => player.points)
+        const currentPlayerScore = scores[props.playerIndex];
+        const currentPlayerPoints = points[props.playerIndex];
+        const isZero = (currentValue) => currentValue === 0;
+        scores.sort((a, b) => b - a);
+        points.sort((a, b) => b - a);
         let rank;
         let i = 0;
-        while (!rank && i < scores.length) {
-            if (currentPlayerScore >= scores[i]) {
-                rank = i + 1; // rank = 2
-            }
-            i++;
-        }
-        if (!rank) {
-            rank = scores.length + 1;
-        }
+        let j = 0;
 
-        if (rank === 1) {
-            rank = '1st'
-        } else if (rank === 2) {
-            rank = '2nd'
-        } else if (rank === 3) {
-            rank = '3rd'
-        } else if (rank === 4) {
-            rank = '4th'
+        if (points.every(isZero)) {
+            while (!rank && i < scores.length) {
+                if (currentPlayerScore >= scores[i]) {
+                    rank = i + 1;
+                }
+                i++;
+            }
+            if (rank === 1) {
+                setRank('1st')
+            } else if (rank === 2) {
+                setRank('2nd')
+            } else if (rank === 3) {
+                setRank('3rd')
+
+            } else if (rank === 4) {
+                setRank('4th')
+
+            }
+        } else if (points.some(el => el > 0)) {
+            while (!rank && j < points.length) {
+
+                if (currentPlayerPoints >= points[j]) {
+                    rank = j + 1;
+                }
+                j++;
+            }
+
+            if (rank === 1) {
+                setRank('1st')
+            } else if (rank === 2) {
+                setRank('2nd')
+            } else if (rank === 3) {
+                setRank('3rd')
+            } else if (rank === 4) {
+                setRank('4th')
+            }
+
         }
         return rank;
-    }
+
+    }, [props.players, props.playerIndex])
 
     return (
         <>
@@ -78,8 +98,7 @@ function DartBoardPlayer(props) {
                 }
 
                 < TotalScore
-                    score={getScore()}
-                    rank={getRank()}
+                    rank={rank}
                     playerIndex={props.playerIndex}
                     player={props.player}
                 />
@@ -91,7 +110,8 @@ function DartBoardPlayer(props) {
 const mapStateToProps = state => {
     return {
         players: state.players,
-        muted: state.muted
+        muted: state.muted,
+        targets: state.targets
     };
 }
 

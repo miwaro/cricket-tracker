@@ -9,6 +9,7 @@ import App from './App';
 import dartBoardReducer from './store/reducers/dartBoard';
 
 import './styles/Header.scss';
+import './styles/button.scss';
 import './styles/base_styles.scss';
 import './styles/index.scss';
 import './styles/label_styles.scss';
