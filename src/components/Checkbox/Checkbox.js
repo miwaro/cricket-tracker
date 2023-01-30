@@ -10,17 +10,19 @@ const Checkbox = (props) => {
     }
 
     return (
-        <div className={classes.checkbox} >
-            <input
-                name="Mute"
-                type="checkbox"
-                onChange={toggleMuteHandler}
-                checked={props.muted}
-            />
-            {props.muted ?
-                <label>UNMUTE SFX</label> :
-                <label>MUTE SFX</label>
-            }
+        <div style={{ display: 'flex', justifyContent: 'center', position: 'absolute', bottom: 0 }}>
+            <div className={classes.checkbox} >
+                <input
+                    name="Mute"
+                    type="checkbox"
+                    onChange={toggleMuteHandler}
+                    checked={props.muted}
+                />
+                {props.muted ?
+                    <label style={{ padding: '10px' }}>Un-Mute SFX</label> :
+                    <label style={{ padding: '10px' }}>Mute SFX</label>
+                }
+            </div>
         </div>
     );
 }

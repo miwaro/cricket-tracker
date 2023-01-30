@@ -13,8 +13,7 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 14px 0;
-  background: radial-gradient(circle, rgb(27 64 78) -10%, rgb(73 161 216) 100%);
-
+    background: rgba(0, 0, 0, 0.773);
 }
 
 .randomizeButton {

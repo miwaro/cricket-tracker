@@ -8,11 +8,8 @@ import classes from '../DartBoardPlayers/DartBoardPlayer/DartBoardPlayer.module.
 const DartBoardStatic = (props) => {
 
     return (
-
         <div className="Label-style">
-
             <PlayersBox />
-
             {props.targets.map((target, i) => (
                 <DartBoardItem
                     key={i}
@@ -21,15 +18,11 @@ const DartBoardStatic = (props) => {
                     labelIndex={i}
                 />
             ))}
-
             {
                 props.players.length > 0 &&
                 <>
                     <div className={classes.playerInfo}>
                         Player Info
-                    </div>
-                    <div className={classes.actions}>
-                        Actions
                     </div>
                 </>
             }

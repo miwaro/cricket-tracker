@@ -43,7 +43,7 @@
     "uuid": "^7.0.3",
     "web-vitals": "^1.0.1"
   },
-  "homepage": "https://miwaro.github.io/bar-darts/",
+  "homepage": "https://miwaro.github.io/cricket-tracker/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

@@ -45,7 +45,7 @@ const TotalScore = (props) => {
         >
 
             {props.players.length > 1 &&
-                <div style={{ fontSize: '14px' }}>Points: {props.player.points}</div>
+                <div style={{ fontSize: '13px' }}>Pts: {props.player.points}</div>
             }
             <Tooltip title="Remove Player" placement="top">
                 <IconButton onClick={handleClickOpen} aria-label="delete">

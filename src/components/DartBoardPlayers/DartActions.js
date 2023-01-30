@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { randomizePlayersOrder, randomizeLabels } from '../../store/actions/actions';
 import Rules from '../../components/RulesSidebar'
-import Button from '@material-ui/core/Button';
 import UndoMove from '../NavBar/NavButtons/UndoMove';
 import ResetBoard from '../NavBar/NavButtons/ResetBoard';
 import randomize from '../../audioclips/randomize.wav';
 import reset from '../../audioclips/randomize.wav';
 import classes from './DartBoardPlayers.module.css';
-import { useEffect } from 'react';
 
 
 
@@ -17,7 +15,9 @@ function DartActions(props) {
     const [canRandomize, setCanRandomize] = useState(true)
 
     const randomizePlayersHandler = () => {
-
+        if (canRandomize === false) {
+            return alert('The game has already started so you can not randomize the targets')
+        }
         playSound(randomizeAudio);
         props.onRandomizePlayers();
     }
@@ -56,6 +56,7 @@ function DartActions(props) {
                 <UndoMove />
                 <div className={classes.randomizeTargets}>
                     <button
+                        disabled={canRandomize === false}
                         className={classes.randomizeButton}
                         onClick={randomizeLabelHandler}>
                         Randomize<br></br>Targets
@@ -68,6 +69,7 @@ function DartActions(props) {
                 </span>
                 <button
                     className={classes.randomizeButton}
+                    disabled={canRandomize === false}
                     onClick={randomizePlayersHandler}
                 >
                     Randomize<br></br>Players

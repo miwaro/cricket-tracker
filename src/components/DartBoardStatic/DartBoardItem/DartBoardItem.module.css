@@ -1,5 +1,5 @@
 .DartBoardItem {
-    font-size : 45px !important;
+    font-size : 38px !important;
     cursor: 'pointer';
     color: #FFF;
 }
@@ -34,7 +34,7 @@
 .numbers:nth-of-type(8):before {
   position: absolute;
   background-color: rgb(20, 20, 20);
-  content: 'Bullseye';
+  content: 'Bull';
   font-size: 22px;
   cursor: default;
 } 

@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import DartBoardPlayer from './DartBoardPlayer/DartBoardPlayer';
-import DartActions from './DartActions'
 import classes from './DartBoardPlayers.module.css';
 
 const dartBoardPlayers = (props) => {
@@ -17,8 +16,6 @@ const dartBoardPlayers = (props) => {
                     />
                 ))}
             </div>
-
-            <DartActions />
         </>
     );
 };

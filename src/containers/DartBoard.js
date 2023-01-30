@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import DartBoardStatic from '../components/DartBoardStatic/DartBoardStatic';
 import DartBoardPlayers from '../components/DartBoardPlayers/DartBoardPlayers';
+import DartActions from '../components/DartBoardPlayers/DartActions';
 
 const styles = {
     root: {
@@ -54,6 +55,7 @@ const dartBoard = (props) => {
                     </Button >
                 </Grid>
             </Grid>
+            <DartActions />
         </div>
     )
 };
