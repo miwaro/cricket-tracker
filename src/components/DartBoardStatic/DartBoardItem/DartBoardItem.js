@@ -23,7 +23,7 @@ const DartBoardItem = (props) => {
 
     const incrementLabelHandler = () => {
         if (canIncrement === false) {
-            return alert('The game has already started so you can not randomize the targets')
+            return alert('The game has already started so you can not increment the targets')
         }
         playSound(resetAudio);
         props.onModifyLabels(props.labelIndex, 'increment');
@@ -31,7 +31,7 @@ const DartBoardItem = (props) => {
 
     const decrementLabelHandler = () => {
         if (canIncrement === false) {
-            return alert('The game has already started so you can not randomize the targets')
+            return alert('The game has already started so you can not decrement the targets')
         }
         playSound(resetAudio);
         props.onModifyLabels(props.labelIndex, 'decrement');

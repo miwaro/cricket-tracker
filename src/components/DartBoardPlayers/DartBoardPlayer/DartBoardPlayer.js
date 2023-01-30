@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { updateScore, updatePoints, undoMove } from '../../../store/actions/actions';
 import TotalScore from '../../DartBoardPlayers/TotalScore';
+import Rank from '../../DartBoardPlayers/Rank';
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 import classes from './DartBoardPlayer.module.css';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -156,11 +157,17 @@ function DartBoardPlayer(props) {
                     ))
                 }
                 {props.players.length > 1 &&
-                    < TotalScore
-                        rank={rank}
-                        playerIndex={props.playerIndex}
-                        player={props.player}
-                    />
+                    <>
+                        < TotalScore
+                            playerIndex={props.playerIndex}
+                            player={props.player}
+                        />
+                        < Rank
+                            rank={rank}
+                            playerIndex={props.playerIndex}
+                            player={props.player}
+                        />
+                    </>
                 }
             </div>
         </>

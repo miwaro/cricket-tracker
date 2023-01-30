@@ -2,11 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux';
 import classes from './DartBoardPlayer/DartBoardPlayerControl/DartBoardPlayerControl.module.css';
 
-const TotalScore = (props) => {
+const Rank = (props) => {
     return (
-        <div className={classes.DartBoardPlayerControl}>
+        <div className={classes.rank}>
             {props.players.length > 1 &&
-                <div style={{ fontSize: '20px' }}>{props.player.points}</div>
+                <div>
+                    {`${props.rank}`}
+                </div>
             }
         </div>
     )
@@ -19,6 +21,6 @@ const mapStateToProps = state => {
     };
 }
 
-export default connect(mapStateToProps)(TotalScore);
+export default connect(mapStateToProps)(Rank);
 
 

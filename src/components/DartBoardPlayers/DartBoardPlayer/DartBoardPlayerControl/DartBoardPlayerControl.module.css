@@ -8,6 +8,16 @@
     box-shadow:  0 0 4px 1px rgba(63, 156, 175, 0.928);
 }
 
+.rank {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  animation: slideDown 1.4s;
+  border-bottom: 2px solid steelblue;
+  box-shadow:  0 0 4px 1px rgba(63, 156, 175, 0.928);
+}
+
 .DartBoardPlayerControl:hover {
   background: rgb(20, 20, 20)
 }

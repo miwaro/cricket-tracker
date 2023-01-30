@@ -10,10 +10,10 @@ const DartBoardStatic = (props) => {
     return (
         <div className="Label-style">
             <PlayersBox />
-            {props.targets.map((target, i) => (
+            {props?.targets?.map((target, i) => (
                 <DartBoardItem
                     key={i}
-                    target={target.target}
+                    target={target?.target}
                     isClosed={target.isClosed}
                     labelIndex={i}
                 />
@@ -21,7 +21,10 @@ const DartBoardStatic = (props) => {
             {props.players.length > 1 &&
                 <>
                     <div className={classes.playerInfo}>
-                        Info
+                        Total
+                    </div>
+                    <div className={classes.Rank}>
+                        Rank
                     </div>
                 </>
             }

@@ -166,7 +166,6 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 players,
-                targets
             }
 
         case actionTypes.UPDATE_SCORE:

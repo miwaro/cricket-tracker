@@ -5,6 +5,7 @@
     align-items: center;
     height: 70px;
     border-bottom: 2px solid steelblue;
+    border-left: 2px solid rgb(212, 212, 212);
 }
 
 .dartBoardPlayer:nth-child(2n+1) {
@@ -35,6 +36,18 @@
   height: 70px;
   cursor: default;
   background: radial-gradient(circle, rgb(24, 92, 95) -10%, rgb(59, 180, 184) 100%);
+}
+
+.Rank {
+  font-size: 19px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 70px;
+  cursor: default;
+  background: radial-gradient(circle, rgb(27 64 78) -10%, rgb(73 161 216) 100%);
 }
 
 .actions {
