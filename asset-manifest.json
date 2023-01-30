@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/cricket-tracker/static/css/main.8d3c9896.chunk.css",
-    "main.js": "/cricket-tracker/static/js/main.ced50dc8.chunk.js",
-    "main.js.map": "/cricket-tracker/static/js/main.ced50dc8.chunk.js.map",
+    "main.css": "/cricket-tracker/static/css/main.3f2c6077.chunk.css",
+    "main.js": "/cricket-tracker/static/js/main.ee3f4093.chunk.js",
+    "main.js.map": "/cricket-tracker/static/js/main.ee3f4093.chunk.js.map",
     "runtime-main.js": "/cricket-tracker/static/js/runtime-main.da2bb043.js",
     "runtime-main.js.map": "/cricket-tracker/static/js/runtime-main.da2bb043.js.map",
-    "static/js/2.c3c1c2e8.chunk.js": "/cricket-tracker/static/js/2.c3c1c2e8.chunk.js",
-    "static/js/2.c3c1c2e8.chunk.js.map": "/cricket-tracker/static/js/2.c3c1c2e8.chunk.js.map",
+    "static/js/2.b79a02b7.chunk.js": "/cricket-tracker/static/js/2.b79a02b7.chunk.js",
+    "static/js/2.b79a02b7.chunk.js.map": "/cricket-tracker/static/js/2.b79a02b7.chunk.js.map",
     "index.html": "/cricket-tracker/index.html",
-    "static/css/main.8d3c9896.chunk.css.map": "/cricket-tracker/static/css/main.8d3c9896.chunk.css.map",
-    "static/js/2.c3c1c2e8.chunk.js.LICENSE.txt": "/cricket-tracker/static/js/2.c3c1c2e8.chunk.js.LICENSE.txt",
+    "static/css/main.3f2c6077.chunk.css.map": "/cricket-tracker/static/css/main.3f2c6077.chunk.css.map",
+    "static/js/2.b79a02b7.chunk.js.LICENSE.txt": "/cricket-tracker/static/js/2.b79a02b7.chunk.js.LICENSE.txt",
     "static/media/addplayers.ed804bd1.wav": "/cricket-tracker/static/media/addplayers.ed804bd1.wav",
     "static/media/arrow.204f5440.wav": "/cricket-tracker/static/media/arrow.204f5440.wav",
+    "static/media/index.scss": "/cricket-tracker/static/media/background.fdf6bd77.jpg",
     "static/media/darts2.f52d0a57.png": "/cricket-tracker/static/media/darts2.f52d0a57.png",
     "static/media/hero_decorative-celebration-01.fd000b5b.wav": "/cricket-tracker/static/media/hero_decorative-celebration-01.fd000b5b.wav",
     "static/media/navigation_transition-right.5d68c198.wav": "/cricket-tracker/static/media/navigation_transition-right.5d68c198.wav",
@@ -24,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.da2bb043.js",
-    "static/js/2.c3c1c2e8.chunk.js",
-    "static/css/main.8d3c9896.chunk.css",
-    "static/js/main.ced50dc8.chunk.js"
+    "static/js/2.b79a02b7.chunk.js",
+    "static/css/main.3f2c6077.chunk.css",
+    "static/js/main.ee3f4093.chunk.js"
   ]
 }
