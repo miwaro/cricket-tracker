@@ -18,10 +18,8 @@ import addplayer from '../../../../audioclips/addplayers.wav';
 import addplayers from '../../../../audioclips/notification_ambient.wav';
 
 const AddPlayer = (props) => {
-
     const [open, setOpen] = useState(false);
     const [name, setName] = useState('');
-    const [nameArr, setNameArr] = useState([]);
     const [hasScored, setHasScored] = useState(false);
 
     useEffect(() => {
@@ -30,8 +28,9 @@ const AddPlayer = (props) => {
             props.players.forEach(player => {
                 player.score.forEach(mark => {
                     if (mark > 0) {
-                        setHasScored(true)
+                        return setHasScored(true)
                     }
+                    setHasScored(false);
                 })
             })
         }
@@ -40,12 +39,8 @@ const AddPlayer = (props) => {
 
     const handleClickOpen = () => {
         if (props.players.length > 5) { return; }
-        if (hasScored === true) {
-            alert('You have already started the game, please reset the game by selecting "New Game" if you wish to add more players');
-        } else {
-            playSound(addplayerAudio);
-            setOpen(true);
-        }
+        playSound(addplayerAudio);
+        setOpen(true);
     }
 
     const handleClose = () => {

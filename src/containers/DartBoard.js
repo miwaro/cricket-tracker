@@ -26,18 +26,18 @@ const dartBoard = (props) => {
         <div style={{ margin: 'auto', width: p === 0 ? '30%' : '90%' }}>
             <Grid className={classes.root} item xs={12}>
                 <Grid container spacing={0}>
-                    <Grid item xs={p === 0 ? 12 : 3} >
+                    <Grid item xs={p === 0 ? 12 : 2} >
                         <DartBoardStatic />
                     </Grid>
-                    <Grid item xs={9}>
+                    <Grid item xs={10}>
                         <DartBoardPlayers />
                     </Grid>
                     <Button
                         style={{
-                            backgroundColor: '#00fff8de',
+                            backgroundColor: 'transparent',
                             transition: 'transform .4s',
                             position: 'absolute',
-                            opacity: '.9',
+                            opacity: '.8',
                             bottom: '10px',
                             right: '10px'
                         }}
@@ -45,9 +45,8 @@ const dartBoard = (props) => {
                         <a
                             className='iconHover'
                             style={{
-                                textDecoration: 'none',
-                                color: 'black', fontSize: '11px',
-                                fontFamily: 'Audiowide',
+                                color: 'white',
+                                fontSize: '11px',
                             }}
                             href="https://paypal.me/michaelrooze?locale.x=en_US" target="_blank" rel="noopener noreferrer">
                             $ Donate

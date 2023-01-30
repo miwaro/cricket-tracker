@@ -5,6 +5,16 @@ import { updateScore, updatePoints, undoMove } from '../../../store/actions/acti
 import TotalScore from '../../DartBoardPlayers/TotalScore';
 import DartBoardPlayerControl from './DartBoardPlayerControl/DartBoardPlayerControl';
 import classes from './DartBoardPlayer.module.css';
+import Tooltip from '@material-ui/core/Tooltip';
+import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
+import { removePlayer } from '../../../store/actions/actions';
+import IconButton from '@material-ui/core/IconButton';
+import remove from '../../../audioclips/navigation_transition-right.wav';
+import reset from '../../../audioclips/ui_loading.wav';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
 
 function DartBoardPlayer(props) {
     const [rank, setRank] = useState('Rank');
@@ -12,6 +22,29 @@ function DartBoardPlayer(props) {
     const handleUpdateScore = (scoreIndex) => {
         props.onUpdateScore(props.playerIndex, scoreIndex)
     }
+
+    const removePlayerHandler = () => {
+        playSound(removeAudio);
+        props.onRemovePlayer(props.playerIndex) && setOpen(false);
+    }
+
+    const resetAudio = new Audio(reset);
+    const removeAudio = new Audio(remove);
+
+    const playSound = audioFile => {
+        if (!props.muted) audioFile.play();
+    }
+
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        playSound(resetAudio);
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     const handleUpdatePoints = (scoreIndex) => {
         props.onUpdatePoints(props.playerIndex, scoreIndex)
@@ -74,12 +107,38 @@ function DartBoardPlayer(props) {
 
     return (
         <>
-            <div className={"Player-name"} style={{ width: '100%' }}>
+            <div className={"Player-name"} style={{ width: '100%', position: 'relative' }} >
                 <div className={classes.dartBoardPlayer}>
                     <div className={classes.name}
                         style={{ fontSize: props.players.length > 2 ? 27 : 34, }}
                     >
                         {props.player.name}
+                    </div>
+                    <div style={{ position: 'absolute', top: 0, right: 0 }}>
+                        <Tooltip title={`Remove ${props.player.name} from the game`} placement="left">
+                            <IconButton onClick={handleClickOpen} aria-label="delete">
+                                <RemoveCircleIcon className={classes.removeCircle} />
+                            </IconButton>
+                        </Tooltip>
+                        <Dialog
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="alert-dialog-title"
+                        >
+                            <DialogTitle id="alert-dialog-title">{`Remove ${props.player.name} from the game?`}</DialogTitle>
+                            <DialogActions>
+                                <Button onClick={handleClose} color="secondary">
+                                    No
+                                </Button>
+                                <Button
+                                    size="small"
+                                    onClick={removePlayerHandler}
+                                    color="primary"
+                                >
+                                    Yes
+                                </Button>
+                            </DialogActions>
+                        </Dialog>
                     </div>
                 </div>
 
@@ -96,12 +155,13 @@ function DartBoardPlayer(props) {
                         />
                     ))
                 }
-
-                < TotalScore
-                    rank={rank}
-                    playerIndex={props.playerIndex}
-                    player={props.player}
-                />
+                {props.players.length > 1 &&
+                    < TotalScore
+                        rank={rank}
+                        playerIndex={props.playerIndex}
+                        player={props.player}
+                    />
+                }
             </div>
         </>
     )
@@ -120,6 +180,7 @@ const mapDispatchToProps = dispatch => {
         onUpdateScore: (playerIndex, scoreIndex) => dispatch(updateScore(playerIndex, scoreIndex)),
         onUpdatePoints: (playerIndex, scoreIndex) => dispatch(updatePoints(playerIndex, scoreIndex)),
         onUndoMove: (playerIndex, scoreIndex) => dispatch(undoMove(playerIndex, scoreIndex)),
+        onRemovePlayer: (playerIndex) => dispatch(removePlayer(playerIndex))
     }
 }
 

@@ -11,9 +11,15 @@
   background: radial-gradient(circle, rgb(27 64 78) -10%, rgb(73 161 216) 100%);
 }
 
- .dartBoardPlayer:nth-last-child(2n) {
-  background: radial-gradient(circle, rgb(24, 92, 95) -10%, rgb(59, 180, 184) 100%);
-} 
+.removeCircle {
+  color: #FFF;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.removeCircle:active {
+  transform: scale(0.88);
+}
 
 .resetGame {
   display: none;
@@ -28,7 +34,7 @@
   text-align: center;
   height: 70px;
   cursor: default;
-  background: radial-gradient(circle, rgb(27 64 78) -10%, rgb(73 161 216) 100%);
+  background: radial-gradient(circle, rgb(24, 92, 95) -10%, rgb(59, 180, 184) 100%);
 }
 
 .actions {
@@ -107,6 +113,9 @@
     .resetGame {
       display: grid;
       grid-template-columns: 1fr;
+    }
+    .removeCircle {
+      transform: none;
     }
   }
 

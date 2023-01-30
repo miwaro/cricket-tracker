@@ -18,8 +18,7 @@ const DartBoardStatic = (props) => {
                     labelIndex={i}
                 />
             ))}
-            {
-                props.players.length > 0 &&
+            {props.players.length > 1 &&
                 <>
                     <div className={classes.playerInfo}>
                         Player Info

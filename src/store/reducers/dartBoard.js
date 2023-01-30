@@ -152,9 +152,21 @@ const reducer = (state = initialState, action) => {
 
         case actionTypes.REMOVE_PLAYER:
             players = state.players.filter((_, i) => i !== action.playerIndex);
+            if (players.length === 0) {
+                targets = [
+                    { target: 15, isClosed: false },
+                    { target: 16, isClosed: false },
+                    { target: 17, isClosed: false },
+                    { target: 18, isClosed: false },
+                    { target: 19, isClosed: false },
+                    { target: 20, isClosed: false },
+                    { target: 25, isClosed: false }
+                ]
+            }
             return {
                 ...state,
-                players
+                players,
+                targets
             }
 
         case actionTypes.UPDATE_SCORE:

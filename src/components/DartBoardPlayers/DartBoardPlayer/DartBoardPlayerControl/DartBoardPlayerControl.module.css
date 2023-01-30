@@ -25,15 +25,6 @@
   }
 }
 
-.removeCircle {
-  color: #FFF;
-  cursor: pointer;
-}
-
-.removeCircle:active {
-  transform: scale(0.88);
-}
-
 .Total {
   display: flex;
   justify-content: center;
@@ -92,6 +83,7 @@
 
 .bonusIcon {
   font-size: 34px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .bonusIcon:active {
@@ -142,11 +134,5 @@
     }
     .slash {
       font-size: 30px;
-    }
-  }
-
-  @media(max-width: 550px) {
-    .removeCircle {
-      transform: none;
     }
   }
