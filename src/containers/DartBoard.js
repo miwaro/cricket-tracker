@@ -26,10 +26,10 @@ const dartBoard = (props) => {
         <div style={{ margin: 'auto', width: p === 0 ? '30%' : '90%' }}>
             <Grid className={classes.root} item xs={12}>
                 <Grid container spacing={0}>
-                    <Grid item xs={p === 0 ? 12 : 2} >
+                    <Grid item xs={p === 0 ? 12 : 3} >
                         <DartBoardStatic />
                     </Grid>
-                    <Grid item xs={10}>
+                    <Grid item xs={9}>
                         <DartBoardPlayers />
                     </Grid>
                     <Button
