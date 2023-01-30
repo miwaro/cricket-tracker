@@ -21,7 +21,7 @@ const DartBoardStatic = (props) => {
             {props.players.length > 1 &&
                 <>
                     <div className={classes.playerInfo}>
-                        Player Info
+                        Info
                     </div>
                 </>
             }
