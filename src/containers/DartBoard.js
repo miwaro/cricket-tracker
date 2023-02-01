@@ -13,10 +13,10 @@ const dartBoard = (props) => {
     <div className={classes.container}>
       <Grid item xs={12}>
         <Grid container spacing={0}>
-          <Grid item xs={props.players.length === 0 ? 12 : 2} >
+          <Grid item xs={props.players.length === 0 ? 12 : 3} >
             <DartBoardStatic />
           </Grid>
-          <Grid item xs={10}>
+          <Grid item xs={9}>
             <DartBoardPlayers />
           </Grid>
           <Button
@@ -25,13 +25,13 @@ const dartBoard = (props) => {
               transition: 'transform .4s',
               position: 'absolute',
               opacity: '.8',
-              bottom: '10px',
-              right: '10px'
+              bottom: '0px',
+              right: '20px'
             }}
           >
             <a
               className='iconHover'
-              style={{ color: 'white', fontSize: '11px' }}
+              style={{ color: 'white', fontSize: '13px' }}
               href="https://paypal.me/michaelrooze?locale.x=en_US" target="_blank" rel="noopener noreferrer"
             >
               $ Donate
