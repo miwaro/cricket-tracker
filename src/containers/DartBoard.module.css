@@ -1,0 +1,24 @@
+
+.container {
+    background-color: #000;
+    color: #FFF;
+    border: 6px double #00fff8de;
+    padding: 5px;
+    box-shadow: 0 0 12px 12px rgba(63, 156, 175, 0.928);
+    margin: auto;
+    width: 70%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}
+
+  @media (max-width: 587px) {
+    .container {
+        width: 100%;
+        border: 2px double #00fff8de;
+        padding: 2px;
+    }
+  }

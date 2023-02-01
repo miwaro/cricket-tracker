@@ -18,123 +18,123 @@ import addplayer from '../../../../audioclips/addplayers.wav';
 import addplayers from '../../../../audioclips/notification_ambient.wav';
 
 const AddPlayer = (props) => {
-    const [open, setOpen] = useState(false);
-    const [name, setName] = useState('');
-    const [hasScored, setHasScored] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [hasScored, setHasScored] = useState(false);
 
-    useEffect(() => {
-        if (props.players.length > 0) {
-            setHasScored(false);
-            props.players.forEach(player => {
-                player.score.forEach(mark => {
-                    if (mark > 0) {
-                        return setHasScored(true)
-                    }
-                    setHasScored(false);
-                })
-            })
-        }
-
-    }, [props.players, hasScored])
-
-    const handleClickOpen = () => {
-        if (props.players.length > 5) { return; }
-        playSound(addplayerAudio);
-        setOpen(true);
-    }
-
-    const handleClose = () => {
-        setOpen(false);
-    }
-
-    useEffect(() => {
-        props.players.forEach(player => {
-            if (name === player.name) {
-                setName('wxyz')
-            };
-
+  useEffect(() => {
+    if (props.players.length > 0) {
+      setHasScored(false);
+      props.players.forEach(player => {
+        player.score.forEach(mark => {
+          if (mark > 0) {
+            return setHasScored(true)
+          }
+          setHasScored(false);
         })
-    }, [name, props.players])
-
-    const addPlayerHandler = () => {
-        if (name === '') return;
-        playSound(addplayersAudio);
-        props.onPlayerAdded(name) && setOpen(false);
-        setName('')
+      })
     }
 
-    const addplayerAudio = new Audio(addplayer);
-    const addplayersAudio = new Audio(addplayers);
+  }, [props.players, hasScored])
 
-    const playSound = audioFile => {
-        if (!props.muted) audioFile.play();
-    }
+  const handleClickOpen = () => {
+    if (props.players.length > 5) { return; }
+    playSound(addplayerAudio);
+    setOpen(true);
+  }
 
-    return (
+  const handleClose = () => {
+    setOpen(false);
+  }
 
-        <div>
-            <Tooltip title="Add up to 6 Players or teams" placement="right">
-                < PersonAddSharpIcon className={classes.addPlayer} onClick={handleClickOpen} />
-            </Tooltip>
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-            >
-                <DialogTitle id="alert-dialog-title">{"Name"}</DialogTitle>
-                <DialogContent >
-                    <DialogContentText>
-                        Please Enter Your Name
-                    </DialogContentText>
-                    <TextField
-                        onKeyPress={(ev) => {
-                            if (ev.key === 'Enter') {
-                                addPlayerHandler();
-                                ev.preventDefault();
-                            }
-                        }}
+  useEffect(() => {
+    props.players.forEach(player => {
+      if (name === player.name) {
+        setName('wxyz')
+      };
 
-                        inputProps={{ maxLength: 9 }}
-                        autoFocus
-                        margin="dense"
-                        id="name"
-                        type="string"
-                        fullWidth
-                        error={name === "wxyz"}
-                        helperText={name === "xyz" ? 'This name has already been selected' : ' '}
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <AccountCircle />
-                                </InputAdornment>
-                            ),
-                        }}
-                        onChange={e => setName(e.target.value)}
-                    />
-                </DialogContent>
-                <DialogActions>
-                    <Button
-                        disabled={name === '' || name === 'wxyz'}
-                        style={{ backgroundColor: '#00fff8de' }} onClick={addPlayerHandler}>
-                        Yeah!
-                    </Button>
-                </DialogActions>
-            </Dialog>
-        </div>
-    )
+    })
+  }, [name, props.players])
+
+  const addPlayerHandler = () => {
+    if (name === '') return;
+    playSound(addplayersAudio);
+    props.onPlayerAdded(name) && setOpen(false);
+    setName('')
+  }
+
+  const addplayerAudio = new Audio(addplayer);
+  const addplayersAudio = new Audio(addplayers);
+
+  const playSound = audioFile => {
+    if (!props.muted) audioFile.play();
+  }
+
+  return (
+
+    <div>
+      <Tooltip title="Add up to 6 Players or teams" placement="right">
+        < PersonAddSharpIcon className={classes.addPlayer} onClick={handleClickOpen} />
+      </Tooltip>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+      >
+        <DialogTitle id="alert-dialog-title">{"Name"}</DialogTitle>
+        <DialogContent >
+          <DialogContentText>
+            Please Enter Your Name
+          </DialogContentText>
+          <TextField
+            onKeyPress={(ev) => {
+              if (ev.key === 'Enter') {
+                addPlayerHandler();
+                ev.preventDefault();
+              }
+            }}
+
+            inputProps={{ maxLength: 9 }}
+            autoFocus
+            margin="dense"
+            id="name"
+            type="string"
+            fullWidth
+            error={name === "wxyz"}
+            helperText={name === "xyz" ? 'This name has already been selected' : ' '}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <AccountCircle />
+                </InputAdornment>
+              ),
+            }}
+            onChange={e => setName(e.target.value)}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button
+            disabled={name === '' || name === 'wxyz'}
+            style={{ backgroundColor: '#00fff8de' }} onClick={addPlayerHandler}>
+            Yeah!
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  )
 }
 
 const mapStateToProps = state => {
-    return {
-        players: state.players,
-        muted: state.muted
-    }
+  return {
+    players: state.players,
+    muted: state.muted
+  }
 }
 
 const mapDispatchToProps = dispatch => {
-    return {
-        onPlayerAdded: (name) => dispatch(addPlayer(name))
-    }
+  return {
+    onPlayerAdded: (name) => dispatch(addPlayer(name))
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddPlayer);

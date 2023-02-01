@@ -137,6 +137,10 @@
       height: 50px;
       font-size: 12px;
     }
+    .rank {
+      height: 50px;
+      font-size: 12px;
+    }
     .circle {
         font-size: 25px !important;
         opacity: 1;

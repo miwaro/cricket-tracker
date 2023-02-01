@@ -100,13 +100,19 @@
       font-size: 17px;
       height: 50px;
     }
+
+    .Rank {
+      font-size: 17px;
+      height: 50px;
+    }
+
     .actions {
       font-size: 16px;
       height: 64px;
     }
     .name {
       font-size: 20px !important;
-  }
+    }
   }
 
   @media (max-width: 587px) {
@@ -142,6 +148,11 @@
         font-size: 18px !important;
     }
     .playerInfo {
+      font-size: 16px;
+      height: 50px;
+    }
+
+    .Rank {
       font-size: 16px;
       height: 50px;
     }
